@@ -2,6 +2,6 @@
 public class Game {
 
     public static void loop() {
-        new Intro();
+        new Intro().characterCreation();
     }
 }

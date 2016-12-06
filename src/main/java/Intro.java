@@ -1,20 +1,29 @@
 import Professions.Profession;
 import Professions.ProfessionList;
-import Races.RaceList;
+import Races.*;
+
+import java.util.ArrayList;
+
+import java.util.Scanner;
 
 public class Intro {
 
     private String name;
     private Profession profession;
     private Race race;
-    private Trait[] traits;
+    private static ArrayList<Trait> traits;
 
-    public void PromptName() {
+    private Scanner in = new Scanner(System.in);
+    public static void main(String[] args) {
+
+    }
+
+    public void promptName() {
         boolean validName = false;
-        while(!validName) {
+        while (!validName) {
             System.out.println("From now on you will be known as ...");
-            name = System.console().readLine();
-            if(name.length() > 3 && name.length() < 20) {
+             name = in.nextLine();
+            if (name.length() > 3 && name.length() < 20) {
                 validName = true;
             }
         }
@@ -22,40 +31,48 @@ public class Intro {
 
     }
 
-    public void PromptClassType() {
+    public void promptClassType() {
         boolean validNProfession = false;
-        while(!validNProfession) {
+        while (!validNProfession) {
+            System.out.println(ProfessionList.toS());
             System.out.println("You are widely known as a professional ...");
-            String profession = System.console().readLine();
-            if(ProfessionList.include(profession)) {
+            String profession = in.nextLine();
+            if (ProfessionList.include(profession)) {
                 validNProfession = true;
             }
         }
         System.out.println("You are widely known as a professional " + profession.toString());
     }
 
-    public void PromptRace() {
+    public void promptRace() {
         boolean validRace = false;
-        while(!validRace) {
+        while (!validRace) {
             System.out.println("You are a proud ...");
-            String race = System.console().readLine();
-            if(RaceList.include(race)) {
+            String race = in.nextLine();
+            if (RaceList.include(race)) {
                 validRace = true;
             }
         }
         System.out.println("You are a proud " + race.toString());
     }
 
-    public void PromptTraits() {
+    public void promptTraits() {
         boolean validTraits = false;
-        while(!validTraits) {
+        while (!validTraits) {
             System.out.println("The world destined you to you to be marked with: ...");
-            String trait = System.console().readLine();
-            if() {
+            String traitName = in.nextLine();
+            if (Trait.exists(traitName)) {
+                traits.add(Trait.getTrait(traitName));
                 validTraits = true;
             }
         }
+        System.out.println("The world destined you to you to be marked with: ..." + traits.toString());
     }
-
+    public void characterCreation() {
+        promptName();
+        promptClassType();
+        promptRace();
+        promptTraits();
+    }
 
 }

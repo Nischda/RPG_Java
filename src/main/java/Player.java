@@ -1,5 +1,5 @@
 import Professions.Profession;
-
+import Races.*;
 public class Player {
 
     private String name;
@@ -30,19 +30,23 @@ public class Player {
     public String name() {
         return name;
     }
+
     public String profession() {
         return profession.toString();
     }
+
     public String race() {
         return race.toString();
     }
+
     public String traits() {
-        return  traits.toString();
+        return traits.toString();
     }
 
     public int getXp() {
         return xp;
     }
+
     public void setXp(int xp) {
         this.xp = xp;
     }
@@ -50,6 +54,7 @@ public class Player {
     public int getHp() {
         return hp;
     }
+
     public void setHp(int hp) {
         this.hp = hp;
     }
@@ -57,6 +62,7 @@ public class Player {
     public int getMp() {
         return mp;
     }
+
     public void setMp(int mp) {
         this.mp = mp;
     }
@@ -64,6 +70,7 @@ public class Player {
     public int getStrengthMod() {
         return strengthMod;
     }
+
     public void setStrengthMod(int strengthMod) {
         this.strengthMod = strengthMod;
     }
@@ -71,6 +78,7 @@ public class Player {
     public int getEnduranceMod() {
         return enduranceMod;
     }
+
     public void setEnduranceMod(int enduranceMod) {
         this.enduranceMod = enduranceMod;
     }
@@ -78,6 +86,7 @@ public class Player {
     public int getKnowledgeMod() {
         return knowledgeMod;
     }
+
     public void setKnowledgeMod(int knowledgeMod) {
         this.knowledgeMod = knowledgeMod;
     }
@@ -85,6 +94,7 @@ public class Player {
     public int getPerceptionMod() {
         return perceptionMod;
     }
+
     public void setPerceptionMod(int perceptionMod) {
         this.perceptionMod = perceptionMod;
     }
@@ -92,6 +102,7 @@ public class Player {
     public int getMentalityMod() {
         return mentalityMod;
     }
+
     public void setMentalityMod(int mentalityMod) {
         this.mentalityMod = mentalityMod;
     }
@@ -99,6 +110,7 @@ public class Player {
     public int getHardeningMod() {
         return hardeningMod;
     }
+
     public void setHardeningMod(int hardeningMod) {
         this.hardeningMod = hardeningMod;
     }
@@ -106,17 +118,18 @@ public class Player {
     public int getImprovisationMod() {
         return improvisationMod;
     }
+
     public void setImprovisationMod(int improvisationMod) {
         this.improvisationMod = improvisationMod;
     }
 
 
-    public Player(String name, Profession classType, Race race, Trait[] traits, int xp, int hp, int mp,
+    public Player(String name, Profession classType, Race race, Trait[] traitses, int xp, int hp, int mp,
                   int baseStrength, int baseEndurance, int baseKnowledge, int basePerception, int baseMentality, int baseHardening, int baseImprovisation) {
         this.name = name;
         this.profession = classType;
         this.race = race;
-        this.traits = traits;
+        this.traits = traitses;
         this.xp = xp;
         this.hp = hp;
         this.mp = mp;
@@ -127,7 +140,7 @@ public class Player {
         this.basePerception = basePerception;
         this.baseHardening = baseHardening;
         this.baseImprovisation = baseImprovisation;
-        
+
     }
 
 

@@ -3,13 +3,14 @@ package Races;
 
 import java.util.HashMap;
 
-public class Dwarf extends Race{
+public class Dwarf extends Race {
 
     private String description = "A Dwarf";
 
     public void printDescription() {
         System.out.println(this.description);
     }
+
     public void initializeTraits() {
 
     }
@@ -19,10 +20,8 @@ public class Dwarf extends Race{
         return "Dwarf";
     }
 
-    public void main(String []args){
-        HashMap<String,Race> dwarf = new HashMap<>();
-        dwarf.put("Dwarf", this);
-        RaceList.add(dwarf);
+    public Dwarf() {
+        RaceList.add("Dwarf", this);
 
     }
 }

@@ -1,11 +1,17 @@
+import Professions.*;
+import Races.*;
 
 public class Main {
 
-    public void loop() {
+    public static void loop() {
         Game.loop();
     }
 
     public static void main(String[] args) {
-        new Main();
+        new Duelist();
+
+        new Dwarf();
+        Game.loop();
+
     }
 }
