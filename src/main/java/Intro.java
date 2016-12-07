@@ -20,6 +20,7 @@ public class Intro {
 
     public void promptName() {
         boolean validName = false;
+
         while (!validName) {
             System.out.println("From now on you will be known as ...");
              name = in.nextLine();
@@ -32,32 +33,36 @@ public class Intro {
     }
 
     public void promptClassType() {
-        boolean validNProfession = false;
-        while (!validNProfession) {
-            System.out.println(ProfessionList.toS());
+        boolean validProfession = false;
+
+        while (!validProfession) {
             System.out.println("You are widely known as a professional ...");
-            String profession = in.nextLine();
-            if (ProfessionList.include(profession)) {
-                validNProfession = true;
+            String professionName = in.nextLine();
+            if (ProfessionList.include(professionName)) {
+                this.profession = ProfessionList.getProfession(professionName);
+                validProfession = true;
             }
         }
-        System.out.println("You are widely known as a professional " + profession.toString());
+        System.out.println("You are widely known as a professional " + this.profession);
     }
 
     public void promptRace() {
         boolean validRace = false;
+
         while (!validRace) {
             System.out.println("You are a proud ...");
-            String race = in.nextLine();
-            if (RaceList.include(race)) {
+            String raceName = in.nextLine();
+            if (RaceList.include(raceName)) {
+                this.race = RaceList.getRace(raceName);
                 validRace = true;
             }
         }
-        System.out.println("You are a proud " + race.toString());
+        System.out.println("You are a proud " + this.race);
     }
 
     public void promptTraits() {
         boolean validTraits = false;
+
         while (!validTraits) {
             System.out.println("The world destined you to you to be marked with: ...");
             String traitName = in.nextLine();

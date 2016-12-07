@@ -1,6 +1,5 @@
 package Professions;
 
-import Races.Race;
 import java.util.HashMap;
 
 
@@ -9,12 +8,13 @@ public class ProfessionList {
     private static HashMap professionList = new HashMap();
 
     public static boolean include(String profession) {
+
         return professionList.containsKey(profession);
     }
 
-    public static Race getRace(String race) {
-        if (professionList.containsKey(race)) {
-            professionList.get(race);
+    public static Profession getProfession(String profession) {
+        if (professionList.containsKey(profession)) {
+            return (Profession) professionList.get(profession);
         }
         return null;
     }
@@ -24,6 +24,6 @@ public class ProfessionList {
     }
 
     public static String toS() {
-        return professionList.toString();
+        return professionList.values().toString();
     }
 }

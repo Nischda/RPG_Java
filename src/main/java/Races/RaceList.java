@@ -3,7 +3,7 @@ package Races;
 import java.util.HashMap;
 
 public class RaceList {
-    private static HashMap raceMap;
+    private static HashMap raceMap = new HashMap();
 
     public static boolean include(String race) {
         return raceMap.containsKey(race);
@@ -11,7 +11,7 @@ public class RaceList {
 
     public static Race getRace(String race) {
         if (raceMap.containsKey(race)) {
-            raceMap.get(race);
+            return (Race)raceMap.get(race);
         }
         return null;
     }

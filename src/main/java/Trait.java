@@ -4,7 +4,7 @@ public enum Trait {
 
     public static boolean exists(String otherName) {
         for(Trait traitName : Trait.values()){
-            if(traitName.equals(otherName)) {
+            if(traitName.toString().equals(otherName)) {
                 return true;
             }
         }
@@ -13,12 +13,14 @@ public enum Trait {
 
     public static Trait getTrait(String otherName) {
         for(Trait trait : Trait.values()){
-            if(trait.equals(otherName)) {
+            if(trait.toString().equals(otherName)) {
+                System.out.println("trait: " + trait); //NullPointerException
                 return trait;
             }
         }
         return null;
     }
+
     public static void activateTrait(Trait trait) {
         switch (trait) {
             case ENTHUSIASTIC:
