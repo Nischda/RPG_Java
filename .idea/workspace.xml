@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c670e49-837f-43cc-8ce4-86261f591d95" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Intro.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Intro.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Professions/Duelist.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Professions/Duelist.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Professions/ProfessionList.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Professions/ProfessionList.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Races/Dwarf.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Races/Dwarf.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Races/RaceList.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Races/RaceList.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Trait$1.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Trait$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Trait.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Trait.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Intro.java" afterPath="$PROJECT_DIR$/src/main/java/Intro.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Professions/Duelist.java" afterPath="$PROJECT_DIR$/src/main/java/Professions/Duelist.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Professions/ProfessionList.java" afterPath="$PROJECT_DIR$/src/main/java/Professions/ProfessionList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Races/Dwarf.java" afterPath="$PROJECT_DIR$/src/main/java/Races/Dwarf.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Races/RaceList.java" afterPath="$PROJECT_DIR$/src/main/java/Races/RaceList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Trait.java" afterPath="$PROJECT_DIR$/src/main/java/Trait.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -39,10 +26,11 @@
       <file leaf-file-name="Intro.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Intro.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="76" column="21" lean-forward="true" selection-start-line="76" selection-start-column="21" selection-end-line="76" selection-end-column="21" />
+            <state relative-caret-position="532">
+              <caret line="83" column="0" lean-forward="true" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#302#309#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -219,8 +207,8 @@
         <option value="$PROJECT_DIR$/src/main/java/Races/Dwarf.java" />
         <option value="$PROJECT_DIR$/src/main/java/Races/Race.java" />
         <option value="$PROJECT_DIR$/src/main/java/Professions/Duelist.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Intro.java" />
         <option value="$PROJECT_DIR$/src/main/java/Trait.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Intro.java" />
       </list>
     </option>
   </component>
@@ -783,6 +771,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#302#309#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -873,6 +862,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#302#309#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -970,6 +960,7 @@
           <caret line="14" column="49" lean-forward="false" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#302#309#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1197,10 +1188,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Intro.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="76" column="21" lean-forward="true" selection-start-line="76" selection-start-column="21" selection-end-line="76" selection-end-column="21" />
+        <state relative-caret-position="532">
+          <caret line="83" column="0" lean-forward="true" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#302#309#0" expanded="true" />
           </folding>
         </state>
       </provider>

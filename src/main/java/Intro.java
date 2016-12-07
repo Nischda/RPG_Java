@@ -11,7 +11,7 @@ public class Intro {
     private String name;
     private Profession profession;
     private Race race;
-    private static ArrayList<Trait> traits;
+    private static ArrayList<Trait> traits = new ArrayList<Trait>();
 
     private Scanner in = new Scanner(System.in);
     public static void main(String[] args) {
