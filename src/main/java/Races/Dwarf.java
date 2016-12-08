@@ -6,7 +6,7 @@ public class Dwarf extends Race {
     private String description = "A Dwarf";
 
     public Dwarf() {
-        RaceList.add("Dwarf", this);
+        RaceList.add("DWARF", this);
     }
 
     public void printDescription() {
@@ -19,6 +19,6 @@ public class Dwarf extends Race {
     }
     @Override
     public String toString() {
-        return "Dwarf";
+        return "DWARF";
     }
 }

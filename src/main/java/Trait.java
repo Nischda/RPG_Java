@@ -42,4 +42,8 @@ public enum Trait {
             default:
         }
     }
+
+    public static String toS() {
+        return "ENTHUSIASTIC, ENERGETIC, CURSED, FORGOTTEN;";
+    }
 }

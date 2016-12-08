@@ -14,9 +14,7 @@ public class Intro {
     private static ArrayList<Trait> traits = new ArrayList<Trait>();
 
     private Scanner in = new Scanner(System.in);
-    public static void main(String[] args) {
 
-    }
 
     public void promptName() {
         boolean validName = false;
@@ -37,7 +35,7 @@ public class Intro {
 
         while (!validProfession) {
             System.out.println("You are widely known as a professional ...");
-            String professionName = in.nextLine();
+            String professionName = in.nextLine().toUpperCase();
             if (ProfessionList.include(professionName)) {
                 this.profession = ProfessionList.getProfession(professionName);
                 validProfession = true;
@@ -51,7 +49,7 @@ public class Intro {
 
         while (!validRace) {
             System.out.println("You are a proud ...");
-            String raceName = in.nextLine();
+            String raceName = in.nextLine().toUpperCase();
             if (RaceList.include(raceName)) {
                 this.race = RaceList.getRace(raceName);
                 validRace = true;
@@ -62,17 +60,32 @@ public class Intro {
 
     public void promptTraits() {
         boolean validTraits = false;
-
-        while (!validTraits) {
-            System.out.println("The world destined you to you to be marked with: ...");
-            String traitName = in.nextLine();
-            if (Trait.exists(traitName)) {
-                traits.add(Trait.getTrait(traitName));
-                validTraits = true;
+        int maxTraits = 3;
+        int curTraits = 0;
+        boolean approval = false;
+        while (!validTraits || !approval) {
+            System.out.println("The world destined you the burden of: ...");
+            System.out.println("Enter up to 3 of the following traits: " + Trait.toS());
+            System.out.println("Enter 'ACCEPT' to continue");
+            System.out.println("Current traits: " + curTraits + "/" + maxTraits + ": " +  traits.toString());
+            String input = in.nextLine().toUpperCase();
+            if(curTraits < maxTraits) {
+                if (Trait.exists(input)) {
+                    Trait traitObject = Trait.getTrait(input);
+                    if (!traits.contains(traitObject)) {
+                        traits.add(traitObject);
+                        curTraits++;
+                        validTraits = true;
+                    }
+                }
+                else if(input.equals("ACCEPT")) {
+                    approval = true;
+                }
             }
         }
-        System.out.println("The world destined you to you to be marked with: ..." + traits.toString());
+        System.out.println("The world destined you the burden of: " + traits.toString());
     }
+
     public void characterCreation() {
         promptName();
         promptClassType();

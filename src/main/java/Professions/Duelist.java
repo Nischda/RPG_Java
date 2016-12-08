@@ -5,7 +5,7 @@ public class Duelist extends Profession {
     private static String description = "A Professions.Duelist";
 
     public Duelist() {
-        ProfessionList.add("Duelist", this);
+        ProfessionList.add("DUELIST", this);
     }
 
     public void printDescription() {
@@ -18,6 +18,6 @@ public class Duelist extends Profession {
 
     @Override
     public String toString() {
-        return "Duelist";
+        return "DUELIST";
     }
 }
