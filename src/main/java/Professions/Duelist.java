@@ -2,10 +2,10 @@ package Professions;
 
 public class Duelist extends Profession {
 
-    private static String description = "A Professions.Duelist";
+    private static String description = "A Duelist";
 
     public Duelist() {
-        ProfessionList.add("DUELIST", this);
+        ProfessionList.add(this.toString(), this);
     }
 
     public void printDescription() {

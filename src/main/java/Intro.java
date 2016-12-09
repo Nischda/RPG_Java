@@ -1,6 +1,8 @@
 import Professions.Profession;
 import Professions.ProfessionList;
 import Races.*;
+import TraitLists.*;
+import TraitLists.Trait;
 
 import java.util.ArrayList;
 
@@ -18,7 +20,6 @@ public class Intro {
 
     public void promptName() {
         boolean validName = false;
-
         while (!validName) {
             System.out.println("From now on you will be known as ...");
              name = in.nextLine();
@@ -65,13 +66,13 @@ public class Intro {
         boolean approval = false;
         while (!validTraits || !approval) {
             System.out.println("The world destined you the burden of: ...");
-            System.out.println("Enter up to 3 of the following traits: " + Trait.toS());
+            System.out.println("Enter up to 3 of the following traits: " + TraitList.toS());
             System.out.println("Enter 'ACCEPT' to continue");
             System.out.println("Current traits: " + curTraits + "/" + maxTraits + ": " +  traits.toString());
             String input = in.nextLine().toUpperCase();
             if(curTraits < maxTraits) {
-                if (Trait.exists(input)) {
-                    Trait traitObject = Trait.getTrait(input);
+                if (TraitList.include(input)) {
+                    Trait traitObject = TraitList.getTrait(input);
                     if (!traits.contains(traitObject)) {
                         traits.add(traitObject);
                         curTraits++;

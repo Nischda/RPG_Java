@@ -6,7 +6,7 @@ public class Dwarf extends Race {
     private String description = "A Dwarf";
 
     public Dwarf() {
-        RaceList.add("DWARF", this);
+        RaceList.add(this.toString(), this);
     }
 
     public void printDescription() {

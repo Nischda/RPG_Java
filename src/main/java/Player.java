@@ -1,5 +1,7 @@
 import Professions.Profession;
 import Races.*;
+import TraitLists.Trait;
+
 public class Player {
 
     private String name;
