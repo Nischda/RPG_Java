@@ -1,5 +1,5 @@
-import Professions.Profession;
-import Races.*;
+import ProfessionLists.Profession;
+import RaceLists.*;
 import TraitLists.Trait;
 
 public class Player {

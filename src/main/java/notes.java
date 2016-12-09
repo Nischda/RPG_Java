@@ -1,8 +1,8 @@
 
 
 /*
-public enum Professions.Profession {
-    Professions.Duelist("A duelist"),
+public enum Profession {
+    Duelist("A duelist"),
     Bruiser("A Bruiser"),
     Knight("A Knight"),
     Kabal("A Kabal"),
@@ -10,13 +10,13 @@ public enum Professions.Profession {
 
     final String name;
 
-    Professions.Profession(String name) {
+    Profession(String name) {
         this.name = name;
     }
 
     public boolean include(String other) {
-        Professions.Profession[] classTypes = Professions.Profession.values();
-        for (Professions.Profession classType : classTypes) {
+        Profession[] classTypes = Profession.values();
+        for (Profession classType : classTypes) {
             if(classType.name.equals(other)) {
                 return true;
             }
@@ -41,7 +41,7 @@ public enum Professions.Profession {
     static void test(ClassTypes classType) {
         // Switch on the enum value.
         switch (classType) {
-            case Professions.Duelist:
+            case Duelist:
                 System.out.println("?");
                 return;
             case Bruiser:

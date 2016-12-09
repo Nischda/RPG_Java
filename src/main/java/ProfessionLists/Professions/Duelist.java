@@ -1,11 +1,12 @@
-package Professions;
+package ProfessionLists.Professions;
+
+import ProfessionLists.Profession;
 
 public class Duelist extends Profession {
 
     private static String description = "A Duelist";
 
     public Duelist() {
-        ProfessionList.add(this.toString(), this);
     }
 
     public void printDescription() {

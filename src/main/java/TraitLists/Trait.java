@@ -1,32 +1,31 @@
 package TraitLists;
 
-public abstract class Trait {
-    private Trait[] traits;
+import java.util.HashMap;
 
-    public  boolean exists(String otherName) {
-        for(Trait traitName : traits){
-            if(traitName.toString().equals(otherName)) {
-                return true;
-            }
-        }
-        return false;
+public abstract class Trait {
+
+    private static HashMap<String, Trait> traitList = new HashMap<>();
+
+    public abstract void activateTrait();
+    public abstract String toString();
+
+
+    public static boolean include(String trait) {
+        return traitList.containsKey(trait);
     }
 
-    public Trait getTrait(String otherName) {
-        for(Trait trait : traits){
-            if(trait.toString().equals(otherName)) {
-                System.out.println("trait: " + trait); //NullPointerException
-                return trait;
-            }
+    public static Trait getTrait(String profession) {
+        if (traitList.containsKey(profession)) {
+            return (Trait) traitList.get(profession);
         }
         return null;
     }
 
-    public void activateTrait() {
+    public void addToList() {
+        traitList.put(this.toString(), this);
     }
-    public abstract  String toString();
 
-    public String toS() {
-        return traits.toString();
+    public static String toS() {
+        return traitList.values().toString();
     }
 }

@@ -1,5 +1,5 @@
-import Professions.*;
-import Races.*;
+import ProfessionLists.Professions.Duelist;
+import RaceLists.Races.Dwarf;
 import TraitLists.Traits.*;
 
 public class Main {
@@ -9,9 +9,9 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        new Duelist();
-        new Dwarf();
-        new Cursed();
+        new Duelist().addToList();
+        new Dwarf().addToList();
+        new Cursed().addToList();
         Game.loop();
 
     }

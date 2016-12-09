@@ -1,13 +1,11 @@
-package Races;
+package RaceLists.Races;
 
 
-public class Dwarf extends Race {
+import RaceLists.Race;
 
-    private String description = "A Dwarf";
+public class Elf extends Race{
 
-    public Dwarf() {
-        RaceList.add(this.toString(), this);
-    }
+    private String description = "An Elf";
 
     public void printDescription() {
         System.out.println(this.description);
@@ -19,6 +17,7 @@ public class Dwarf extends Race {
     }
     @Override
     public String toString() {
-        return "DWARF";
+        return "ELF";
     }
+
 }

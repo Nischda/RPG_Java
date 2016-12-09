@@ -1,6 +1,5 @@
-import Professions.Profession;
-import Professions.ProfessionList;
-import Races.*;
+import ProfessionLists.Profession;
+import RaceLists.*;
 import TraitLists.*;
 import TraitLists.Trait;
 
@@ -37,8 +36,8 @@ public class Intro {
         while (!validProfession) {
             System.out.println("You are widely known as a professional ...");
             String professionName = in.nextLine().toUpperCase();
-            if (ProfessionList.include(professionName)) {
-                this.profession = ProfessionList.getProfession(professionName);
+            if (Profession.include(professionName)) {
+                this.profession = Profession.getProfession(professionName);
                 validProfession = true;
             }
         }
@@ -51,8 +50,8 @@ public class Intro {
         while (!validRace) {
             System.out.println("You are a proud ...");
             String raceName = in.nextLine().toUpperCase();
-            if (RaceList.include(raceName)) {
-                this.race = RaceList.getRace(raceName);
+            if (Race.include(raceName)) {
+                this.race = Race.getRace(raceName);
                 validRace = true;
             }
         }
@@ -66,13 +65,13 @@ public class Intro {
         boolean approval = false;
         while (!validTraits || !approval) {
             System.out.println("The world destined you the burden of: ...");
-            System.out.println("Enter up to 3 of the following traits: " + TraitList.toS());
+            System.out.println("Enter up to 3 of the following traits: " + Trait.toS());
             System.out.println("Enter 'ACCEPT' to continue");
             System.out.println("Current traits: " + curTraits + "/" + maxTraits + ": " +  traits.toString());
             String input = in.nextLine().toUpperCase();
             if(curTraits < maxTraits) {
-                if (TraitList.include(input)) {
-                    Trait traitObject = TraitList.getTrait(input);
+                if (Trait.include(input)) {
+                    Trait traitObject = Trait.getTrait(input);
                     if (!traits.contains(traitObject)) {
                         traits.add(traitObject);
                         curTraits++;

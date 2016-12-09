@@ -1,11 +1,17 @@
-package Professions;
+package ProfessionLists;
 
 import java.util.HashMap;
 
+public abstract class Profession {
 
-public class ProfessionList {
+    private static HashMap<String, Profession> professionList = new HashMap<>();
 
-    private static HashMap professionList = new HashMap();
+    public abstract void printDescription();
+    public abstract void initializePerks();
+
+    public void addToList() {
+        professionList.put(this.toString(), this);
+    }
 
     public static boolean include(String profession) {
 
