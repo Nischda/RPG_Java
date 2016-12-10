@@ -1,7 +1,7 @@
-import ProfessionLists.Profession;
-import RaceLists.*;
-import TraitLists.*;
-import TraitLists.Trait;
+import Entities.ProfessionLists.Profession;
+import Entities.RaceLists.*;
+import Entities.TraitLists.CustomTraitList;
+import Entities.TraitLists.Trait;
 
 import java.util.ArrayList;
 
@@ -12,7 +12,7 @@ public class Intro {
     private String name;
     private Profession profession;
     private Race race;
-    private static ArrayList<Trait> traits = new ArrayList<Trait>();
+    private CustomTraitList customTraitList = new CustomTraitList();
 
     private Scanner in = new Scanner(System.in);
 
@@ -67,13 +67,13 @@ public class Intro {
             System.out.println("The world destined you the burden of: ...");
             System.out.println("Enter up to 3 of the following traits: " + Trait.toS());
             System.out.println("Enter 'ACCEPT' to continue");
-            System.out.println("Current traits: " + curTraits + "/" + maxTraits + ": " +  traits.toString());
+            System.out.println("Current traits: " + curTraits + "/" + maxTraits + ": " +  customTraitList.toString());
             String input = in.nextLine().toUpperCase();
             if(curTraits < maxTraits) {
                 if (Trait.include(input)) {
                     Trait traitObject = Trait.getTrait(input);
-                    if (!traits.contains(traitObject)) {
-                        traits.add(traitObject);
+                    if (!customTraitList.include(traitObject)) {
+                        customTraitList.addToList(traitObject);
                         curTraits++;
                         validTraits = true;
                     }
@@ -83,7 +83,7 @@ public class Intro {
                 }
             }
         }
-        System.out.println("The world destined you the burden of: " + traits.toString());
+        System.out.println("The world destined you the burden of: " + customTraitList.toString());
     }
 
     public void characterCreation() {
