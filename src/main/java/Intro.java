@@ -1,3 +1,4 @@
+import Entities.Player;
 import Entities.ProfessionLists.Profession;
 import Entities.RaceLists.*;
 import Entities.TraitLists.CustomTraitList;
@@ -85,12 +86,12 @@ public class Intro {
         }
         System.out.println("The world destined you the burden of: " + customTraitList.toString());
     }
-
-    public void characterCreation() {
+    public Player playerCreation() {
         promptName();
         promptClassType();
         promptRace();
         promptTraits();
+        return new Player(this.name,this.profession,this.race,this.customTraitList);
     }
 
 }

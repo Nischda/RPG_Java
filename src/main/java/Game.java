@@ -1,7 +1,10 @@
+import Entities.Player;
 
 public class Game {
 
-    public static void loop() {
-        new Intro().characterCreation();
+    private Player player;
+
+    public void loop() {
+        this.player = new Intro().playerCreation();
     }
 }

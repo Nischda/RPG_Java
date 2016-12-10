@@ -5,6 +5,8 @@ import Entities.RaceLists.*;
 import Entities.TraitLists.CustomTraitList;
 import Entities.TraitLists.Trait;
 
+import java.util.ArrayList;
+
 public class Player {
 
     private String name;
@@ -13,10 +15,16 @@ public class Player {
     private CustomTraitList customTraitList;
 
     private int xp = 0;
+    private int level = 1;
+    private int xpToNextLevel = 100;
+    private int attributePoints = 0;
+
     private int maxHp;
     private int hp;
     private int maxMp;
     private int mp;
+
+    private static ArrayList<Item> inventory = new ArrayList<>();
 
     private int baseStrength; //see if making double
     private int baseEndurance;
@@ -33,6 +41,24 @@ public class Player {
     private double mentalityMod;
     private double hardeningMod;
     private double improvisationMod;
+
+    private int strength; //see if making double
+    private int endurance;
+    private int knowledge;
+    private int perception;
+    private int mentality;
+    private int hardening;
+  //  private int improvisation;
+
+    private int baseDamage;
+    private int baseStamina;
+    private int baseSpellDamage;
+    private int baseCharisma;
+    private int baseEffectChance;
+    private int baseHpReg;
+    private int baseMpReg;
+    private int baseArmor;
+    private int baseResistance;
 
     public int getBaseImprovisation() {
         return baseImprovisation;
@@ -186,6 +212,30 @@ public class Player {
         this.improvisationMod = improvisationMod;
     }
 
+    public int getStrength() {
+        return strength;
+    }
+
+    public int getEndurance() {
+        return endurance;
+    }
+
+    public int getKnowledge() {
+        return knowledge;
+    }
+
+    public int getPerception() {
+        return perception;
+    }
+
+    public int getMentality() {
+        return mentality;
+    }
+
+    public int getHardening() {
+        return hardening;
+    }
+
 
     public Player(String name, Profession profession, Race race, CustomTraitList traitList) {
         this.name = name;
@@ -201,18 +251,100 @@ public class Player {
         this.hp = maxHp;
         calculateMaxMp();
         this.mp = maxMp;
+
+        calculateStrength();
+        calculateEndurance();
+        calculateKnowledge();
+        calculatePerception();
+        calculateMentality ();
+        calculateHardening();
+
+        calculateBaseDamage();
+        calculateBaseStamina();
+        calculateBaseSpellDamage();
+        calculateBaseCharisma();
+        calculateBaseEffectChance();
+        calculateBaseHpReg();
+        calculateBaseMpReg ();
+        calculateBaseArmor();
+        calculateBaseResistance();
     }
 
 
     private void calculateMaxHp() {
-        this.hp = (int)Math.round(strengthMod * baseStrength);
+        this.maxHp = (int)Math.round(strengthMod * baseStrength * 10);
     }
     private void calculateMaxMp() {
-        this.hp = (int)Math.round(strengthMod * baseStrength);
+        this.maxMp = (int)Math.round(knowledgeMod * baseKnowledge * 10);
     }
+
+    private void calculateStrength() {
+        this.strength = (int)Math.round(strengthMod * baseStrength);
+    }
+    private void calculateEndurance() {
+        this.endurance = (int)Math.round(enduranceMod * baseEndurance);
+    }
+    private void calculateKnowledge() {
+        this.knowledge = (int)Math.round(knowledgeMod * baseKnowledge);
+    }
+    private void calculatePerception() {
+        this.perception = (int)Math.round(perceptionMod * basePerception);
+    }
+    private void calculateMentality() {
+        this.mentality = (int)Math.round(mentalityMod * baseMentality);
+    }
+    private void calculateHardening() {
+        this.hardening = (int)Math.round(hardeningMod * baseHardening);
+    }
+
+    private void calculateBaseDamage() {
+        this.baseDamage = this.baseStrength;
+    } // *weaponmodifier * other boni
+    private void calculateBaseStamina() {
+        this.baseStamina = this.baseEndurance * 2;
+    } // *weaponmodifier * other boni
+    private void calculateBaseSpellDamage() {
+        this.baseSpellDamage = this.knowledge *2;
+    } // *weaponModifier * other boni
+    private void calculateBaseCharisma() {
+        this.baseCharisma = this.perception *2;
+    } // *status *armorModifier * other boni
+    private void calculateBaseEffectChance() {
+        this.baseEffectChance = this.perception;
+    } //  other boni
+    private void calculateBaseHpReg() {
+        this.baseMpReg = this.mentality;
+    } // *status
+    private void calculateBaseMpReg() {
+        this.baseHpReg = this.mentality;
+    } // *status
+    private void calculateBaseArmor() {
+        this.baseArmor = this.hardening *10;
+    } // *armorModifier * other boni
+    private void calculateBaseResistance() {
+        this.baseResistance = this.hardening *5;
+    } // *armorModifier * other boni
+
     private void addXp(int xp) {
         this.xp += xp;
-        //add check for level up
+        if(this.xp > this.xpToNextLevel) {
+            this.xp -= this.xpToNextLevel;
+            this.xpToNextLevel *= 1.2;
+            this.level += 1;
+            this.attributePoints += 5;
+            System.out.println("You leveled up! You are now level " + this.level + ".");
+            System.out.println("You have " + this.attributePoints + "left so spend.");
+        }
+    }
+    public void printStatus() {
+        System.out.println("XP: " + this.xp + "/" + this.xpToNextLevel);
+        System.out.println("HP: " + this.hp + "/" + this.maxHp);
+        System.out.println("MP: " + this.mp + "/" + this.maxMp);
+        System.out.println("Status effects: ");
+    }
+
+    public void printInventory() {
+        inventory.toString();
     }
 
 }
