@@ -4,7 +4,8 @@ import Entities.TraitLists.Traits.*;
 
 public class Main {
 
-    public static void main(String[] args) {
+
+    public  static void main(String[] args) {
         new Duelist().addToList();
         new Bruiser().addToList();
         new Knight().addToList();
@@ -18,7 +19,6 @@ public class Main {
         new Necrotic().addToList();
 
         new Cursed().addToList();
-
         new Game().loop();
 
     }

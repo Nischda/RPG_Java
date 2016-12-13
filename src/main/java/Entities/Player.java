@@ -1,9 +1,9 @@
 package Entities;
 
+import Entities.Items.Item;
 import Entities.ProfessionLists.Profession;
 import Entities.RaceLists.*;
 import Entities.TraitLists.CustomTraitList;
-import Entities.TraitLists.Trait;
 
 import java.util.ArrayList;
 
@@ -342,9 +342,18 @@ public class Player {
         System.out.println("MP: " + this.mp + "/" + this.maxMp);
         System.out.println("Status effects: ");
     }
+    public void printAttributes() {
+        System.out.println("str: "+ this.baseStrength + " end: "+ this.baseStamina+ " kno: "+ this.baseKnowledge + " per: "+ this.basePerception + " men: "+ this.baseMentality + " har: "+ this.baseHardening);
+    }
 
     public void printInventory() {
         inventory.toString();
+    }
+
+    public void spendAttributePoints() {
+        System.out.println("What do you want to spend your " + this.attributePoints + "points on?");
+        printAttributes();
+        //continue
     }
 
 }
