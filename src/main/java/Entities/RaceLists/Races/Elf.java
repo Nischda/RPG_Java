@@ -1,6 +1,7 @@
 package Entities.RaceLists.Races;
 
 
+import Entities.Entity;
 import Entities.Player;
 import Entities.RaceLists.Race;
 
@@ -14,13 +15,13 @@ public class Elf extends Race{
     }
 
     @Override
-    public void initializeAttributes(Player player) {
-        player.setBaseStrength(8);
-        player.setBaseEndurance(17);
-        player.setBaseKnowledge(12);
-        player.setBasePerception(15);
-        player.setBaseMentality(5);
-        player.setBaseHardening(3);
+    public void initializeAttributes(Entity entity) {
+        entity.setBaseStrength(8);
+        entity.setBaseEndurance(17);
+        entity.setBaseKnowledge(12);
+        entity.setBasePerception(15);
+        entity.setBaseMentality(5);
+        entity.setBaseHardening(3);
     }
 
     @Override

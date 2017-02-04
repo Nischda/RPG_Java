@@ -1,6 +1,7 @@
 package Entities.RaceLists.Races;
 
 
+import Entities.Entity;
 import Entities.Player;
 import Entities.RaceLists.Race;
 
@@ -14,14 +15,15 @@ public class Ent extends Race{
     }
 
     @Override
-    public void initializeAttributes(Player player) {
-        player.setBaseStrength(17);
-        player.setBaseEndurance(7);
-        player.setBaseKnowledge(5);
-        player.setBasePerception(2);
-        player.setBaseMentality(3);
-        player.setBaseHardening(18);
+    public void initializeAttributes(Entity entity) {
+        entity.setBaseStrength(17);
+        entity.setBaseEndurance(7);
+        entity.setBaseKnowledge(5);
+        entity.setBasePerception(2);
+        entity.setBaseMentality(3);
+        entity.setBaseHardening(18);
     }
+
     @Override
     public String toString() {
         return "ENT";

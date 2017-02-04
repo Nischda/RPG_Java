@@ -6,11 +6,12 @@ import Map.TileLists.Tiles.*;
 public class Game {
 
     private Player player;
+    private boolean gameEnd = false;
     private Map map;
 
     public Game(){
         this.player = new Intro().playerCreation();
-        this.map = new Map(new Object[] {
+        this.map = new Map(this.player, new Tile[][] {
                 new Tile[]{   new Mountain(), new Mountain(), new Mountain(), new Mountain(), new Mountain()},
                 new Tile[]{   new Ocean(), new Road(), new Plain(), new Forest(), new Ocean()},
                 new Tile[]{   new Ocean(), new Road(), new Plain(), new Plain(), new Ocean()},
@@ -20,7 +21,8 @@ public class Game {
     }
 
     public void loop() {
-        map.choiceDirections();
-        map.printMap();
+        while(!gameEnd) {
+            map.chooseAction();
+        }
     }
 }

@@ -1,7 +1,7 @@
 package Entities.RaceLists.Races;
 
 
-import Entities.Player;
+import Entities.Entity;
 import Entities.RaceLists.Race;
 
 public class Necrotic extends Race{
@@ -14,13 +14,13 @@ public class Necrotic extends Race{
     }
 
     @Override
-    public void initializeAttributes(Player player) {
-        player.setBaseStrength(2);
-        player.setBaseEndurance(12);
-        player.setBaseKnowledge(18);
-        player.setBasePerception(4);
-        player.setBaseMentality(16);
-        player.setBaseHardening(7);
+    public void initializeAttributes(Entity entity) {
+        entity.setBaseStrength(2);
+        entity.setBaseEndurance(12);
+        entity.setBaseKnowledge(18);
+        entity.setBasePerception(4);
+        entity.setBaseMentality(16);
+        entity.setBaseHardening(7);
     }
 
     @Override

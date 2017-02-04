@@ -1,6 +1,7 @@
 package Entities.RaceLists.Races;
 
 
+import Entities.Entity;
 import Entities.Player;
 import Entities.RaceLists.Race;
 
@@ -14,13 +15,14 @@ public class Dwarf extends Race {
     }
 
     @Override
-    public void initializeAttributes(Player player) {
-        player.setBaseStrength(14);
-        player.setBaseEndurance(10);
-        player.setBaseKnowledge(8);
-        player.setBasePerception(5);
-        player.setBaseMentality(11);
-        player.setBaseHardening(12);
+    public void initializeAttributes(Entity entity) {
+        entity.setBaseStrength(14);
+        entity.setBaseEndurance(10);
+        entity.setBaseKnowledge(8);
+        entity.setBasePerception(5);
+        entity.setBaseMentality(11);
+        entity.setBaseHardening(12);
+        System.out.println("stuff");
     }
 
     @Override

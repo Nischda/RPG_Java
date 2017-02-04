@@ -10,6 +10,6 @@ public class Mountain extends Tile {
     }
     @Override
     public String toString() {
-       return "Mountain";
+       return "M";
     }
 }

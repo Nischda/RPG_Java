@@ -12,6 +12,6 @@ public class Forest extends Tile{
     }
     @Override
     public String toString() {
-        return "Forest";
+        return "F";
     }
 }

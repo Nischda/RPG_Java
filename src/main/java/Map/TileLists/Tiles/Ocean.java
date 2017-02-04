@@ -10,6 +10,6 @@ public class Ocean extends Tile {
     }
     @Override
     public String toString() {
-        return "Ocean";
+        return "O";
     }
 }

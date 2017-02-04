@@ -11,6 +11,6 @@ public class Road extends Tile {
 
     @Override
     public String toString() {
-        return "Road";
+        return "R";
     }
 }

@@ -1,5 +1,6 @@
 package Entities.ProfessionLists.Professions;
 
+import Entities.Entity;
 import Entities.Player;
 import Entities.ProfessionLists.Profession;
 
@@ -13,9 +14,9 @@ public class Duelist extends Profession {
     }
 
     @Override
-    public void initializePerks(Player player) {
-        double enduranceMod = player.getEnduranceMod();
-        player.setEnduranceMod(enduranceMod + 0.1);
+    public void initializePerks(Entity entity) {
+        double enduranceMod = entity.getEnduranceMod();
+        entity.setEnduranceMod(enduranceMod + 0.1);
     }
 
     @Override

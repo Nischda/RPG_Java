@@ -1,5 +1,5 @@
 package Entities.ProfessionLists;
-import Entities.Player;
+import Entities.Entity;
 
 import java.util.HashMap;
 
@@ -8,7 +8,7 @@ public abstract class Profession {
     private static HashMap<String, Profession> professionList = new HashMap<>();
 
     public abstract void printDescription();
-    public abstract void initializePerks(Player player);
+    public abstract void initializePerks(Entity entity);
 
     public void addToList() {
         professionList.put(this.toString(), this);

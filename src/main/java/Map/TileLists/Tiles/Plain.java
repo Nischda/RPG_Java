@@ -12,6 +12,6 @@ public class Plain extends Tile{
     }
     @Override
     public String toString() {
-        return "Plain";
+        return "P";
     }
 }

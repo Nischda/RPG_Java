@@ -1,5 +1,6 @@
 package Entities.ProfessionLists.Professions;
 
+import Entities.Entity;
 import Entities.Player;
 import Entities.ProfessionLists.Profession;
 
@@ -13,9 +14,9 @@ public class Kabbalist extends Profession {
     }
 
     @Override
-    public void initializePerks(Player player) {
-        double perceptionMod = player.getPerceptionMod();
-        player.setPerceptionMod(perceptionMod + 0.1);
+    public void initializePerks(Entity entity) {
+        double perceptionMod = entity.getPerceptionMod();
+        entity.setPerceptionMod(perceptionMod + 0.1);
     }
 
     @Override

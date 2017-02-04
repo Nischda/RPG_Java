@@ -1,5 +1,6 @@
 package Entities.ProfessionLists.Professions;
 
+import Entities.Entity;
 import Entities.Player;
 import Entities.ProfessionLists.Profession;
 
@@ -13,9 +14,9 @@ public class Bruiser extends Profession {
     }
 
     @Override
-    public void initializePerks(Player player) {
-        double strengthMod = player.getStrengthMod();
-        player.setStrengthMod(strengthMod + 0.1);
+    public void initializePerks(Entity entity) {
+        double strengthMod = entity.getStrengthMod();
+        entity.setStrengthMod(strengthMod + 0.1);
         //activate player.attackPattern = doublehit
     }
 

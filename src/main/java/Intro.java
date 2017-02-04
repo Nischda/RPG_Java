@@ -4,8 +4,6 @@ import Entities.RaceLists.*;
 import Entities.TraitLists.CustomTraitList;
 import Entities.TraitLists.Trait;
 
-import java.util.ArrayList;
-
 import java.util.Scanner;
 
 public class Intro {
@@ -23,7 +21,7 @@ public class Intro {
         while (!validName) {
             System.out.println("From now on you will be known as ...");
              name = in.nextLine();
-            if (name.length() > 3 && name.length() < 20) {
+            if (name.length() >= 3 && name.length() <= 20) {
                 validName = true;
             }
         }
@@ -36,6 +34,7 @@ public class Intro {
 
         while (!validProfession) {
             System.out.println("You are widely known as a professional ...");
+            System.out.println(Profession.toS());
             String professionName = in.nextLine().toUpperCase();
             if (Profession.include(professionName)) {
                 this.profession = Profession.getProfession(professionName);
@@ -50,6 +49,7 @@ public class Intro {
 
         while (!validRace) {
             System.out.println("You are a proud ...");
+            System.out.println(Race.toS());
             String raceName = in.nextLine().toUpperCase();
             if (Race.include(raceName)) {
                 this.race = Race.getRace(raceName);
@@ -66,7 +66,8 @@ public class Intro {
         boolean approval = false;
         while (!validTraits || !approval) {
             System.out.println("The world destined you the burden of: ...");
-            System.out.println("Enter up to 3 of the following traits: " + Trait.toS());
+            System.out.println("Enter up to 3 of the following traits: ");
+            System.out.println(Trait.toS());
             System.out.println("Enter 'ACCEPT' to continue");
             System.out.println("Current traits: " + curTraits + "/" + maxTraits + ": " +  customTraitList.toString());
             String input = in.nextLine().toUpperCase();
@@ -87,11 +88,30 @@ public class Intro {
         System.out.println("The world destined you the burden of: " + customTraitList.toString());
     }
     public Player playerCreation() {
-        promptName();
-        promptClassType();
-        promptRace();
-        promptTraits();
-        return new Player(this.name,this.profession,this.race,this.customTraitList);
-    }
+        boolean validInput = false;
+        while(!validInput) {
+            System.out.println("Do you want to crate a custom character? 'yes'/'no'");
+            String createCharacter = in.nextLine().toUpperCase();
+            System.out.println(createCharacter);
+            if (createCharacter.equals("YES")) {
+                promptName();
+                promptClassType();
+                promptRace();
+                promptTraits();
+                validInput = true;
+            }
+            else if(createCharacter.equals("NO")){
+                this.name = "Bob";
+                this.profession = Profession.getProfession("DUELIST");
+                this.race = Race.getRace("DWARF");
+                Trait traitObject = Trait.getTrait("CURSED");
+                customTraitList.addToList(traitObject);
+                validInput = true;
+            }
+        }
+        System.out.println("You are the " + this.race + " " + this.name + " the " + this.profession + "and your traits are:" + customTraitList.toString() + ".");
+        Player player = new Player(this.name,this.profession,this.race,this.customTraitList);
+        return player;
+}
 
 }
