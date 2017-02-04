@@ -1,11 +1,9 @@
 package Entities;
 
-import Entities.Items.Item;
+import Entities.Items.Inventory;
 import Entities.ProfessionLists.Profession;
 import Entities.RaceLists.*;
 import Entities.TraitLists.CustomTraitList;
-
-import java.util.ArrayList;
 
 public class Player extends Entity {
 

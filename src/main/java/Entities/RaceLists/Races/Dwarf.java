@@ -22,7 +22,6 @@ public class Dwarf extends Race {
         entity.setBasePerception(5);
         entity.setBaseMentality(11);
         entity.setBaseHardening(12);
-        System.out.println("stuff");
     }
 
     @Override

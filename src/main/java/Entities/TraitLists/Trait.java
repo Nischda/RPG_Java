@@ -29,4 +29,6 @@ public abstract class Trait {
     public static String toS() {
         return traitList.values().toString();
     }
+
+
 }

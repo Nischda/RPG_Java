@@ -1,13 +1,7 @@
 package Entities;
 
 
-import Entities.Items.Item;
-import Entities.ProfessionLists.Profession;
-import Entities.RaceLists.Race;
-import Entities.TraitLists.CustomTraitList;
-
-import java.util.ArrayList;
-import java.util.Comparator;
+import Entities.Items.Inventory;
 
 public abstract class Entity{
 

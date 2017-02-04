@@ -1,6 +1,8 @@
 package Map;
 
 import Entities.Entity;
+import Entities.NPC;
+import Entities.NPCFactory;
 import Entities.Player;
 import Map.TileLists.Tile;
 
@@ -117,9 +119,7 @@ public class Map {
     public void hunt() {
         ArrayList<Entity> playerList= new ArrayList<>();
         playerList.add(this.player);
-        System.out.println(player.getHp());
-        ArrayList<Entity> enemyList = new ArrayList<>();
-        enemyList.add(this.player);
+        ArrayList<Entity> enemyList = NPCFactory.createNPCs(3, 2);
         Battlefield battlefield = new Battlefield(playerList, enemyList);
     }
 }
