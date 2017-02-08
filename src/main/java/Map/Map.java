@@ -32,52 +32,30 @@ public class Map {
         int mapHeight = this.map.size();
         int mapLength = this.map.get(0).size();
         playerMap = new ArrayList<ArrayList<Tile>>();
-        for(int x = 0; x < mapHeight; x++) {
+        for(int y = 0; y < mapHeight; y++) {
             ArrayList<Tile> unknownTileList = new ArrayList<Tile>();
-            for(int y = 0; y < mapLength; y++) {
+            for(int x = 0; x < mapLength; x++) {
                 unknownTileList.add( new UnknownTile());
             }
             this.playerMap.add(unknownTileList);
         }
-        this.playerMap.get(2).set(2, map.get(2).get(2)); //reveal Playerposition
+        this.playerMap.get(y).set(x, map.get(y).get(x));
+    }
+    public void updatePlayerMap() {
+        this.playerMap.get(y).set(x, map.get(y).get(x)); //reveal Playerposition
     }
 
-    public void chooseAction() {
-        boolean validAction = false;
-
-        while(!validAction) {
-            System.out.println("You are on: " + map.get(x).get(y).toString());
-            System.out.println("What do you want to do? (stay/walk/inventory)");
-            String action = in.nextLine().toUpperCase();
-
-            switch(action) {
-                case "STAY":
-                        hunt();
-                        validAction = true;
-                    break;
-                case "WALK":
-                        chooseDirection();
-                        validAction = true;
-                    break;
-                case "INVENTORY":
-                        //accessInventory();
-                        validAction = true;
-                    break;
-                default:
-                    System.out.println("You can't do that");
-                    validAction = false;
-                    break;
-            }
-        }
-    }
-
-    private void printMap(int playerX, int playerY) {
-        ArrayList<ArrayList<Tile>> newMap = this.playerMap;
-        //newMap[playerX][playerY] = new PlayerTile();
+    private void printPlayerMap() {
+        ArrayList<ArrayList<Tile>> newMap = (ArrayList<ArrayList<Tile>>) this.playerMap.clone(); //make deepclone instead of if check?
         for(int i = 0; i < this.playerMap.size();i++){
             String row = "";
-            for(Tile tile : this.playerMap.get(i)){
-                row += " " + tile.toString();
+            for(int j = 0; j < this.playerMap.get(i).size(); j++){
+                if(i == y && j == x) {
+                    row += "-" + this.playerMap.get(i).get(j).toString();
+                }
+                else {
+                    row += " " + this.playerMap.get(i).get(j).toString();
+                }
             }
             System.out.println(row);
         }
@@ -88,36 +66,38 @@ public class Map {
 
         while(!validDirection) {
             System.out.println("Where do you want to go? (N/E/S/W)");
-            printMap(x,y);
+            System.out.println(y + " " + x);
+            System.out.println(this.map.get(y).get(x));
+            printPlayerMap();
             String direction = in.nextLine().toUpperCase();
 
             switch(direction) {
                 case "N":
-                    if(isPassable(x,y+1)) {
+                    if(isPassable(y-1, x)) {
                         System.out.println("You walk north");
-                        validDirection = true;
-                        this.y++;
-                    }
-                    break;
-                case "E":
-                    if(isPassable(x+1,y)) {
-                        System.out.println("You walk east");
-                        validDirection = true;
-                        this.x++;
-                    }
-                    break;
-                case "S":
-                    if(isPassable(x,y-1)) {
-                        System.out.println("You walk south");
                         validDirection = true;
                         this.y--;
                     }
                     break;
                 case "W":
-                    if(isPassable(x-1,y)) {
-                        System.out.println("You walk west");
+                    if(isPassable(y, x-1)) {
+                        System.out.println("You walk east");
                         validDirection = true;
                         this.x--;
+                    }
+                    break;
+                case "S":
+                    if(isPassable(y+1, x)) {
+                        System.out.println("You walk south");
+                        validDirection = true;
+                        this.y++;
+                    }
+                    break;
+                case "E":
+                    if(isPassable(y, x+1)) {
+                        System.out.println("You walk west");
+                        validDirection = true;
+                        this.x++;
                     }
                     break;
                 default:
@@ -126,8 +106,40 @@ public class Map {
                     break;
             }
         }
+        updatePlayerMap();
 
     }
+
+    public void chooseAction() {
+        boolean validAction = false;
+
+        while(!validAction) {
+            System.out.println("You are on: " + map.get(y).get(x).toString());
+            printPlayerMap();
+            System.out.println("What do you want to do? (stay/walk/inventory)");
+            String action = in.nextLine().toUpperCase();
+
+            switch(action) {
+                case "STAY":
+                    hunt();
+                    validAction = true;
+                    break;
+                case "WALK":
+                    chooseDirection();
+                    validAction = true;
+                    break;
+                case "INVENTORY":
+                    //accessInventory();
+                    validAction = true;
+                    break;
+                default:
+                    System.out.println("You can't do that");
+                    validAction = false;
+                    break;
+            }
+        }
+    }
+
     public boolean isPassable(int x, int y) {
         String locationName = this.map.get(x).get(y).toString();
         if(locationName.equals("O")
