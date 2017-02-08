@@ -14,4 +14,7 @@ public class Plain extends Tile{
     public String toString() {
         return "P";
     }
+    public String toS() {
+        return "on a plain";
+    }
 }

@@ -238,10 +238,10 @@ public class Player extends Entity {
         }
     }
     public void printStatus() {
-        System.out.println("XP: " + this.xp + "/" + this.xpToNextLevel);
         System.out.println("HP: " + this.hp + "/" + this.maxHp);
         System.out.println("MP: " + this.mp + "/" + this.maxMp);
-        System.out.println("Status effects: ");
+        System.out.println("XP: " + this.xp + "/" + this.xpToNextLevel);
+        System.out.println("Status effects: \n");
     }
 
     public void spendAttributePoints() {

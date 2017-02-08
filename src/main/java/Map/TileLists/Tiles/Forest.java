@@ -14,4 +14,7 @@ public class Forest extends Tile{
     public String toString() {
         return "F";
     }
+    public String toS() {
+        return "in a forest";
+    }
 }

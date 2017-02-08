@@ -12,4 +12,7 @@ public class Ocean extends Tile {
     public String toString() {
         return "O";
     }
+    public String toS() {
+        return "on the ocean";
+    }
 }

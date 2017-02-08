@@ -19,21 +19,21 @@ public class Intro {
     public void promptName() {
         boolean validName = false;
         while (!validName) {
-            System.out.println("From now on you will be known as ...");
-             name = in.nextLine();
-            if (name.length() >= 3 && name.length() <= 20) {
+            System.out.println("From now on you will be known as? (enter your name)");
+
+             this.name = in.nextLine();
+            if (this.name.length() >= 3 && this.name.length() <= 20) {
                 validName = true;
             }
         }
-        System.out.println("From now on you will be known as " + name);
-
+        System.out.println(String.format("From now on you will be known as %s.\n", this.name));
     }
 
     public void promptClassType() {
         boolean validProfession = false;
 
         while (!validProfession) {
-            System.out.println("You are widely known as a professional ...");
+            System.out.println("You are widely known as a professional? (enter your profession)");
             System.out.println(Profession.toS());
             String professionName = in.nextLine().toUpperCase();
             if (Profession.include(professionName)) {
@@ -41,14 +41,14 @@ public class Intro {
                 validProfession = true;
             }
         }
-        System.out.println("You are widely known as a professional " + this.profession);
+        System.out.println(String.format("You are widely known as a professional %s.\n", this.profession));
     }
 
     public void promptRace() {
         boolean validRace = false;
 
         while (!validRace) {
-            System.out.println("You are a proud ...");
+            System.out.println("You are a proud? (enter your race)");
             System.out.println(Race.toS());
             String raceName = in.nextLine().toUpperCase();
             if (Race.include(raceName)) {
@@ -56,7 +56,7 @@ public class Intro {
                 validRace = true;
             }
         }
-        System.out.println("You are a proud " + this.race);
+        System.out.println(String.format("You are a proud %s.\n", this.race));
     }
 
     public void promptTraits() {
@@ -65,19 +65,17 @@ public class Intro {
         int curTraits = 0;
         boolean approval = false;
         while (!validTraits || !approval) {
-            System.out.println("The world destined you the burden of: ...");
-            System.out.println("Enter up to 3 of the following traits: ");
+            System.out.println("The world destined you the burden of? (enter up to 3 traits, enter 'accept' to continue)");
             System.out.println(Trait.toS());
-            System.out.println("Enter 'ACCEPT' to continue");
-            System.out.println("Current traits: " + curTraits + "/" + maxTraits + ": " +  customTraitList.toString());
+            System.out.println(String.format("Current traits: %s/%s:%s.", curTraits, maxTraits, customTraitList.toString()));
             String input = in.nextLine().toUpperCase();
             if(curTraits < maxTraits) {
+                validTraits = true;
                 if (Trait.include(input)) {
                     Trait traitObject = Trait.getTrait(input);
                     if (!customTraitList.include(traitObject)) {
                         customTraitList.addToList(traitObject);
                         curTraits++;
-                        validTraits = true;
                     }
                 }
                 else if(input.equals("ACCEPT")) {
@@ -85,12 +83,12 @@ public class Intro {
                 }
             }
         }
-        System.out.println("The world destined you the burden of: " + customTraitList.toString());
+        System.out.println(String.format("The world destined you the burden of: %s", customTraitList.toString()));
     }
     public Player playerCreation() {
         boolean validInput = false;
         while(!validInput) {
-            System.out.println("Do you want to crate a custom character? 'yes'/'no'");
+            System.out.println("Do you want to crate a custom character? (yes/no)");
             String createCharacter = in.nextLine().toUpperCase();
             System.out.println(createCharacter);
             if (createCharacter.equals("YES")) {
@@ -109,9 +107,8 @@ public class Intro {
                 validInput = true;
             }
         }
-        System.out.println("You are the " + this.race + " " + this.name + " the " + this.profession + "and your traits are:" + customTraitList.toString() + ".");
-        Player player = new Player(this.name,this.profession,this.race,this.customTraitList);
-        return player;
+        System.out.println(String.format("You are the %s %s. You are a skillful %s and your traits are: %s.", this.race, this.name, this.profession, customTraitList.toString()));
+        return new Player(this.name,this.profession,this.race,this.customTraitList);
 }
 
 }

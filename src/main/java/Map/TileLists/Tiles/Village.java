@@ -12,4 +12,7 @@ public class Village extends Tile {
     public String toString() {
        return "V";
     }
+    public String toS() {
+        return "in a village";
+    }
 }

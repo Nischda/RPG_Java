@@ -1,11 +1,13 @@
 package Map;
 
 import Entities.Entity;
-import Entities.NPC;
 import Entities.NPCFactory;
 import Entities.Player;
 import Map.TileLists.Tile;
+import Map.TileLists.Tiles.PlayerTile;
+import Map.TileLists.Tiles.UnknownTile;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -13,22 +15,39 @@ public class Map {
 
     private Player player;
     private Scanner in = new Scanner(System.in);
-    private Tile[][] map;
+    private ArrayList<ArrayList<Tile>> map;
+    private ArrayList<ArrayList<Tile>> playerMap;
     private int x = 2;
     private int y = 2;
 
-    public Map(Player player, Tile[][] map) {
+    public Map(Player player,ArrayList<ArrayList<Tile>> map) {
         this.player = player;
         this.map = map;
+        createPlayerMap();
 
+    }
+
+
+    public void createPlayerMap() {
+        int mapHeight = this.map.size();
+        int mapLength = this.map.get(0).size();
+        playerMap = new ArrayList<ArrayList<Tile>>();
+        for(int x = 0; x < mapHeight; x++) {
+            ArrayList<Tile> unknownTileList = new ArrayList<Tile>();
+            for(int y = 0; y < mapLength; y++) {
+                unknownTileList.add( new UnknownTile());
+            }
+            this.playerMap.add(unknownTileList);
+        }
+        this.playerMap.get(2).set(2, map.get(2).get(2)); //reveal Playerposition
     }
 
     public void chooseAction() {
         boolean validAction = false;
 
         while(!validAction) {
-            System.out.println("You are on: " + map[x][y].toString());
-            System.out.println("What do you want to do? Stay/Walk/Inventory");
+            System.out.println("You are on: " + map.get(x).get(y).toString());
+            System.out.println("What do you want to do? (stay/walk/inventory)");
             String action = in.nextLine().toUpperCase();
 
             switch(action) {
@@ -52,10 +71,12 @@ public class Map {
         }
     }
 
-    private void printMap() {
-        for(int i = 0; i < this.map.length;i++){
+    private void printMap(int playerX, int playerY) {
+        ArrayList<ArrayList<Tile>> newMap = this.playerMap;
+        //newMap[playerX][playerY] = new PlayerTile();
+        for(int i = 0; i < this.playerMap.size();i++){
             String row = "";
-            for(Tile tile : (Tile[])this.map[i]){
+            for(Tile tile : this.playerMap.get(i)){
                 row += " " + tile.toString();
             }
             System.out.println(row);
@@ -66,8 +87,8 @@ public class Map {
         boolean validDirection = false;
 
         while(!validDirection) {
-            System.out.println("Where do you want to go? N/E/S/W");
-            printMap();
+            System.out.println("Where do you want to go? (N/E/S/W)");
+            printMap(x,y);
             String direction = in.nextLine().toUpperCase();
 
             switch(direction) {
@@ -108,7 +129,7 @@ public class Map {
 
     }
     public boolean isPassable(int x, int y) {
-        String locationName = this.map[x][y].toString();
+        String locationName = this.map.get(x).get(y).toString();
         if(locationName.equals("O")
                 || locationName.equals("M")) {
             System.out.println("Destination is not passable");
@@ -122,4 +143,5 @@ public class Map {
         ArrayList<Entity> enemyList = NPCFactory.createNPCs(3, 2);
         Battlefield battlefield = new Battlefield(playerList, enemyList);
     }
+
 }

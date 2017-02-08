@@ -13,4 +13,7 @@ public class Road extends Tile {
     public String toString() {
         return "R";
     }
+    public String toS() {
+        return "on a road";
+    }
 }
