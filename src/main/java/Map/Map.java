@@ -121,7 +121,7 @@ public class Map {
 
             switch(action) {
                 case "STAY":
-                    hunt();
+                    stay();
                     validAction = true;
                     break;
                 case "WALK":
@@ -149,11 +149,10 @@ public class Map {
         }
         return true;
     }
-    public void hunt() {
-        ArrayList<Entity> playerList= new ArrayList<>();
-        playerList.add(this.player);
-        ArrayList<Entity> enemyList = NPCFactory.createNPCs(3, 2);
-        Battlefield battlefield = new Battlefield(playerList, enemyList);
+
+    public void stay() {
+        Tile tile = map.get(y).get(x);
+        tile.chooseAction(this.player);
     }
 
 }
