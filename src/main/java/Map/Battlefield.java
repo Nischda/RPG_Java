@@ -32,7 +32,7 @@ public class Battlefield {
 
             roundCount++;
             System.out.println("Round: " + roundCount);
-            while (playerGotTurns || enemyGotTurns) {
+            while (playerGotTurns || enemyGotTurns) { //rounds end if every entity has acted
 
                 turnCount++;
                 System.out.println("Turn: " + turnCount);
@@ -57,10 +57,36 @@ public class Battlefield {
     }
 
     public void executePlayerTurn(Entity entity) {
-        String input;
         System.out.println("Your turn: " + entity.toString());
-        System.out.println("What do you want to do?");
-        input = in.nextLine().toUpperCase();
+            boolean validAction = false;
+
+            while(!validAction) {
+                System.out.println("What do you want to do? (attack/cast/item/escape/)");
+                String action = in.nextLine().toUpperCase();
+
+                switch(action) {
+                    case "ATTACK":
+                        entity.attack(players, enemies);
+                        validAction = true;
+                        break;
+                    case "CAST":
+                        entity.cast(players, enemies);
+                        validAction = true;
+                        break;
+                    case "ITEM":
+                        entity.item(players, enemies);
+                        validAction = true;
+                        break;
+                    case "ESCAPE":
+                        entity.escape(players, enemies);
+                        validAction = true;
+                        break;
+                    default:
+                        System.out.println("You can't do that");
+                        validAction = false;
+                        break;
+                }
+            }
         System.out.println("Nothing has been done");
     }
 

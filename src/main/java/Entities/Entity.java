@@ -3,6 +3,8 @@ package Entities;
 
 import Entities.Items.Inventory;
 
+import java.util.ArrayList;
+
 public abstract class Entity{
 
 //add contrustor to do shit from here for player & entity?
@@ -33,6 +35,7 @@ public abstract class Entity{
     public abstract int getPerception();
     public abstract int getMentality();
     public abstract int getHardening();
+    public abstract int getImprovisation();
 
     public abstract void setBaseStrength(int baseStrength);
     public abstract void setBaseEndurance(int baseEndurance);
@@ -47,26 +50,30 @@ public abstract class Entity{
         return (int)(strengthMod * baseStrength * 10);
     }
     protected int calculateMaxMp(double knowledgeMod, int baseKnowledge) {
-        return (int)knowledgeMod * baseKnowledge * 10;
+        return (int)(knowledgeMod * baseKnowledge * 10);
     }
     protected int calculateStrength(double strengthMod, int baseStrength) {
-        return (int)strengthMod * baseStrength;
+        return (int)(strengthMod * baseStrength);
     }
     protected int calculateEndurance(double enduranceMod, int baseEndurance ) {
-        return (int)enduranceMod * baseEndurance;
+        return (int)(enduranceMod * baseEndurance);
     }
     protected int calculateKnowledge(double knowledgeMod, int baseKnowledge) {
-        return (int)knowledgeMod * baseKnowledge;
+        return (int)(knowledgeMod * baseKnowledge);
     }
     protected int calculatePerception(double perceptionMod, int basePerception) {
-        return (int)perceptionMod * basePerception;
+        return (int)(perceptionMod * basePerception);
     }
     protected int calculateMentality(double mentalityMod, int baseMentality) {
-        return (int)mentalityMod * baseMentality;
+        return (int)(mentalityMod * baseMentality);
     }
     protected int calculateHardening(double hardeningMod, int baseHardening) {
-        return (int)hardeningMod * baseHardening;
+        return (int)(hardeningMod * baseHardening);
     }
+    protected int calculateBaseImprovisation(double improvisationMod, int baseImprovisation) {
+        return (int)(improvisationMod * baseImprovisation);
+    }
+
     protected int calculateBaseDamage(int baseStrength) {
         return baseStrength;
     } // *weaponmodifier * other boni
@@ -95,6 +102,12 @@ public abstract class Entity{
         return baseHardening *5;
     } // *armorModifier * other boni
 
+    public abstract void attack(ArrayList<Entity> players, ArrayList<Entity> enemies);
+    public abstract void cast(ArrayList<Entity> players, ArrayList<Entity> enemies);
+    public abstract void item(ArrayList<Entity> players, ArrayList<Entity> enemies);
+    public abstract void escape(ArrayList<Entity> players, ArrayList<Entity> enemies);
+    public abstract void receiveDamage(int damage);
+    public abstract void checkLeathal();
 
     public void printStatus(int xp, int xpToNextLevel, int hp, int maxHp, int mp, int maxMp) {
         System.out.println("XP: " + xp + "/" + xpToNextLevel);

@@ -5,7 +5,13 @@ import Entities.ProfessionLists.Profession;
 import Entities.RaceLists.*;
 import Entities.TraitLists.CustomTraitList;
 
-public class Player extends Entity {
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Player extends Entity implements Attributes {
+
+    private Scanner in = new Scanner(System.in);
+    private static Inventory inventory = new Inventory();
 
     private String name;
     private Profession profession;
@@ -21,8 +27,6 @@ public class Player extends Entity {
     private int hp;
     private int maxMp;
     private int mp;
-
-    private static Inventory inventory = new Inventory();
 
     private int baseStrength; //see if making double
     private int baseEndurance;
@@ -40,14 +44,6 @@ public class Player extends Entity {
     private double hardeningMod = 1;
     private double improvisationMod = 1;
 
-    private int strength; //see if making double
-    private int endurance;
-    private int knowledge;
-    private int perception;
-    private int mentality;
-    private int hardening;
-  //  private int improvisation;
-
     private int baseDamage;
     private int baseStamina;
     private int baseSpellDamage;
@@ -57,6 +53,14 @@ public class Player extends Entity {
     private int baseMpReg;
     private int baseArmor;
     private int baseResistance;
+
+    private int strength; //see if making double
+    private int endurance;
+    private int knowledge;
+    private int perception;
+    private int mentality;
+    private int hardening;
+    private int improvisation;
 
 
     public Player(String name, Profession profession, Race race, CustomTraitList traitList) {
@@ -69,30 +73,46 @@ public class Player extends Entity {
         race.initializeAttributes(this);
         traitList.initializeAllTraits();
 
-        this.baseStrength = calculateStrength(strengthMod, baseStrength );
-        this.baseEndurance = calculateEndurance(enduranceMod, baseEndurance);
-        this.baseKnowledge = calculateKnowledge(knowledgeMod, baseKnowledge);
-        this.basePerception = calculatePerception(perceptionMod, basePerception);
-        this.baseMentality = calculateMentality(mentalityMod, baseMentality);
-        this.baseHardening = calculateHardening(hardeningMod,baseHardening);
-
-        this.baseDamage = calculateBaseDamage(baseStrength);
-        this.baseStamina = calculateBaseStamina(baseEndurance);
-        this.baseSpellDamage = calculateBaseSpellDamage(baseKnowledge);
-        this.baseCharisma = calculateBaseCharisma(basePerception);
-        this.baseEffectChance = calculateBaseEffectChance(basePerception);
-        this.baseHpReg = calculateBaseHpReg(baseMentality);
-        this.baseMpReg = calculateBaseMpReg (baseMentality);
-        this.baseArmor = calculateBaseArmor(baseHardening);
-        this.baseResistance = calculateBaseResistance(baseHardening);
-
-        this.maxHp = calculateMaxHp(strengthMod, baseStrength);
+        updateAttributes();
         this.hp = maxHp;
-        this.maxMp = calculateMaxMp(knowledgeMod, baseKnowledge);
         this.mp = maxMp;
 
         printStatus();
         System.out.println(this.toString());
+    }
+
+    public void updateAttributes() {
+        this.strength = calculateStrength(strengthMod, baseStrength );
+        this.endurance = calculateEndurance(enduranceMod, baseEndurance);
+        this.knowledge = calculateKnowledge(knowledgeMod, baseKnowledge);
+        this.perception = calculatePerception(perceptionMod, basePerception);
+        this.mentality = calculateMentality(mentalityMod, baseMentality);
+        this.hardening = calculateHardening(hardeningMod,baseHardening);
+        this.improvisation = calculateBaseImprovisation(improvisationMod,baseImprovisation);
+
+        this.baseDamage = calculateBaseDamage(baseStrength); //add weapon
+        this.baseStamina = calculateBaseStamina(baseEndurance); //add clothes
+        this.baseSpellDamage = calculateBaseSpellDamage(baseKnowledge); //
+        this.baseCharisma = calculateBaseCharisma(basePerception); //add clothes
+        this.baseEffectChance = calculateBaseEffectChance(basePerception);
+        this.baseHpReg = calculateBaseHpReg(baseMentality);
+        this.baseMpReg = calculateBaseMpReg (baseMentality);
+        this.baseArmor = calculateBaseArmor(baseHardening); //add clothes
+        this.baseResistance = calculateBaseResistance(baseHardening); //add clothes
+
+        this.maxHp = calculateMaxHp(strengthMod, baseStrength);
+        this.maxMp = calculateMaxMp(knowledgeMod, baseKnowledge);
+        /*
+        this.damage = ;
+        this.stamina =;
+        this.spellDamage =;
+        this.charisma = ;
+        this.effectChance = ;
+        this.hpReg =;
+        this.mpReg = ;
+        this.armor =;
+        this.resistance =;
+        */
     }
 
 
@@ -218,6 +238,73 @@ public class Player extends Entity {
     public int getHardening() {
         return hardening;
     }
+    @Override
+    public int getImprovisation() {
+        return improvisation;
+    }
+
+    public void attack(ArrayList<Entity> players, ArrayList<Entity> enemies) {
+        boolean validAction = false;
+
+        while(!validAction) {
+            System.out.println("Choose your attack move. (slash/charge/back)");
+            String action = in.nextLine().toUpperCase();
+            System.out.println("Choose your target (1/2/3)");
+            String target = in.nextLine();
+            switch(action) {
+                case "SLASH":
+                    slash(enemies.get(Integer.parseInt(target)));
+                    validAction = true;
+                    break;
+                case "CHARGE":
+                    charge(enemies.get(Integer.parseInt(target)));
+                    validAction = true;
+                    break;
+                case "BACK":
+                    System.out.println("not yet implemented. doing nothing");
+                    validAction = true;
+                    break;
+                default:
+                    System.out.println("You can't do that");
+                    validAction = false;
+                    break;
+            }
+        }
+    }
+    public void slash(Entity entity) {
+        entity.receiveDamage(this.baseDamage);
+    }
+
+    public void charge(Entity entity) {
+        entity.receiveDamage((this.baseDamage * 2));
+    }
+
+    public void cast(ArrayList<Entity> players, ArrayList<Entity> enemies) {
+
+    }
+
+    public void item(ArrayList<Entity> players, ArrayList<Entity> enemies) {
+
+    }
+
+    public void escape(ArrayList<Entity> players, ArrayList<Entity> enemies) {
+
+    }
+
+    public void receiveDamage(int damage) {
+        int pureDamage = damage/baseArmor;
+        this.hp-= pureDamage;
+        System.out.println("You  received" + pureDamage + " damage.");
+        checkLeathal();
+    }
+
+    public void checkLeathal() {
+        if(this.hp < 0) {
+            System.out.println("You died.");
+        }
+    }
+
+
 
     public int getXp() {
         return xp;
