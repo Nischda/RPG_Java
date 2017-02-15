@@ -1,11 +1,11 @@
-package Main.Game.Entity.ProfessionLists.Professions;
+package Main.Game.Entity.Entities.ProfessionLists.Professions;
 
+import Main.Game.Entity.Entities.ProfessionLists.Profession;
 import Main.Game.Entity.Entity;
-import Main.Game.Entity.ProfessionLists.Profession;
 
-public class Duelist extends Profession {
+public class Kabbalist extends Profession {
 
-    private static String description = "A Duelist";
+    private static String description = "A Kabbalist";
 
     @Override
     public void printDescription() {
@@ -19,6 +19,6 @@ public class Duelist extends Profession {
 
     @Override
     public String toString() {
-        return "DUELIST";
+        return "KABBALIST";
     }
 }

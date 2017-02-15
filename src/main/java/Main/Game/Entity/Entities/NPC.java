@@ -1,6 +1,6 @@
 package Main.Game.Entity.Entities;
 
-import Main.Game.Entity.ProfessionLists.Profession;
+import Main.Game.Entity.Entities.ProfessionLists.Profession;
 import Main.Game.Entity.Entities.RaceLists.Race;
 import Main.Game.Entity.Entity;
 import Main.Game.Entity.Entities.Items.Inventory;
@@ -132,6 +132,10 @@ public class NPC extends Entity {
         this.resistance = baseResistance;       //add status effects
     }
 
+    public String name() {
+        return this.name;
+    }
+
     //SET BASE ATTRIBUTES
     @Override
     public void setBaseAttributes(int baseStrength, int baseEndurance, int baseKnowledge, int basePerception, int baseMentality, int baseHardening, int baseImprovisation) {
@@ -251,11 +255,11 @@ public class NPC extends Entity {
     }
 
     public void slash(Entity entity) {
-        entity.receiveDamage(this.baseDamage);
+        entity.receiveDamage(this.baseDamage, this.name);
     }
 
     public void charge(Entity entity) {
-        entity.receiveDamage((this.baseDamage * 2));
+        entity.receiveDamage(this.baseDamage * 2, this.name);
     }
 
     //CAST SPELLS
@@ -277,10 +281,10 @@ public class NPC extends Entity {
     }
 
     //PLAYER STATUS
-    public void receiveDamage(int damage) {
+    public void receiveDamage(int damage, String actor) {
         int pureDamage = damage / baseArmor;
         this.hp -= pureDamage;
-        System.out.println(this.name + " received" + pureDamage + " damage.");
+        System.out.println("You dealt " + pureDamage + " to " + this.name + ".");
         checkLeathal();
     }
 

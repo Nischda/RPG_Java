@@ -1,10 +1,12 @@
 package Main.Game.Entity.Entities;
 
+import Main.Game.Entity.Entities.Book.Books.Skillbook;
+import Main.Game.Entity.Entities.Book.Books.Spellbook;
 import Main.Game.Entity.Entities.Items.Inventory;
 import Main.Game.Entity.Entities.RaceLists.Race;
 import Main.Game.Entity.Entities.TraitLists.CustomTraitList;
 import Main.Game.Entity.Entity;
-import Main.Game.Entity.ProfessionLists.Profession;
+import Main.Game.Entity.Entities.ProfessionLists.Profession;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -18,6 +20,8 @@ public class Player extends Entity {
     private Profession profession;
     private Race race;
     private CustomTraitList customTraitList;
+    private Skillbook skillbook;
+    private Spellbook spellbook;
 
     private int xp = 0;
     private int level = 1;
@@ -79,6 +83,8 @@ public class Player extends Entity {
         this.profession = profession;
         this.race = race;
         this.customTraitList = traitList;
+        this.skillbook = new Skillbook();
+        this.spellbook = new Spellbook();
 
         profession.initializePerks(this);
         race.initializeAttributes(this);
@@ -146,6 +152,9 @@ public class Player extends Entity {
     }
 
 
+    public String name() {
+        return this.name;
+    }
     // AddTo Stats
     @Override
     public void addToHp(double value) {
@@ -225,17 +234,17 @@ public class Player extends Entity {
         boolean validAction = false;
 
         while (!validAction) {
-            System.out.println("Choose your attack move. (slash/charge/back)");
+            System.out.println("Choose your attack move. (" + skillbook.toString() + ")");
             String action = in.nextLine().toUpperCase();
-            System.out.println("Choose your target (1/2/3)");
-            String target = in.nextLine();
+            System.out.println("Choose your target (up to " + enemies.size() + ")");
+            Entity target = enemies.get(Integer.parseInt(in.nextLine()));
             switch (action) {
                 case "SLASH":
-                    slash(enemies.get(Integer.parseInt(target)));
+                    slash(target);
                     validAction = true;
                     break;
                 case "CHARGE":
-                    charge(enemies.get(Integer.parseInt(target)));
+                    charge(target);
                     validAction = true;
                     break;
                 case "BACK":
@@ -251,11 +260,11 @@ public class Player extends Entity {
     }
 
     public void slash(Entity entity) {
-        entity.receiveDamage(this.baseDamage);
+        entity.receiveDamage(this.baseDamage, this.name);
     }
 
     public void charge(Entity entity) {
-        entity.receiveDamage((this.baseDamage * 2));
+        entity.receiveDamage(this.baseDamage * 2, this.name);
     }
 
     //CAST SPELLS
@@ -277,10 +286,10 @@ public class Player extends Entity {
     }
 
     //PLAYER STATUS
-    public void receiveDamage(int damage) {
+    public void receiveDamage(int damage, String actor) {
         int pureDamage = damage/baseArmor;
         this.hp-= pureDamage;
-        System.out.println("You  received" + pureDamage + " damage.");
+        System.out.println("You  received" + pureDamage + " damage from " + actor + ".");
         checkLeathal();
     }
 

@@ -1,6 +1,6 @@
 package Main.Game;
 
-import Main.Game.Entity.ProfessionLists.Profession;
+import Main.Game.Entity.Entities.ProfessionLists.Profession;
 import Main.Game.Entity.Entities.Player;
 import Main.Game.Entity.Entities.RaceLists.Race;
 import Main.Game.Entity.Entities.TraitLists.CustomTraitList;

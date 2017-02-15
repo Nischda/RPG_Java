@@ -1,11 +1,11 @@
-package Main.Game.Entity.ProfessionLists.Professions;
+package Main.Game.Entity.Entities.ProfessionLists.Professions;
 
+import Main.Game.Entity.Entities.ProfessionLists.Profession;
 import Main.Game.Entity.Entity;
-import Main.Game.Entity.ProfessionLists.Profession;
 
-public class Trickster extends Profession {
+public class Bruiser extends Profession {
 
-    private static String description = "A Trickster";
+    private static String description = "A Bruiser";
 
     @Override
     public void printDescription() {
@@ -15,10 +15,11 @@ public class Trickster extends Profession {
     @Override
     public void initializePerks(Entity entity) {
         entity.addToEnduranceMod(0.1);
+        //activate player.attackPattern = doublehit
     }
 
     @Override
     public String toString() {
-        return "TRICKSTER";
+        return "BRUISER";
     }
 }

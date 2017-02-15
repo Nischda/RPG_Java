@@ -1,4 +1,4 @@
-package Main.Game.Entity.ProfessionLists;
+package Main.Game.Entity.Entities.ProfessionLists;
 import Main.Game.Entity.Entity;
 
 import java.util.HashMap;

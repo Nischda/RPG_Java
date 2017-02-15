@@ -22,6 +22,7 @@ public abstract class Entity{
     public abstract void addToHardeningMod(double value);
     public abstract void addToImprovisationMod(double value);
 
+    public abstract String name();
     public abstract int getStrength();
     public abstract int getEndurance();
     public abstract int getKnowledge();
@@ -35,7 +36,7 @@ public abstract class Entity{
     public abstract void cast(ArrayList<Entity> players, ArrayList<Entity> enemies);
     public abstract void item(ArrayList<Entity> players, ArrayList<Entity> enemies);
     public abstract void escape(ArrayList<Entity> players, ArrayList<Entity> enemies);
-    public abstract void receiveDamage(int damage);
+    public abstract void receiveDamage(int damage, String actor);
     public abstract void checkLeathal();
 
     public abstract void setBaseAttributes(int baseStrength, int baseEndurance, int baseKnowledge, int basePerception, int baseMentality, int baseHardening, int baseImprovisation);

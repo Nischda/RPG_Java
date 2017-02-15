@@ -4,7 +4,7 @@ package Main.Game.Entity.Entities;
 import Main.Game.Entity.Entities.RaceLists.Race;
 import Main.Game.Entity.Entities.TraitLists.CustomTraitList;
 import Main.Game.Entity.Entities.TraitLists.Trait;
-import Main.Game.Entity.ProfessionLists.Profession;
+import Main.Game.Entity.Entities.ProfessionLists.Profession;
 import Main.Game.Entity.Entity;
 
 import java.util.ArrayList;
