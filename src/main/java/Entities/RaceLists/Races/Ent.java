@@ -16,12 +16,7 @@ public class Ent extends Race{
 
     @Override
     public void initializeAttributes(Entity entity) {
-        entity.setBaseStrength(17);
-        entity.setBaseEndurance(7);
-        entity.setBaseKnowledge(5);
-        entity.setBasePerception(2);
-        entity.setBaseMentality(3);
-        entity.setBaseHardening(18);
+        entity.setBaseAttributes(14,10,8,5,11,12,10);
     }
 
     @Override

@@ -8,7 +8,7 @@ import Entities.TraitLists.CustomTraitList;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Player extends Entity implements Attributes {
+public class Player extends Entity {
 
     private Scanner in = new Scanner(System.in);
     private static Inventory inventory = new Inventory();
@@ -44,6 +44,14 @@ public class Player extends Entity implements Attributes {
     private double hardeningMod = 1;
     private double improvisationMod = 1;
 
+    private int strength; //see if making double
+    private int endurance;
+    private int knowledge;
+    private int perception;
+    private int mentality;
+    private int hardening;
+    private int improvisation;
+
     private int baseDamage;
     private int baseStamina;
     private int baseSpellDamage;
@@ -54,13 +62,15 @@ public class Player extends Entity implements Attributes {
     private int baseArmor;
     private int baseResistance;
 
-    private int strength; //see if making double
-    private int endurance;
-    private int knowledge;
-    private int perception;
-    private int mentality;
-    private int hardening;
-    private int improvisation;
+    private int damage;
+    private int stamina;
+    private int spellDamage;
+    private int charisma;
+    private int effectChance;
+    private int hpReg;
+    private int mpReg;
+    private int armor;
+    private int resistance;
 
 
     public Player(String name, Profession profession, Race race, CustomTraitList traitList) {
@@ -73,7 +83,7 @@ public class Player extends Entity implements Attributes {
         race.initializeAttributes(this);
         traitList.initializeAllTraits();
 
-        updateAttributes();
+        updatePlayer();
         this.hp = maxHp;
         this.mp = maxMp;
 
@@ -81,139 +91,105 @@ public class Player extends Entity implements Attributes {
         System.out.println(this.toString());
     }
 
-    public void updateAttributes() {
+    public void updatePlayer() {
+        calculateAttributes();
+        calculateBaseValues();
+        calculateValues();
+
+    }
+    private void calculateAttributes() {
         this.strength = calculateStrength(strengthMod, baseStrength );
         this.endurance = calculateEndurance(enduranceMod, baseEndurance);
         this.knowledge = calculateKnowledge(knowledgeMod, baseKnowledge);
         this.perception = calculatePerception(perceptionMod, basePerception);
         this.mentality = calculateMentality(mentalityMod, baseMentality);
         this.hardening = calculateHardening(hardeningMod,baseHardening);
-        this.improvisation = calculateBaseImprovisation(improvisationMod,baseImprovisation);
-
+        this.improvisation = calculateBaseImprovisation(improvisationMod, baseImprovisation);
+    }
+    private void calculateBaseValues() {
         this.baseDamage = calculateBaseDamage(baseStrength); //add weapon
         this.baseStamina = calculateBaseStamina(baseEndurance); //add clothes
-        this.baseSpellDamage = calculateBaseSpellDamage(baseKnowledge); //
+        this.baseSpellDamage = calculateBaseSpellDamage(baseKnowledge); //add clothes & weapon
         this.baseCharisma = calculateBaseCharisma(basePerception); //add clothes
-        this.baseEffectChance = calculateBaseEffectChance(basePerception);
-        this.baseHpReg = calculateBaseHpReg(baseMentality);
-        this.baseMpReg = calculateBaseMpReg (baseMentality);
-        this.baseArmor = calculateBaseArmor(baseHardening); //add clothes
+        this.baseEffectChance = calculateBaseEffectChance(basePerception); //add clothes
+        this.baseHpReg = calculateBaseHpReg(baseMentality); //add clothes
+        this.baseMpReg = calculateBaseMpReg (baseMentality); //add clothes
+        this.baseArmor = calculateBaseArmor(baseHardening); //add clothes & weapon
         this.baseResistance = calculateBaseResistance(baseHardening); //add clothes
-
-        this.maxHp = calculateMaxHp(strengthMod, baseStrength);
-        this.maxMp = calculateMaxMp(knowledgeMod, baseKnowledge);
-        /*
-        this.damage = ;
-        this.stamina =;
-        this.spellDamage =;
-        this.charisma = ;
-        this.effectChance = ;
-        this.hpReg =;
-        this.mpReg = ;
-        this.armor =;
-        this.resistance =;
-        */
+        this.maxHp = calculateMaxHp(strengthMod, baseStrength); //make base?
+        this.maxMp = calculateMaxMp(knowledgeMod, baseKnowledge); //make base?
+    }
+    private void calculateValues() {
+        this.damage = baseDamage;               //add status effects
+        this.stamina = baseStamina;             //add status effects
+        this.spellDamage = baseSpellDamage;     //add status effects
+        this.charisma = baseCharisma;           //add status effects
+        this.effectChance = baseEffectChance;   //add status effects
+        this.hpReg = baseHpReg;                 //add status effects
+        this.mpReg = baseMpReg;                 //add status effects
+        this.armor = baseArmor;                 //add status effects
+        this.resistance = baseResistance;       //add status effects
     }
 
 
-
+    //SET BASE ATTRIBUTES
     @Override
-    public void setBaseStrength(int baseStrength) {
+    public void setBaseAttributes(int baseStrength, int baseEndurance, int baseKnowledge, int basePerception, int baseMentality, int baseHardening, int baseImprovisation) {
         this.baseStrength = baseStrength;
-    };
-    @Override
-    public void setBaseEndurance(int baseEndurance) {
         this.baseEndurance = baseEndurance;
-    };
-    @Override
-    public void setBaseKnowledge(int baseKnowledge) {
-        this. baseKnowledge = baseKnowledge;
-    };
-    @Override
-    public void setBasePerception(int basePerception) {
-        this. basePerception = basePerception;
-    };
-    @Override
-    public void setBaseMentality (int baseMentality) {
-        this. baseMentality = baseMentality;
-    };
-    @Override
-    public void  setBaseHardening(int baseHardening) {
+        this.baseKnowledge = baseKnowledge;
+        this.basePerception = basePerception;
+        this.baseMentality = baseMentality;
         this.baseHardening = baseHardening;
-    };
+        this.baseImprovisation = baseImprovisation;
+    }
 
+
+    // AddTo Stats
     @Override
-    public int getHp() {
-        return hp;
+    public void addToHp(double value) {
+        this.hp += value;
     }
     @Override
-    public void setHp(int hp) {
-        this.hp = hp;
+    public void addToMp(double value) {
+        this.mp += value;
     }
     @Override
-    public int getMp() {
-        return mp;
+    public void addToXp(double value) {
+        this.xp += value;
+    }
+
+    // AddTo ATTRIBUTE MODIFIER
+    @Override
+    public void addToStrengthMod(double value) {
+        strengthMod += value;
     }
     @Override
-    public void setMp(int mp) {
-        this.mp = mp;
+    public void addToEnduranceMod(double value) {
+        enduranceMod += value;
     }
     @Override
-    public double getStrengthMod() {
-        return strengthMod;
+    public void addToKnowledgeMod(double value) {
+        knowledgeMod += value;
     }
     @Override
-    public void setStrengthMod(double strengthMod) {
-        this.strengthMod = strengthMod;
+    public void addToPerceptionMod(double value) {
+        perceptionMod += value;
     }
     @Override
-    public double getEnduranceMod() {
-        return enduranceMod;
+    public void addToMentalityMod(double value) {
+        mentalityMod += value;
     }
     @Override
-    public void setEnduranceMod(double enduranceMod) {
-        this.enduranceMod = enduranceMod;
+    public void addToHardeningMod(double value) {
+        hardeningMod += value;
     }
     @Override
-    public double getKnowledgeMod() {
-        return knowledgeMod;
+    public void addToImprovisationMod(double value) {
+        improvisationMod += value;
     }
-    @Override
-    public void setKnowledgeMod(double knowledgeMod) {
-        this.knowledgeMod = knowledgeMod;
-    }
-    @Override
-    public double getPerceptionMod() {
-        return perceptionMod;
-    }
-    @Override
-    public void setPerceptionMod(double perceptionMod) {
-        this.perceptionMod = perceptionMod;
-    }
-    @Override
-    public double getMentalityMod() {
-        return mentalityMod;
-    }
-    @Override
-    public void setMentalityMod(double mentalityMod) {
-        this.mentalityMod = mentalityMod;
-    }
-    @Override
-    public double getHardeningMod() {
-        return hardeningMod;
-    }
-    @Override
-    public void setHardeningMod(double hardeningMod) {
-        this.hardeningMod = hardeningMod;
-    }
-    @Override
-    public double getImprovisationMod() {
-        return improvisationMod;
-    }
-    @Override
-    public void setImprovisationMod(double improvisationMod) {
-        this.improvisationMod = improvisationMod;
-    }
+
+    //GET ATTRIBUTES
     @Override
     public int getStrength() {
         return strength;
@@ -243,15 +219,16 @@ public class Player extends Entity implements Attributes {
         return improvisation;
     }
 
+    //ATTACK MOVES
     public void attack(ArrayList<Entity> players, ArrayList<Entity> enemies) {
         boolean validAction = false;
 
-        while(!validAction) {
+        while (!validAction) {
             System.out.println("Choose your attack move. (slash/charge/back)");
             String action = in.nextLine().toUpperCase();
             System.out.println("Choose your target (1/2/3)");
             String target = in.nextLine();
-            switch(action) {
+            switch (action) {
                 case "SLASH":
                     slash(enemies.get(Integer.parseInt(target)));
                     validAction = true;
@@ -271,6 +248,7 @@ public class Player extends Entity implements Attributes {
             }
         }
     }
+
     public void slash(Entity entity) {
         entity.receiveDamage(this.baseDamage);
     }
@@ -279,10 +257,16 @@ public class Player extends Entity implements Attributes {
         entity.receiveDamage((this.baseDamage * 2));
     }
 
+    //CAST SPELLS
     public void cast(ArrayList<Entity> players, ArrayList<Entity> enemies) {
 
     }
 
+    public void firebolt(Entity entity) {
+
+    }
+
+    //USE ITEMS
     public void item(ArrayList<Entity> players, ArrayList<Entity> enemies) {
 
     }
@@ -291,6 +275,7 @@ public class Player extends Entity implements Attributes {
 
     }
 
+    //PLAYER STATUS
     public void receiveDamage(int damage) {
         int pureDamage = damage/baseArmor;
         this.hp-= pureDamage;
@@ -304,26 +289,6 @@ public class Player extends Entity implements Attributes {
         }
     }
 
-
-
-    public int getXp() {
-        return xp;
-    }
-    public void setXp(int xp) {
-        this.xp = xp;
-    }
-
-    private void addXp(int xp) {
-        this.xp += xp;
-        if(this.xp > this.xpToNextLevel) {
-            this.xp -= this.xpToNextLevel;
-            this.xpToNextLevel *= 1.2;
-            this.level += 1;
-            this.attributePoints += 5;
-            System.out.println("You leveled up! You are now level " + this.level + ".");
-            System.out.println("You have " + this.attributePoints + "left so spend.");
-        }
-    }
     public void printStatus() {
         System.out.println("HP: " + this.hp + "/" + this.maxHp);
         System.out.println("MP: " + this.mp + "/" + this.maxMp);

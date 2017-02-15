@@ -15,12 +15,7 @@ public class Necrotic extends Race{
 
     @Override
     public void initializeAttributes(Entity entity) {
-        entity.setBaseStrength(2);
-        entity.setBaseEndurance(12);
-        entity.setBaseKnowledge(18);
-        entity.setBasePerception(4);
-        entity.setBaseMentality(16);
-        entity.setBaseHardening(7);
+        entity.setBaseAttributes(14,10,8,5,11,12,10);
     }
 
     @Override

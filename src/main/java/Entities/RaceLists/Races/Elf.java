@@ -16,12 +16,7 @@ public class Elf extends Race{
 
     @Override
     public void initializeAttributes(Entity entity) {
-        entity.setBaseStrength(8);
-        entity.setBaseEndurance(17);
-        entity.setBaseKnowledge(12);
-        entity.setBasePerception(15);
-        entity.setBaseMentality(5);
-        entity.setBaseHardening(3);
+        entity.setBaseAttributes(14,10,8,5,11,12,10);
     }
 
     @Override

@@ -16,12 +16,7 @@ public class Dwarf extends Race {
 
     @Override
     public void initializeAttributes(Entity entity) {
-        entity.setBaseStrength(14);
-        entity.setBaseEndurance(10);
-        entity.setBaseKnowledge(8);
-        entity.setBasePerception(5);
-        entity.setBaseMentality(11);
-        entity.setBaseHardening(12);
+        entity.setBaseAttributes(14,10,8,5,11,12,10);
     }
 
     @Override
