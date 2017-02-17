@@ -5,11 +5,11 @@ import Main.Game.Entity.Entities.Book.Books.Ability;
 
 public abstract class Book {
 
-    public abstract void add(String name, Ability ability);
-    public abstract void remove(String name);
+    public abstract void add(Ability ability);
+    public abstract void remove(Ability ability);
 
     public abstract void printBook();
-    public abstract boolean include(String name);
+    public abstract boolean include(Ability ability);
     public abstract Ability getAbility(String name);
 
 }

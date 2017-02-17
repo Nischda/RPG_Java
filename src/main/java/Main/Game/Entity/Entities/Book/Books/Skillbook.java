@@ -3,35 +3,39 @@ package Main.Game.Entity.Entities.Book.Books;
 
 import Main.Game.Entity.Entities.Book.Book;
 import Main.Game.Entity.Entities.Book.Books.Spells.Spark;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Skillbook extends Book {
 
-    private static HashMap<String, Ability> skillBook = new HashMap<>();
+    private static ArrayList<Ability> skillBook;
 
     public Skillbook() {
-        this.skillBook = new HashMap<>();
-        this.skillBook.put("Spark", new Spark());
+        this.skillBook = new ArrayList<>();
+        this.skillBook.add(new Spark());
     }
 
     @Override
-    public void add(String name, Ability ability) {
-        this.skillBook.put(name, ability);
+    public void add(Ability ability) {
+        this.skillBook.add(ability);
     }
     @Override
-    public void remove(String name) {
-        if(skillBook.containsKey(name)) {
-            skillBook.remove(name);
+    public void remove(Ability ability) {
+        if(skillBook.contains(ability)) {
+            skillBook.remove(ability);
         }
     }
     @Override
-    public boolean include(String name) {
-        return skillBook.containsKey(name);
+    public boolean include(Ability ability) {
+        return skillBook.contains(ability);
     }
+
     @Override
     public  Ability getAbility(String name) {
-        if (skillBook.containsKey(name)) {
-            return (Ability) skillBook.get(name);
+        for(Ability ability: skillBook)
+        if (ability.toString().equals(name)) {
+            return ability;
         }
         return null;
     }
@@ -44,8 +48,8 @@ public class Skillbook extends Book {
     @Override
     public String toString() {
         String string = "";
-        for(String name : skillBook.keySet()) {
-            string += ", " + name;
+        for(Ability ability : skillBook) {
+            string += ", " + ability.toString();
         }
         return string;
     }
