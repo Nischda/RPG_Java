@@ -1,7 +1,7 @@
 package Main.Game.Entity;
 
 
-import Main.Game.Entity.Entities.Items.Inventory;
+import Main.Game.Entity.Entities.Item.Inventory;
 
 import java.util.ArrayList;
 

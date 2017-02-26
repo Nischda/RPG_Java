@@ -2,7 +2,7 @@ package Main.Game.Entity.Entities;
 
 import Main.Game.Entity.Entities.Book.Books.Skillbook;
 import Main.Game.Entity.Entities.Book.Books.Spellbook;
-import Main.Game.Entity.Entities.Items.Inventory;
+import Main.Game.Entity.Entities.Item.Inventory;
 import Main.Game.Entity.Entities.RaceLists.Race;
 import Main.Game.Entity.Entities.TraitLists.CustomTraitList;
 import Main.Game.Entity.Entity;

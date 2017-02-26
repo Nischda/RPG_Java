@@ -3,7 +3,7 @@ package Main.Game.Entity.Entities;
 import Main.Game.Entity.Entities.ProfessionLists.Profession;
 import Main.Game.Entity.Entities.RaceLists.Race;
 import Main.Game.Entity.Entity;
-import Main.Game.Entity.Entities.Items.Inventory;
+import Main.Game.Entity.Entities.Item.Inventory;
 import Main.Game.Entity.Entities.TraitLists.CustomTraitList;
 
 import java.util.ArrayList;
