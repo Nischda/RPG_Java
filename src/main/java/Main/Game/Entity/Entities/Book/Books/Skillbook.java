@@ -2,6 +2,8 @@ package Main.Game.Entity.Entities.Book.Books;
 
 
 import Main.Game.Entity.Entities.Book.Book;
+import Main.Game.Entity.Entities.Book.Books.Skills.Slash;
+import Main.Game.Entity.Entities.Book.Books.Skills.Whirlwind;
 import Main.Game.Entity.Entities.Book.Books.Spells.Spark;
 
 import java.util.ArrayList;
@@ -13,7 +15,8 @@ public class Skillbook extends Book {
 
     public Skillbook() {
         this.skillBook = new ArrayList<>();
-        this.skillBook.add(new Spark());
+        this.skillBook.add(new Slash());
+        this.skillBook.add(new Whirlwind());
     }
 
     @Override
@@ -28,7 +31,12 @@ public class Skillbook extends Book {
     }
     @Override
     public boolean include(Ability ability) {
-        return skillBook.contains(ability);
+        return this.skillBook.contains(ability);
+    }
+
+    @Override
+    public boolean contains(String string) {
+        return this.include(this.getAbility(string));
     }
 
     @Override

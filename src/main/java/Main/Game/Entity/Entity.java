@@ -115,5 +115,12 @@ public abstract class Entity{
 
     public abstract String toString();
 
+    public static void printEntities(ArrayList<Entity> entityList) {
+        StringBuilder string = new StringBuilder();
+        for (Entity entity : entityList) {
+            string.append(entity.toString());
+        }
+        System.out.println(string.toString());
+    }
 
 }

@@ -32,6 +32,11 @@ public class Spellbook extends Book {
     }
 
     @Override
+    public boolean contains(String string) {
+        return this.include(this.getAbility(string));
+    }
+
+    @Override
     public  Ability getAbility(String name) {
         for(Ability ability: spellbook)
             if (ability.toString().equals(name)) {

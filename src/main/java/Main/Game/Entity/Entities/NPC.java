@@ -88,8 +88,8 @@ public class NPC extends Entity {
         this.hp = maxHp;
         this.mp = maxMp;
 
-        printStatus();
-        System.out.println(this.toString());
+        //printStatus();
+        //System.out.println(this.toString());
     }
 
     public void updateNPC() {
@@ -330,6 +330,6 @@ public class NPC extends Entity {
 
     @Override
     public String toString() {
-        return String.format("name: %s, profession: %s, race: %s, HP: %s, MP: %s, endurance: %s ", this.name, this.profession, this.race, this.hp, this.mp, this.endurance);
+        return String.format("%s %s: %s\n%s/%s HP %s/%s MP %s End\n",this.race, this.profession, this.name, this.hp, this.maxHp, this.mp, this.maxMp, this.endurance);
     }
 }

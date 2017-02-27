@@ -1,6 +1,7 @@
 package Main.Game.Entity.Entities;
 
 import Main.Game.Entity.Entities.Book.Books.Skillbook;
+import Main.Game.Entity.Entities.Book.Books.Skills.Slash;
 import Main.Game.Entity.Entities.Book.Books.Spellbook;
 import Main.Game.Entity.Entities.Item.Inventory;
 import Main.Game.Entity.Entities.RaceLists.Race;
@@ -236,37 +237,17 @@ public class Player extends Entity {
         while (!validAction) {
             System.out.println("Choose your attack move. (" + skillbook.toString() + ")");
             String action = in.nextLine().toUpperCase();
-            System.out.println("Choose your target (up to " + enemies.size() + ")");
-            Entity target = enemies.get(Integer.parseInt(in.nextLine()));
-            switch (action) {
-                case "SLASH":
-                    slash(target);
-                    validAction = true;
-                    break;
-                case "CHARGE":
-                    charge(target);
-                    validAction = true;
-                    break;
-                case "BACK":
-                    System.out.println("not yet implemented. doing nothing");
-                    validAction = true;
-                    break;
-                default:
+
+            if (skillbook.contains(action)) {//already uses getAbility ->simplify TODO booleancheck not working but tired as fork
+                skillbook.getAbility(action).use(this, this.damage, enemies);
+                validAction = true;
+            }
+            else {
                     System.out.println("You can't do that");
                     validAction = false;
-                    break;
             }
         }
     }
-
-    public void slash(Entity entity) {
-        entity.receiveDamage(this.baseDamage, this.name);
-    }
-
-    public void charge(Entity entity) {
-        entity.receiveDamage(this.baseDamage * 2, this.name);
-    }
-
     //CAST SPELLS
     public void cast(ArrayList<Entity> players, ArrayList<Entity> enemies) {
 
@@ -313,7 +294,7 @@ public class Player extends Entity {
     }
     @Override
     public String toString() {
-        return String.format("name: %s, profession: %s, race: %s, HP: %s, MP: %s, endurance: %s ",this.name, this.profession,this.race, this.hp, this.mp, this.endurance);
+        return String.format("You\n  %s/%s HP %s/%s MP %s End\n ", this.hp, this.maxHp, this.mp, this.maxMp, this.endurance);
     }
 
 }

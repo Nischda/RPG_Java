@@ -70,7 +70,7 @@ public class Ocean extends Tile {
         System.out.println("You start to search the area...");
         Random intrandom = new Random();
         int rand = intrandom.nextInt(10) + 1;
-        if(rand < 5) {
+        if(rand < 8) {
             hunt();
         }
         else{
@@ -94,7 +94,8 @@ public class Ocean extends Tile {
         ArrayList<Entity> playerList= new ArrayList<>();
         playerList.add(this.player);
 
-        System.out.println("You stumple upon: " + enemyList.toString() + ".");
+        System.out.println("You stumple upon:");
+        Entity.printEntities(this.enemyList);
         Battlefield battlefield = new Battlefield(playerList, enemyList);
     }
 }

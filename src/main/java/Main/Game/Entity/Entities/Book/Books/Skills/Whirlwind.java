@@ -5,18 +5,16 @@ import Main.Game.Entity.Entities.Book.Books.Ability;
 import Main.Game.Entity.Entity;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
-
-public class Slash extends Ability {
-
-    private Scanner in = new Scanner(System.in);
+public class Whirlwind extends Ability {
 
     @Override
     public void use(Entity actor, int damage, ArrayList<Entity> targets) {
-        System.out.println("Choose your target (up to " + targets.size() + ")");
-        Entity target = targets.get(Integer.parseInt(in.nextLine()));
-        target.receiveDamage(damage, actor.name());
+        System.out.println("You attack all targets!");
+
+        for(Entity target: targets) {
+            target.receiveDamage(damage, actor.name());
+        }
     }
 
     @Override
@@ -25,6 +23,6 @@ public class Slash extends Ability {
     }
     @Override
     public String toString() {
-        return "slash";
+        return "whirlwind";
     }
 }

@@ -33,7 +33,8 @@ public class Battlefield {
             roundCount++;
             System.out.println("Round: " + roundCount);
             while (playerGotTurns || enemyGotTurns) { //rounds end if every entity has acted
-
+                Entity.printEntities(this.players);
+                Entity.printEntities(this.enemies);
                 turnCount++;
                 System.out.println("Turn: " + turnCount);
                 if ((players.get(0).getEndurance() >= enemies.get(0).getEndurance() && playerGotTurns) || (playerGotTurns && !enemyGotTurns)) {//Playerturn
@@ -57,7 +58,7 @@ public class Battlefield {
     }
 
     public void executePlayerTurn(Entity entity) {
-        System.out.println("Your turn: " + entity.toString());
+        System.out.println("Your turn:");
             boolean validAction = false;
 
             while(!validAction) {

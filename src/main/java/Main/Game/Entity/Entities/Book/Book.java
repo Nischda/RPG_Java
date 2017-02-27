@@ -10,6 +10,7 @@ public abstract class Book {
 
     public abstract void printBook();
     public abstract boolean include(Ability ability);
+    public abstract boolean contains(String string);
     public abstract Ability getAbility(String name);
 
 }
