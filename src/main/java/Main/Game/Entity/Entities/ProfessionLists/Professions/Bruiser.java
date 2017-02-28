@@ -5,11 +5,11 @@ import Main.Game.Entity.Entity;
 
 public class Bruiser extends Profession {
 
-    private static String description = "A Bruiser";
+    private static String description = "A bruiser";
 
     @Override
     public void printDescription() {
-        System.out.println(this.description);
+        System.out.println(description);
     }
 
     @Override
@@ -20,6 +20,6 @@ public class Bruiser extends Profession {
 
     @Override
     public String toString() {
-        return "BRUISER";
+        return "bruiser";
     }
 }

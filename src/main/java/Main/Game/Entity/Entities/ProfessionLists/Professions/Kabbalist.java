@@ -5,11 +5,11 @@ import Main.Game.Entity.Entity;
 
 public class Kabbalist extends Profession {
 
-    private static String description = "A Kabbalist";
+    private static String description = "A kabbalist";
 
     @Override
     public void printDescription() {
-        System.out.println(this.description);
+        System.out.println(description);
     }
 
     @Override
@@ -19,6 +19,6 @@ public class Kabbalist extends Profession {
 
     @Override
     public String toString() {
-        return "KABBALIST";
+        return "kabbalist";
     }
 }

@@ -7,7 +7,7 @@ public class Energetic extends Trait {
 
     @Override
     public void printDescription() {
-        System.out.println("This is the trait ENERGETIC");
+        System.out.println("This is the trait energetic");
     }
 
     @Override
@@ -16,6 +16,6 @@ public class Energetic extends Trait {
     }
 
     public String toString() {
-        return "ENERGETIC";
+        return "energetic";
     }
 }

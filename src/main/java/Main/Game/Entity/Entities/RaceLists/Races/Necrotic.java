@@ -6,7 +6,7 @@ import Main.Game.Entity.Entity;
 
 public class Necrotic extends Race {
 
-    private String description = "A Necrotic";
+    private String description = "A necrotic";
 
     @Override
     public void printDescription() {
@@ -20,7 +20,7 @@ public class Necrotic extends Race {
 
     @Override
     public String toString() {
-        return "NECROTIC";
+        return "necrotic";
     }
 
 }

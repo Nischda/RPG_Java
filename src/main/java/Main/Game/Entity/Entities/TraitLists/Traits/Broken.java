@@ -7,7 +7,7 @@ public class Broken extends Trait {
 
     @Override
     public void printDescription() {
-        System.out.println("This is the trait BROKEN");
+        System.out.println("This is the trait broken");
     }
 
     @Override
@@ -16,6 +16,6 @@ public class Broken extends Trait {
     }
 
     public String toString() {
-        return "BROKEN";
+        return "broken";
     }
 }

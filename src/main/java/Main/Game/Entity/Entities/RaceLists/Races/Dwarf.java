@@ -6,7 +6,7 @@ import Main.Game.Entity.Entities.RaceLists.Race;
 
 public class Dwarf extends Race {
 
-    private String description = "A Dwarf";
+    private String description = "A dwarf";
 
     @Override
     public void printDescription() {
@@ -20,6 +20,6 @@ public class Dwarf extends Race {
 
     @Override
     public String toString() {
-        return "DWARF";
+        return "dwarf";
     }
 }

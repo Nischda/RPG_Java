@@ -7,7 +7,7 @@ public class Wanderer extends Trait {
 
     @Override
     public void printDescription() {
-        System.out.println("This is the trait WANDERER");
+        System.out.println("This is the trait wanderer");
     }
 
     @Override
@@ -16,6 +16,6 @@ public class Wanderer extends Trait {
     }
 
     public String toString() {
-        return "WANDERER";
+        return "wanderer";
     }
 }

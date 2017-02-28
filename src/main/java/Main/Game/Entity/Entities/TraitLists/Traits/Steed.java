@@ -7,7 +7,7 @@ public class Steed extends Trait {
 
     @Override
     public void printDescription() {
-        System.out.println("This is the trait STEED");
+        System.out.println("This is the trait steed");
     }
 
     @Override
@@ -16,6 +16,6 @@ public class Steed extends Trait {
     }
 
     public String toString() {
-        return "STEED";
+        return "steed";
     }
 }

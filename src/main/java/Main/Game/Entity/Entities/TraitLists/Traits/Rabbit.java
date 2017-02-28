@@ -7,7 +7,7 @@ public class Rabbit extends Trait {
 
     @Override
     public void printDescription() {
-        System.out.println("This is the trait RABBIT");
+        System.out.println("This is the trait rabbit");
     }
 
     @Override
@@ -16,6 +16,6 @@ public class Rabbit extends Trait {
     }
 
     public String toString() {
-        return "RABBIT";
+        return "rabbit";
     }
 }

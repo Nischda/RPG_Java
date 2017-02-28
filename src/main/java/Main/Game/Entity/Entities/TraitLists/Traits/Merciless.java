@@ -7,7 +7,7 @@ public class Merciless extends Trait {
 
     @Override
     public void printDescription() {
-        System.out.println("This is the trait MERCILESS");
+        System.out.println("This is the trait merciless");
     }
 
     @Override
@@ -16,6 +16,6 @@ public class Merciless extends Trait {
     }
 
     public String toString() {
-        return "MERCILESS";
+        return "merciless";
     }
 }

@@ -7,7 +7,7 @@ public class Enthusiastic extends Trait {
 
     @Override
     public void printDescription() {
-        System.out.println("This is the trait ENTHUSIASTIC");
+        System.out.println("This is the trait enthusiastic");
     }
 
     @Override
@@ -16,6 +16,6 @@ public class Enthusiastic extends Trait {
     }
 
     public String toString() {
-        return "ENTHUSIASTIC";
+        return "enthusiastic";
     }
 }

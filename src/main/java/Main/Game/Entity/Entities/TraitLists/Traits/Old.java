@@ -7,7 +7,7 @@ public class Old extends Trait {
 
     @Override
     public void printDescription() {
-        System.out.println("This is the trait OLD");
+        System.out.println("This is the trait old");
     }
 
     @Override
@@ -16,6 +16,6 @@ public class Old extends Trait {
     }
 
     public String toString() {
-        return "OLD";
+        return "old";
     }
 }

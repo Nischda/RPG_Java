@@ -11,54 +11,60 @@ import java.util.HashMap;
 
 public class Skillbook extends Book {
 
-    private static ArrayList<Ability> skillBook;
+    private static ArrayList<Ability> skillbook;
 
     public Skillbook() {
-        this.skillBook = new ArrayList<>();
-        this.skillBook.add(new Slash());
-        this.skillBook.add(new Whirlwind());
+        skillbook = new ArrayList<>();
+        skillbook.add(new Slash());
+        skillbook.add(new Whirlwind());
     }
 
     @Override
     public void add(Ability ability) {
-        this.skillBook.add(ability);
+        skillbook.add(ability);
     }
     @Override
     public void remove(Ability ability) {
-        if(skillBook.contains(ability)) {
-            skillBook.remove(ability);
+        if(skillbook.contains(ability)) {
+            skillbook.remove(ability);
         }
     }
     @Override
     public boolean include(Ability ability) {
-        return this.skillBook.contains(ability);
+        return skillbook.contains(ability);
+
     }
 
     @Override
-    public boolean contains(String string) {
-        return this.include(this.getAbility(string));
+    public boolean contains(String string) { //ToDo simplify this and getAbility/include
+        Ability ability = this.getAbility(string);
+        if(ability != null) {
+            return this.include(ability);
+        }
+        return false;
     }
 
     @Override
     public  Ability getAbility(String name) {
-        for(Ability ability: skillBook)
-        if (ability.toString().equals(name)) {
-            return ability;
+        for(Ability ability: skillbook) {
+            if (ability.toString().equals(name)) {
+                return ability;
+            }
         }
         return null;
     }
 
     @Override
     public void printBook() {
-        System.out.println(this.skillBook.toString());
+        System.out.println(skillbook.toString());
     }
 
     @Override
     public String toString() {
         String string = "";
-        for(Ability ability : skillBook) {
-            string += ", " + ability.toString();
+        for(Ability ability : skillbook) {
+            string += ability.toString() + ", ";
         }
-        return string;
+        return string.substring(0, string.length()-2);
     }
 }

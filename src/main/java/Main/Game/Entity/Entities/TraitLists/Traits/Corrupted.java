@@ -7,7 +7,7 @@ public class Corrupted extends Trait {
 
     @Override
     public void printDescription() {
-        System.out.println("This is the trait CORRUPTED");
+        System.out.println("This is the trait corrupted");
     }
 
     @Override
@@ -16,6 +16,6 @@ public class Corrupted extends Trait {
     }
 
     public String toString() {
-        return "CORRUPTED";
+        return "corrupted";
     }
 }

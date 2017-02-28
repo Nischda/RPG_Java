@@ -7,7 +7,7 @@ public class Shapeshifter extends Trait {
 
     @Override
     public void printDescription() {
-        System.out.println("This is the trait SHAPESHIFTER");
+        System.out.println("This is the trait shapeshifter");
     }
 
     @Override
@@ -16,6 +16,6 @@ public class Shapeshifter extends Trait {
     }
 
     public String toString() {
-        return "SHAPESHIFTER";
+        return "shapeshifter";
     }
 }

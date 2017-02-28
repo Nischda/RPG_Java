@@ -7,7 +7,7 @@ public class Forgotten extends Trait {
 
     @Override
     public void printDescription() {
-        System.out.println("This is the trait FORGOTTEN");
+        System.out.println("This is the trait forgotten");
     }
 
     @Override
@@ -16,6 +16,6 @@ public class Forgotten extends Trait {
     }
 
     public String toString() {
-        return "FORGOTTEN";
+        return "forgotten";
     }
 }

@@ -6,7 +6,7 @@ import Main.Game.Entity.Entity;
 
 public class Ent extends Race {
 
-    private String description = "An Ent";
+    private String description = "An ent";
 
     @Override
     public void printDescription() {
@@ -20,7 +20,7 @@ public class Ent extends Race {
 
     @Override
     public String toString() {
-        return "ENT";
+        return "ent";
     }
 
 }

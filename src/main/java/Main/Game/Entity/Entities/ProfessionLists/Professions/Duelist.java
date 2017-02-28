@@ -5,11 +5,11 @@ import Main.Game.Entity.Entities.ProfessionLists.Profession;
 
 public class Duelist extends Profession {
 
-    private static String description = "A Duelist";
+    private static String description = "A duelist";
 
     @Override
     public void printDescription() {
-        System.out.println(this.description);
+        System.out.println(description);
     }
 
     @Override
@@ -19,6 +19,6 @@ public class Duelist extends Profession {
 
     @Override
     public String toString() {
-        return "DUELIST";
+        return "duelist";
     }
 }

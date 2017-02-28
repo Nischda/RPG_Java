@@ -97,6 +97,7 @@ public class Player extends Entity {
 
         printStatus();
         System.out.println(this.toString());
+        printCharacter();
     }
 
     public void updatePlayer() {
@@ -236,9 +237,9 @@ public class Player extends Entity {
 
         while (!validAction) {
             System.out.println("Choose your attack move. (" + skillbook.toString() + ")");
-            String action = in.nextLine().toUpperCase();
+            String action = in.nextLine().toLowerCase();
 
-            if (skillbook.contains(action)) {//already uses getAbility ->simplify TODO booleancheck not working but tired as fork
+            if (skillbook.contains(action)) {//already uses getAbility ->simplify
                 skillbook.getAbility(action).use(this, this.damage, enemies);
                 validAction = true;
             }
@@ -295,6 +296,71 @@ public class Player extends Entity {
     @Override
     public String toString() {
         return String.format("You\n  %s/%s HP %s/%s MP %s End\n ", this.hp, this.maxHp, this.mp, this.maxMp, this.endurance);
+    }
+
+    public void printCharacter() {
+        System.out.println("inventory: " + inventory.toString());
+        System.out.println("name: " + name);
+        System.out.println("profession: " + profession);
+        System.out.println("race: " + race);
+        System.out.println("customTraitList: " + customTraitList.toString());
+        System.out.println("skillbook: " + skillbook.toString());
+        System.out.println("spellbook: " + spellbook.toString());
+
+        System.out.println("xp: " + xp);
+        System.out.println("level: " + level);
+        System.out.println("xpToNextLevel: " + xpToNextLevel);
+        System.out.println("attributePoints: " + attributePoints);
+
+        System.out.println("maxHp: " + maxHp);
+        System.out.println("hp: " + hp);
+        System.out.println("maxMp: " + maxMp);
+        System.out.println("mp: " + mp);
+
+        System.out.println("baseStrength: " + baseStrength);
+        System.out.println("baseEndurance: " + baseEndurance);
+        System.out.println("baseKnowledge: " + baseKnowledge);
+        System.out.println("basePerception: " + basePerception);
+        System.out.println("baseMentality: " + baseMentality);
+        System.out.println("baseHardening: " + baseHardening);
+        System.out.println("baseImprovisation: " + baseImprovisation);
+
+        System.out.println("strengthMod: " + strengthMod);
+        System.out.println("enduranceMod: " + enduranceMod);
+        System.out.println("knowledgeMod: " + knowledgeMod);
+        System.out.println("perceptionMod: " + perceptionMod);
+        System.out.println("mentalityMod: " + mentalityMod);
+        System.out.println("hardeningMod: " + hardeningMod);
+        System.out.println("improvisationMod: " + improvisationMod);
+
+        System.out.println("strength: " + strength);
+        System.out.println("endurance: " + endurance);
+        System.out.println("knowledge: " + knowledge);
+        System.out.println("perception: " + perception);
+        System.out.println("mentality: " + mentality);
+        System.out.println("hardening: " + hardening);
+        System.out.println("improvisation: " + improvisation);
+
+        System.out.println("baseDamage: " + baseDamage);
+        System.out.println("baseStamina: " + baseStamina);
+        System.out.println("baseSpellDamage: " + baseSpellDamage);
+        System.out.println("baseCharisma: " + baseCharisma);
+        System.out.println("baseEffectChance: " + baseEffectChance);
+        System.out.println("baseHpReg: " + baseHpReg);
+        System.out.println("baseMpReg: " + baseMpReg);
+        System.out.println("baseArmor: " + baseArmor);
+        System.out.println("baseResistance: " + baseResistance);
+
+        System.out.println("damage: " + damage);
+        System.out.println("stamina: " + stamina);
+        System.out.println("spellDamage: " + spellDamage);
+        System.out.println("charisma: " + charisma);
+        System.out.println("effectChance: " + effectChance);
+        System.out.println("hpReg: " + hpReg);
+        System.out.println("mpReg: " + mpReg);
+        System.out.println("armor: : " + armor);
+        System.out.println("resistance: : " + resistance);
+        System.out.println();
     }
 
 }

@@ -7,7 +7,7 @@ public class Beloved extends Trait {
 
     @Override
     public void printDescription() {
-        System.out.println("This is the trait BELOVED");
+        System.out.println("This is the trait beloved");
     }
 
     @Override
@@ -16,6 +16,6 @@ public class Beloved extends Trait {
     }
 
     public String toString() {
-        return "BELOVED";
+        return "beloved";
     }
 }

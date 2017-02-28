@@ -7,7 +7,7 @@ public class Giant extends Trait {
 
     @Override
     public void printDescription() {
-        System.out.println("This is the trait GIANT");
+        System.out.println("This is the trait giant");
     }
 
     @Override
@@ -16,6 +16,6 @@ public class Giant extends Trait {
     }
 
     public String toString() {
-        return "GIANT";
+        return "giant";
     }
 }

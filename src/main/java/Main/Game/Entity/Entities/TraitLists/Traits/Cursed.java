@@ -7,7 +7,7 @@ public class Cursed extends Trait {
 
     @Override
     public void printDescription() {
-        System.out.println("This is the trait CURSED");
+        System.out.println("This is the trait cursed");
     }
 
     @Override
@@ -16,6 +16,6 @@ public class Cursed extends Trait {
     }
 
     public String toString() {
-        return "CURSED";
+        return "cursed";
     }
 }

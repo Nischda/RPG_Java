@@ -5,7 +5,7 @@ import Main.Game.Entity.Entities.ProfessionLists.Profession;
 
 public class Trickster extends Profession {
 
-    private static String description = "A Trickster";
+    private static String description = "A trickster";
 
     @Override
     public void printDescription() {
@@ -19,6 +19,6 @@ public class Trickster extends Profession {
 
     @Override
     public String toString() {
-        return "TRICKSTER";
+        return "trickster";
     }
 }

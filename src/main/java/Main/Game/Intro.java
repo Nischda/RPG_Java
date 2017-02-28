@@ -37,7 +37,7 @@ public class Intro {
         while (!validProfession) {
             System.out.println("You are widely known as a professional? (enter your profession)");
             System.out.println(Profession.toS());
-            String professionName = in.nextLine().toUpperCase();
+            String professionName = in.nextLine().toLowerCase();
             if (Profession.include(professionName)) {
                 this.profession = Profession.getProfession(professionName);
                 validProfession = true;
@@ -52,7 +52,7 @@ public class Intro {
         while (!validRace) {
             System.out.println("You are a proud? (enter your race)");
             System.out.println(Race.toS());
-            String raceName = in.nextLine().toUpperCase();
+            String raceName = in.nextLine().toLowerCase();
             if (Race.include(raceName)) {
                 this.race = Race.getRace(raceName);
                 validRace = true;
@@ -70,7 +70,7 @@ public class Intro {
             System.out.println("The world destined you the burden of? (enter up to 3 traits, enter 'accept' to continue)");
             System.out.println(Trait.toS());
             System.out.println(String.format("Current traits: %s/%s:%s.", curTraits, maxTraits, customTraitList.toString()));
-            String input = in.nextLine().toUpperCase();
+            String input = in.nextLine().toLowerCase();
             if(curTraits < maxTraits) {
                 validTraits = true;
                 if (Trait.include(input)) {
@@ -80,7 +80,7 @@ public class Intro {
                         curTraits++;
                     }
                 }
-                else if(input.equals("ACCEPT")) {
+                else if(input.equals("accept")) {
                     approval = true;
                 }
             }
@@ -91,20 +91,20 @@ public class Intro {
         boolean validInput = false;
         while(!validInput) {
             System.out.println("Do you want to crate a custom character? (yes/no)");
-            String createCharacter = in.nextLine().toUpperCase();
+            String createCharacter = in.nextLine().toLowerCase();
             System.out.println(createCharacter);
-            if (createCharacter.equals("YES")) {
+            if (createCharacter.equals("yes")) {
                 promptName();
                 promptClassType();
                 promptRace();
                 promptTraits();
                 validInput = true;
             }
-            else if(createCharacter.equals("NO")){
+            else if(createCharacter.equals("no")){
                 this.name = "Bob";
-                this.profession = Profession.getProfession("DUELIST");
-                this.race = Race.getRace("DWARF");
-                Trait traitObject = Trait.getTrait("CURSED");
+                this.profession = Profession.getProfession("duelist");
+                this.race = Race.getRace("dwarf");
+                Trait traitObject = Trait.getTrait("cursed");
                 customTraitList.addToList(traitObject);
                 validInput = true;
             }

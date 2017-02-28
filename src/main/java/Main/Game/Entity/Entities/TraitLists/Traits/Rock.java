@@ -7,7 +7,7 @@ public class Rock extends Trait {
 
     @Override
     public void printDescription() {
-        System.out.println("This is the trait ROCK");
+        System.out.println("This is the trait rock");
     }
 
     @Override
@@ -16,6 +16,6 @@ public class Rock extends Trait {
     }
 
     public String toString() {
-        return "ROCK";
+        return "rock";
     }
 }
