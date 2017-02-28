@@ -36,11 +36,11 @@ public final class NPCFactory {
         return name;
     }
     public static Profession chooseProfession() {
-        Profession profession = Profession.getProfession("DUELIST");
+        Profession profession = Profession.getProfession("duelist");
         return profession;
     }
     public static Race chooseRace() {
-        Race race = Race.getRace("DWARF");
+        Race race = Race.getRace("dwarf");
         return race;
     }
     public static CustomTraitList chooseTraits(int traitCount) {
@@ -53,7 +53,7 @@ public final class NPCFactory {
     }
 
     public static Trait chooseTrait() {
-        Trait trait = Trait.getTrait("CURSED");
+        Trait trait = Trait.getTrait("cursed");
         return trait;
     }
 

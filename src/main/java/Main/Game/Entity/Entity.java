@@ -35,7 +35,7 @@ public abstract class Entity{
     public abstract void attack(ArrayList<Entity> players, ArrayList<Entity> enemies);
     public abstract void cast(ArrayList<Entity> players, ArrayList<Entity> enemies);
     public abstract void item(ArrayList<Entity> players, ArrayList<Entity> enemies);
-    public abstract void escape(ArrayList<Entity> players, ArrayList<Entity> enemies);
+    public abstract boolean escape(ArrayList<Entity> players, ArrayList<Entity> enemies);
     public abstract void receiveDamage(int damage, String actor);
     public abstract void checkLeathal();
 
@@ -92,7 +92,7 @@ public abstract class Entity{
         return baseMentality;
     } // *status
     protected int calculateBaseArmor(int baseHardening) {
-        return baseHardening *10;
+        return baseHardening;
     } // *armorModifier * other boni
     protected int calculateBaseResistance(int baseHardening) {
         return baseHardening *5;
@@ -117,8 +117,10 @@ public abstract class Entity{
 
     public static void printEntities(ArrayList<Entity> entityList) {
         StringBuilder string = new StringBuilder();
+        int count = 1;
         for (Entity entity : entityList) {
-            string.append(entity.toString());
+            string.append(count + ". " + entity.toString());
+            count++;
         }
         System.out.println(string.toString());
     }

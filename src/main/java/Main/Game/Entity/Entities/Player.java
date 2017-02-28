@@ -1,7 +1,6 @@
 package Main.Game.Entity.Entities;
 
 import Main.Game.Entity.Entities.Book.Books.Skillbook;
-import Main.Game.Entity.Entities.Book.Books.Skills.Slash;
 import Main.Game.Entity.Entities.Book.Books.Spellbook;
 import Main.Game.Entity.Entities.Item.Inventory;
 import Main.Game.Entity.Entities.RaceLists.Race;
@@ -10,6 +9,7 @@ import Main.Game.Entity.Entity;
 import Main.Game.Entity.Entities.ProfessionLists.Profession;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Player extends Entity {
@@ -251,11 +251,21 @@ public class Player extends Entity {
     }
     //CAST SPELLS
     public void cast(ArrayList<Entity> players, ArrayList<Entity> enemies) {
+        boolean validAction = false;
 
-    }
+        while (!validAction) {
+            System.out.println("Choose your spell. (" + spellbook.toString() + ")");
+            String action = in.nextLine().toLowerCase();
 
-    public void firebolt(Entity entity) {
-
+            if (spellbook.contains(action)) {//already uses getAbility ->simplify
+                spellbook.getAbility(action).use(this, this.spellDamage, enemies);
+                validAction = true;
+            }
+            else {
+                System.out.println("You can't do that");
+                validAction = false;
+            }
+        }
     }
 
     //USE ITEMS
@@ -263,8 +273,15 @@ public class Player extends Entity {
 
     }
 
-    public void escape(ArrayList<Entity> players, ArrayList<Entity> enemies) {
-
+    public boolean escape(ArrayList<Entity> players, ArrayList<Entity> enemies) { //ToDo make escape chances dependent on attributes of you and enemies f.e. some intRandom of improvisation*endurance vs perception*endurance
+        Random intRandom = new Random();
+        int rand = intRandom.nextInt(10) + 1;
+        if(rand < 5) {
+            System.out.println("You managed to escape!");
+            return true;
+        }
+        System.out.println("You got caught beforehand!");
+        return false;
     }
 
     //PLAYER STATUS
@@ -295,7 +312,7 @@ public class Player extends Entity {
     }
     @Override
     public String toString() {
-        return String.format("You\n  %s/%s HP %s/%s MP %s End\n ", this.hp, this.maxHp, this.mp, this.maxMp, this.endurance);
+        return String.format("You: (%s/%sHP %s/%sMP %sEnd)\n ", this.hp, this.maxHp, this.mp, this.maxMp, this.endurance);
     }
 
     public void printCharacter() {

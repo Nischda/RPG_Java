@@ -77,8 +77,8 @@ public class Forest extends Tile{
         else{
             startEvent();
         }
-
     }
+
     public void startEvent() {
         System.out.println("You encountered a special event.");
     }

@@ -9,6 +9,7 @@ public class Battlefield {
     private Scanner in = new Scanner(System.in);
     private ArrayList<Entity> players;
     private ArrayList<Entity> enemies;
+    private boolean battleEnd = false;
 
     public Battlefield(ArrayList<Entity> players, ArrayList<Entity> enemies) {
         this.players = players;
@@ -18,7 +19,6 @@ public class Battlefield {
     }
 
     public void executeRound() {
-        boolean battleEnd = false;
         int playerTurnCount = 0;
         int enemyTurnCount = 0;
         int roundCount = 0;
@@ -31,12 +31,9 @@ public class Battlefield {
             sortEntities(enemies);
 
             roundCount++;
-            System.out.println("Round: " + roundCount);
             while (playerGotTurns || enemyGotTurns) { //rounds end if every entity has acted
-                Entity.printEntities(this.players);
-                Entity.printEntities(this.enemies);
                 turnCount++;
-                System.out.println("Turn: " + turnCount);
+                System.out.println("Round: " + roundCount + " | Turn: " + turnCount);
                 if ((players.get(0).getEndurance() >= enemies.get(0).getEndurance() && playerGotTurns) || (playerGotTurns && !enemyGotTurns)) {//Playerturn
                     playerTurnCount++;
                     if (playerTurnCount >= players.size() - 1) {
@@ -59,6 +56,8 @@ public class Battlefield {
 
     public void executePlayerTurn(Entity entity) {
         System.out.println("Your turn:");
+        Entity.printEntities(this.players);
+        Entity.printEntities(this.enemies);
             boolean validAction = false;
 
             while(!validAction) {
@@ -79,7 +78,7 @@ public class Battlefield {
                         validAction = true;
                         break;
                     case "ESCAPE":
-                        entity.escape(players, enemies);
+                        if(entity.escape(players, enemies)) battleEnd = true;
                         validAction = true;
                         break;
                     default:
@@ -88,7 +87,6 @@ public class Battlefield {
                         break;
                 }
             }
-        System.out.println("Nothing has been done");
     }
 
     public void executeNPCTurn(Entity entity) {
