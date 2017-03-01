@@ -64,7 +64,7 @@ public class Fruit extends Item implements Equipable, Consumable {
 
     @Override
     public void use(Entity entity) {
-        entity.receiveDamage(this.damage, this.name);
+        entity.receivePhysicalDamage(this.damage, this.name);
     }
 
     @Override

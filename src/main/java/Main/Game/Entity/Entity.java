@@ -5,7 +5,7 @@ import Main.Game.Entity.Entities.Item.Inventory;
 
 import java.util.ArrayList;
 
-public abstract class Entity{
+public abstract class Entity implements Fightable{
 
 //add contrustor to do shit from here for player & entity?
 
@@ -30,14 +30,8 @@ public abstract class Entity{
     public abstract int getMentality();
     public abstract int getHardening();
     public abstract int getImprovisation();
+    public abstract String getName();
 
-    //move into seperat class
-    public abstract void attack(ArrayList<Entity> players, ArrayList<Entity> enemies);
-    public abstract void cast(ArrayList<Entity> players, ArrayList<Entity> enemies);
-    public abstract void item(ArrayList<Entity> players, ArrayList<Entity> enemies);
-    public abstract boolean escape(ArrayList<Entity> players, ArrayList<Entity> enemies);
-    public abstract void receiveDamage(int damage, String actor);
-    public abstract void checkLeathal();
 
     public abstract void setBaseAttributes(int baseStrength, int baseEndurance, int baseKnowledge, int basePerception, int baseMentality, int baseHardening, int baseImprovisation);
 
@@ -95,7 +89,7 @@ public abstract class Entity{
         return baseHardening;
     } // *armorModifier * other boni
     protected int calculateBaseResistance(int baseHardening) {
-        return baseHardening *5;
+        return baseHardening;
     } // *armorModifier * other boni
 
     public void printStatus(int xp, int xpToNextLevel, int hp, int maxHp, int mp, int maxMp) {

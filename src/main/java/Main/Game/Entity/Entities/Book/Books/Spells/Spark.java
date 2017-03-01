@@ -15,7 +15,13 @@ public class Spark extends Ability {
     public void use(Entity actor, int damage, ArrayList<Entity> targets) {
         System.out.println("Choose your target (up to " + targets.size() + ")");
         Entity target = targets.get(Integer.parseInt(in.nextLine()));
-        target.receiveDamage(damage, actor.name());
+        target.receiveSpellDamage(damage, actor.name());
+    }
+    @Override
+    public void aiUse(Entity actor, int damage, ArrayList<Entity> targets) {
+        Entity target = targets.get(0); //ToDo sort targets by Hp missing
+        System.out.println(actor.getName() + " uses " + this.toString() + " on " + target.getName() + ".");
+        target.receiveSpellDamage(damage, actor.name());
     }
 
     @Override

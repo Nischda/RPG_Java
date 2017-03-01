@@ -1,5 +1,7 @@
 package Main.Game.Entity.Entities;
 
+import Main.Game.Entity.Entities.Book.Books.Skillbook;
+import Main.Game.Entity.Entities.Book.Books.Spellbook;
 import Main.Game.Entity.Entities.ProfessionLists.Profession;
 import Main.Game.Entity.Entities.RaceLists.Race;
 import Main.Game.Entity.Entity;
@@ -19,6 +21,8 @@ public class NPC extends Entity {
     private Profession profession;
     private Race race;
     private CustomTraitList customTraitList;
+    private Skillbook skillbook;
+    private Spellbook spellbook;
 
     private int xp = 0;
     private int level = 1;
@@ -80,6 +84,8 @@ public class NPC extends Entity {
         this.profession = profession;
         this.race = race;
         this.customTraitList = traitList;
+        this.skillbook = new Skillbook();
+        this.spellbook = new Spellbook();
 
         profession.initializePerks(this);
         race.initializeAttributes(this);
@@ -148,7 +154,6 @@ public class NPC extends Entity {
         this.baseHardening = baseHardening;
         this.baseImprovisation = baseImprovisation;
     }
-
 
     // AddTo Stats
     @Override
@@ -223,38 +228,22 @@ public class NPC extends Entity {
     public int getImprovisation() {
         return improvisation;
     }
+    @Override
+    public String getName(){
+        return this.name();
+    }
 
 //move somewhere else, utility class for abilities?
-    //ATTACK MOVES
+//ATTACK MOVES
+    @Override
     public void attack(ArrayList<Entity> players, ArrayList<Entity> enemies) {
-        boolean validAction = false;
-
-        while (!validAction) {
-            System.out.println("Choose your attack move. (slash/charge/back)");
-            String action = in.nextLine().toUpperCase();
-            System.out.println("Choose your target (1/2/3)");
-            String target = in.nextLine();
-            switch (action) {
-                case "BACK":
-                    System.out.println("not yet implemented. doing nothing");
-                    validAction = true;
-                    break;
-                default:
-                    System.out.println("You can't do that");
-                    validAction = false;
-                    break;
-            }
-        }
+        skillbook.getRandomAbility().aiUse(this, this.damage, enemies);
     }
-
 
     //CAST SPELLS
+    @Override
     public void cast(ArrayList<Entity> players, ArrayList<Entity> enemies) {
-
-    }
-
-    public void firebolt(Entity entity) {
-
+        skillbook.getRandomAbility().aiUse(this, this.spellDamage, enemies);
     }
 
     //USE ITEMS
@@ -275,14 +264,23 @@ public class NPC extends Entity {
 
 
     //PLAYER STATUS
-    public void receiveDamage(int damage, String actor) {
-        int pureDamage = damage / baseArmor;
-        System.out.println(damage + ", " + baseArmor + " = " + pureDamage + "HP:" + this.hp + "/" + this.maxHp);
+    @Override
+    public void receivePhysicalDamage(int damage, String actor) {
+        int pureDamage = damage - baseArmor;
+        if(pureDamage <= 0) pureDamage = 1;
         this.hp -= pureDamage;
         System.out.println("You dealt " + pureDamage + " damage to " + this.name + ".");
         checkLeathal();
     }
-
+    @Override
+    public void receiveSpellDamage(int damage, String actor) {
+        int pureDamage = damage - baseResistance;
+        if(pureDamage <= 0) pureDamage = 1;
+        this.hp-= pureDamage;
+        System.out.println("You dealt " + pureDamage + " spell damage to " + this.name + ".");
+        checkLeathal();
+    }
+    @Override
     public void checkLeathal() {
         if (this.hp < 0) {
             System.out.println(this.name + " died.");

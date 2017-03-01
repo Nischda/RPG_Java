@@ -8,6 +8,7 @@ import Main.Game.Entity.Entities.Book.Books.Spells.Spark;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
 
 public class Skillbook extends Book {
 
@@ -32,7 +33,6 @@ public class Skillbook extends Book {
     @Override
     public boolean include(Ability ability) {
         return skillbook.contains(ability);
-
     }
 
     @Override
@@ -52,6 +52,11 @@ public class Skillbook extends Book {
             }
         }
         return null;
+    }
+    @Override
+    public Ability getRandomAbility() {
+        Random intRandom = new Random();
+        return skillbook.get(intRandom.nextInt(skillbook.size()-1));
     }
 
     @Override

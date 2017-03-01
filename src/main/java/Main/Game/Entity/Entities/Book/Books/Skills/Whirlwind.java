@@ -11,9 +11,15 @@ public class Whirlwind extends Ability {
     @Override
     public void use(Entity actor, int damage, ArrayList<Entity> targets) {
         System.out.println("You attack all targets!");
-
         for(Entity target: targets) {
-            target.receiveDamage(damage, actor.name());
+            target.receivePhysicalDamage(damage, actor.name());
+        }
+    }
+    @Override
+    public void aiUse(Entity actor, int damage, ArrayList<Entity> targets) {
+        System.out.println(actor.getName() + " uses " + this.toString() + ".");
+        for(Entity target: targets) {
+            target.receivePhysicalDamage(damage, actor.name());
         }
     }
 

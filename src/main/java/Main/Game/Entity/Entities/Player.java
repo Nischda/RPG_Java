@@ -230,8 +230,12 @@ public class Player extends Entity {
     public int getImprovisation() {
         return improvisation;
     }
-
+    @Override
+    public String getName(){
+        return "you";
+    } //ToDo differentiate with real name
     //ATTACK MOVES
+    @Override
     public void attack(ArrayList<Entity> players, ArrayList<Entity> enemies) {
         boolean validAction = false;
 
@@ -250,6 +254,7 @@ public class Player extends Entity {
         }
     }
     //CAST SPELLS
+    @Override
     public void cast(ArrayList<Entity> players, ArrayList<Entity> enemies) {
         boolean validAction = false;
 
@@ -285,13 +290,23 @@ public class Player extends Entity {
     }
 
     //PLAYER STATUS
-    public void receiveDamage(int damage, String actor) {
-        int pureDamage = damage/baseArmor;
+    @Override
+    public void receivePhysicalDamage(int damage, String actor) {
+        int pureDamage = damage - baseArmor;
+        if(pureDamage <= 0) pureDamage = 1;
         this.hp-= pureDamage;
-        System.out.println("You  received" + pureDamage + " damage from " + actor + ".");
+        System.out.println("You received " + pureDamage + " damage from " + actor + ".");
         checkLeathal();
     }
-
+    @Override
+    public void receiveSpellDamage(int damage, String actor) {
+        int pureDamage = damage - baseResistance;
+        if(pureDamage <= 0) pureDamage = 1;
+        this.hp-= pureDamage;
+        System.out.println("You  received" + pureDamage + " spell damage from " + actor + ".");
+        checkLeathal();
+    }
+    @Override
     public void checkLeathal() {
         if(this.hp < 0) {
             System.out.println("You died.");

@@ -33,10 +33,11 @@ public class Battlefield {
             roundCount++;
             while (playerGotTurns || enemyGotTurns) { //rounds end if every entity has acted
                 turnCount++;
-                System.out.println("Round: " + roundCount + " | Turn: " + turnCount);
+                //System.out.println("Round: " + roundCount + " | Turn: " + turnCount);
+                System.out.println();
                 if ((players.get(0).getEndurance() >= enemies.get(0).getEndurance() && playerGotTurns) || (playerGotTurns && !enemyGotTurns)) {//Playerturn
                     playerTurnCount++;
-                    if (playerTurnCount >= players.size() - 1) {
+                    if (playerTurnCount >= players.size()) {
                         playerGotTurns = false;
                     }
                     executePlayerTurn(players.get(0));
@@ -44,7 +45,7 @@ public class Battlefield {
                 }
                 else if (enemyGotTurns) {//Enemyturn
                     enemyTurnCount++;
-                    if (enemyTurnCount >= enemies.size() - 1) {
+                    if (enemyTurnCount >= enemies.size()) {
                         enemyGotTurns = false;
                     }
                     executeNPCTurn(enemies.get(0));
@@ -55,6 +56,7 @@ public class Battlefield {
     }
 
     public void executePlayerTurn(Entity entity) {
+        System.out.println("----------------------------------------------------------------------------------------------------");
         System.out.println("Your turn:");
         Entity.printEntities(this.players);
         Entity.printEntities(this.enemies);
@@ -90,7 +92,16 @@ public class Battlefield {
     }
 
     public void executeNPCTurn(Entity entity) {
-        System.out.println("Turn of: " + entity.toString());
+        //System.out.println("Turn of: " + entity.toString());
+        Random intRandom = new Random();
+        int rand = intRandom.nextInt(10) + 1;
+        if(rand < 5) entity.attack(enemies, players);
+        else {
+            entity.cast(enemies, players);
+        }
+        //add item use chance of inventory contains items
+        //add escapechance if health is < 20%
+        //add
     }
 
     private void sortEntities(ArrayList<Entity> entities) {

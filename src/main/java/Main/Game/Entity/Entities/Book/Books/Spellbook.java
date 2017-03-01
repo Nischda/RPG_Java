@@ -2,12 +2,10 @@ package Main.Game.Entity.Entities.Book.Books;
 
 
 import Main.Game.Entity.Entities.Book.Book;
-import Main.Game.Entity.Entities.Book.Books.Skills.Slash;
-import Main.Game.Entity.Entities.Book.Books.Skills.Whirlwind;
 import Main.Game.Entity.Entities.Book.Books.Spells.Spark;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Random;
 
 public class Spellbook extends Book {
 
@@ -15,8 +13,7 @@ public class Spellbook extends Book {
 
     public Spellbook() {
         spellbook = new ArrayList<>();
-        spellbook.add(new Slash());
-        spellbook.add(new Whirlwind());
+        spellbook.add(new Spark());
     }
 
     @Override
@@ -52,6 +49,11 @@ public class Spellbook extends Book {
             }
         }
         return null;
+    }
+    @Override
+    public Ability getRandomAbility() {
+        Random intRandom = new Random();
+        return spellbook.get(intRandom.nextInt(spellbook.size()-1));
     }
 
     @Override

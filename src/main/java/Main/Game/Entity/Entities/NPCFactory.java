@@ -8,8 +8,10 @@ import Main.Game.Entity.Entities.ProfessionLists.Profession;
 import Main.Game.Entity.Entity;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public final class NPCFactory {
+    private static String[] names = {"Karl","Günther","Johann","Steve","Pete","Jeff","Glumbar","Kniggara","Gilber,","Brick"};
 
     public static ArrayList<Entity> createNPCs(int npcCount, int traitCount) {
 
@@ -32,8 +34,9 @@ public final class NPCFactory {
     }
 
     public static String chooseName() {
-        String name = "Bob";
-        return name;
+        Random intRandom = new Random();
+        int rand = intRandom.nextInt(names.length -1);
+        return names[rand];
     }
     public static Profession chooseProfession() {
         Profession profession = Profession.getProfession("duelist");

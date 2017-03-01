@@ -2,17 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c670e49-837f-43cc-8ce4-86261f591d95" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Fightable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Book/Books/Skills/Slash.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Book/Books/Skills/Slash.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Book/Books/Skills/Whirlwind.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Book/Books/Skills/Whirlwind.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Book/Books/Spellbook.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Book/Books/Spellbook.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Book/Books/Spells/Spark.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Book/Books/Spells/Spark.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Item/Items/Fruit.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Item/Items/Fruit.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/NPC.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/NPC.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/NPCFactory.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/NPCFactory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Player.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Player.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entity.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Map/Battlefield$1.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Map/Battlefield$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Map/Battlefield.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Map/Battlefield.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Map/TileLists/Tiles/Forest.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Map/TileLists/Tiles/Forest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Book.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Book.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Ability.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Ability.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Skillbook.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Skillbook.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Skills/Slash.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Skills/Slash.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Skills/Whirlwind.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Skills/Whirlwind.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Spellbook.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Spellbook.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Spells/Spark.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Spells/Spark.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Item/Items/Fruit.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Item/Items/Fruit.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/NPC.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/NPC.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/NPCFactory.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/NPCFactory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Player.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Player.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entity.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Map/Battlefield.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Map/Battlefield.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Map/TileLists/Tiles/Forest.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Map/TileLists/Tiles/Forest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -35,12 +50,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="NPC.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NPC.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/NPC.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="272" column="21" lean-forward="true" selection-start-line="272" selection-start-column="21" selection-end-line="272" selection-end-column="21" />
-              <folding />
+            <state relative-caret-position="365">
+              <caret line="234" column="0" lean-forward="false" selection-start-line="234" selection-start-column="0" selection-end-line="234" selection-end-column="0" />
+              <folding>
+                <element signature="e#7391#7392#0" expanded="true" />
+                <element signature="e#7425#7426#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -48,21 +66,18 @@
       <file leaf-file-name="Battlefield.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Map/Battlefield.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="84" column="63" lean-forward="true" selection-start-line="84" selection-start-column="63" selection-end-line="84" selection-end-column="63" />
-              <folding>
-                <element signature="e#3244#3245#0" expanded="true" />
-                <element signature="e#3311#3312#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="272">
+              <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <file leaf-file-name="Spellbook.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Spellbook.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="379">
+              <caret line="54" column="40" lean-forward="true" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -70,12 +85,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Intro.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Intro.java">
+      <file leaf-file-name="Skillbook.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Skillbook.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="116" column="0" lean-forward="true" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="345">
+              <caret line="58" column="65" lean-forward="false" selection-start-line="58" selection-start-column="65" selection-end-line="58" selection-end-column="65" />
+              <folding>
+                <element signature="e#889#890#0" expanded="true" />
+                <element signature="e#939#940#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -83,8 +101,8 @@
       <file leaf-file-name="NPCFactory.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/NPCFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="55" column="44" lean-forward="false" selection-start-line="55" selection-start-column="44" selection-end-line="55" selection-end-column="44" />
+            <state relative-caret-position="464">
+              <caret line="36" column="40" lean-forward="true" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -93,12 +111,19 @@
       <file leaf-file-name="Whirlwind.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Skills/Whirlwind.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding>
-                <element signature="e#611#612#0" expanded="true" />
-                <element signature="e#645#646#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="272">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="79" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Slash.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Skills/Slash.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="107" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -106,8 +131,8 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="275" column="0" lean-forward="false" selection-start-line="275" selection-start-column="0" selection-end-line="285" selection-end-column="0" />
+            <state relative-caret-position="416">
+              <caret line="247" column="22" lean-forward="true" selection-start-line="247" selection-start-column="22" selection-end-line="247" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -115,21 +140,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Tile.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Map/TileLists/Tile.java">
+      <file leaf-file-name="Spark.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Spells/Spark.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Forest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Map/TileLists/Tiles/Forest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+            <state relative-caret-position="272">
+              <caret line="20" column="76" lean-forward="true" selection-start-line="20" selection-start-column="76" selection-end-line="20" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -138,12 +153,9 @@
       <file leaf-file-name="Entity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="37" column="27" lean-forward="false" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
-              <folding>
-                <element signature="e#3917#3918#0" expanded="true" />
-                <element signature="e#3953#3954#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="204">
+              <caret line="29" column="32" lean-forward="true" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -154,14 +166,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Singleton" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>improvisation</find>
       <find>traits</find>
       <find>Trait</find>
       <find>ProfessionList</find>
@@ -190,6 +201,8 @@
       <find>receiv</find>
       <find>slash</find>
       <find>escape</find>
+      <find>rand</find>
+      <find>getn</find>
     </findStrings>
     <replaceStrings>
       <replace>baseImprovisation</replace>
@@ -212,8 +225,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Item/Items/Food.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Item/Items/Fruit.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Item/Consumable.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Map/Map.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Map/TileLists/Tile.java" />
@@ -225,11 +236,6 @@
         <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Map/TileLists/Tiles/Road.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Map/TileLists/Tiles/UnknownTile.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Skills/Charge.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Book.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Skills/Slash.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Ability.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Skills/Whirlwind.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Spells/Spark.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Shapeshifter.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Wanderer.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Steed.java" />
@@ -255,14 +261,21 @@
         <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Knight.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Trickster.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main/Game/Intro.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Spellbook.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Skillbook.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/NPCFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entity.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Map/TileLists/Tiles/Forest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Item/Items/Fruit.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Fightable.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Book.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Ability.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/NPCFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Skillbook.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Spellbook.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/NPC.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Skills/Whirlwind.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Skills/Slash.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Spells/Spark.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Player.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Map/Battlefield.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/NPC.java" />
       </list>
     </option>
   </component>
@@ -322,8 +335,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -716,13 +727,61 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Spells" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPG_Java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPG_Java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entities" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Book" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Books" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Skills" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1062,8 +1121,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21018419" sideWeight="0.4936034" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1977612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19989339" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1076,6 +1134,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -1096,27 +1155,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Map/TileLists/Tiles/Mountain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="97" column="45" lean-forward="false" selection-start-line="97" selection-start-column="45" selection-end-line="97" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Map/TileLists/Tiles/Ocean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="97" column="45" lean-forward="false" selection-start-line="97" selection-start-column="45" selection-end-line="97" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Map/TileLists/Tiles/Plain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="98" column="45" lean-forward="false" selection-start-line="98" selection-start-column="45" selection-end-line="98" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Map/TileLists/Tiles/PlayerTile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1326">
@@ -1200,46 +1238,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Skills/Charge.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Book.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="50" lean-forward="false" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Spells/Spark.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#637#638#0" expanded="false" />
-            <element signature="e#681#682#0" expanded="false" />
-            <element signature="e#726#727#0" expanded="false" />
-            <element signature="e#756#757#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Ability.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Skills/Slash.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Wanderer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1417,14 +1415,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Spellbook.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="62" column="30" lean-forward="false" selection-start-line="62" selection-start-column="30" selection-end-line="62" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/CustomTraitList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1441,17 +1431,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Skillbook.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="47" column="45" lean-forward="false" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
+        <state relative-caret-position="34">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1461,45 +1443,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Intro.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="116" column="0" lean-forward="true" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+        <state relative-caret-position="1870">
+          <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/NPCFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="55" column="44" lean-forward="false" selection-start-line="55" selection-start-column="44" selection-end-line="55" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Skills/Whirlwind.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#611#612#0" expanded="true" />
-            <element signature="e#645#646#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="37" column="27" lean-forward="false" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
-          <folding>
-            <element signature="e#3917#3918#0" expanded="true" />
-            <element signature="e#3953#3954#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Map/TileLists/Tiles/Forest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
+        <state relative-caret-position="1088">
           <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
           <folding />
         </state>
@@ -1513,21 +1465,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Map/Battlefield.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Item/Items/Fruit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="84" column="63" lean-forward="true" selection-start-line="84" selection-start-column="63" selection-end-line="84" selection-end-column="63" />
+        <state relative-caret-position="529">
+          <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
           <folding>
-            <element signature="e#3244#3245#0" expanded="true" />
-            <element signature="e#3311#3312#0" expanded="true" />
+            <element signature="e#1487#1488#0" expanded="false" />
+            <element signature="e#1555#1556#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Player.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Fightable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="275" column="0" lean-forward="false" selection-start-line="275" selection-start-column="0" selection-end-line="285" selection-end-column="0" />
+        <state relative-caret-position="204">
+          <caret line="12" column="40" lean-forward="false" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Book.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="43" lean-forward="false" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="652" column="0" lean-forward="false" selection-start-line="652" selection-start-column="0" selection-end-line="652" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Ability.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="28" lean-forward="false" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Skillbook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="58" column="65" lean-forward="false" selection-start-line="58" selection-start-column="65" selection-end-line="58" selection-end-column="65" />
+          <folding>
+            <element signature="e#889#890#0" expanded="true" />
+            <element signature="e#939#940#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Spellbook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="54" column="40" lean-forward="true" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1536,8 +1533,69 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/NPC.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="272" column="21" lean-forward="true" selection-start-line="272" selection-start-column="21" selection-end-line="272" selection-end-column="21" />
+        <state relative-caret-position="365">
+          <caret line="234" column="0" lean-forward="false" selection-start-line="234" selection-start-column="0" selection-end-line="234" selection-end-column="0" />
+          <folding>
+            <element signature="e#7391#7392#0" expanded="true" />
+            <element signature="e#7425#7426#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="29" column="32" lean-forward="true" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Skills/Whirlwind.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Spells/Spark.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="20" column="76" lean-forward="true" selection-start-line="20" selection-start-column="76" selection-end-line="20" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="247" column="22" lean-forward="true" selection-start-line="247" selection-start-column="22" selection-end-line="247" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Map/Battlefield.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/NPCFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="36" column="40" lean-forward="true" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Book/Books/Skills/Slash.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="107" />
           <folding />
         </state>
       </provider>
