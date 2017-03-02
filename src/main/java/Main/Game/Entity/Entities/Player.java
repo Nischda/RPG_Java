@@ -322,7 +322,7 @@ public class Player extends Entity {
 
     public void spendAttributePoints() {
         System.out.println("What do you want to spend your " + this.attributePoints + "points on?");
-        printAttributes(baseStrength, baseStamina, baseKnowledge, basePerception, baseMentality, baseHardening);
+        //printAttributes(baseStrength, baseStamina, baseKnowledge, basePerception, baseMentality, baseHardening);
         //continue
     }
     @Override

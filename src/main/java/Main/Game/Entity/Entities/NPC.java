@@ -243,10 +243,11 @@ public class NPC extends Entity {
     //CAST SPELLS
     @Override
     public void cast(ArrayList<Entity> players, ArrayList<Entity> enemies) {
-        skillbook.getRandomAbility().aiUse(this, this.spellDamage, enemies);
+        spellbook.getRandomAbility().aiUse(this, this.spellDamage, enemies);
     }
 
     //USE ITEMS
+    @Override
     public void item(ArrayList<Entity> players, ArrayList<Entity> enemies) {
 
     }
@@ -317,7 +318,7 @@ public class NPC extends Entity {
 
     public void spendAttributePoints() {
         System.out.println("What do you want to spend your " + this.attributePoints + "points on?");
-        printAttributes(baseStrength, baseStamina, baseKnowledge, basePerception, baseMentality, baseHardening);
+        //printAttributes(baseStrength, baseStamina, baseKnowledge, basePerception, baseMentality, baseHardening);
         //continue
     }
 

@@ -5,6 +5,7 @@ import Main.Game.Entity.Entities.RaceLists.Races.Necrotic;
 import Main.Game.Entity.Entities.TraitLists.Traits.Cursed;
 import Main.Game.Entity.Entities.ProfessionLists.Professions.*;
 import Main.Game.Game;
+import Main.Game.TxtReader;
 
 public class Main {
 

@@ -1,12 +1,10 @@
 package Main.Game;
 
 import Main.Game.Entity.Map.Map;
-import Main.Game.Entity.Map.TileLists.Tile;
 import Main.Game.Entity.Entities.Player;
-import Main.Game.Entity.Map.TileLists.Tiles.*;
+import Main.Game.Entity.Map.TileLists.Tile;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Game {
 
@@ -26,13 +24,8 @@ public class Game {
     }
 
     public void generateMap() {
-        ArrayList<ArrayList<Tile>> map = new ArrayList<>();
-        map.add(new ArrayList<>(Arrays.asList(new Mountain(),new Mountain(),new Mountain(),new Mountain(),  new Mountain())));
-        map.add(new ArrayList<>(Arrays.asList(new Ocean(), new Road(),      new Plain(),    new Forest(),   new Ocean())));
-        map.add(new ArrayList<>(Arrays.asList(new Ocean(), new Road(),      new Plain(),    new Plain(),    new Ocean())));
-        map.add(new ArrayList<>(Arrays.asList(new Ocean(), new Road(),      new Road(),     new Plain(),    new Ocean())));
-        map.add(new ArrayList<>(Arrays.asList(new Ocean(), new Village(),   new Road(),     new Forest(),   new Ocean())));
-        map.add(new ArrayList<>(Arrays.asList(new Ocean(), new Ocean(),     new Ocean(),    new Ocean(),    new Ocean())));
-      this.worldMap = new Map(this.player, map);
+        TxtReader txtReader = new TxtReader();
+        ArrayList<ArrayList<Tile>> map = null;
+        this.worldMap = new Map(this.player, txtReader.generateMap());
     }
 }

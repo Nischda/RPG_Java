@@ -19,8 +19,6 @@ public class Battlefield {
     }
 
     public void executeRound() {
-        int playerTurnCount = 0;
-        int enemyTurnCount = 0;
         int roundCount = 0;
 
         while (!battleEnd) {
@@ -31,6 +29,8 @@ public class Battlefield {
             sortEntities(enemies);
 
             roundCount++;
+            int playerTurnCount = 0;
+            int enemyTurnCount = 0;
             while (playerGotTurns || enemyGotTurns) { //rounds end if every entity has acted
                 turnCount++;
                 //System.out.println("Round: " + roundCount + " | Turn: " + turnCount);

@@ -32,9 +32,8 @@ public abstract class Entity implements Fightable{
     public abstract int getImprovisation();
     public abstract String getName();
 
-
     public abstract void setBaseAttributes(int baseStrength, int baseEndurance, int baseKnowledge, int basePerception, int baseMentality, int baseHardening, int baseImprovisation);
-
+    public abstract String toString();
 
     protected int calculateMaxHp(double strengthMod, int baseStrength) {
         return (int)(strengthMod * baseStrength * 10);
@@ -91,23 +90,6 @@ public abstract class Entity implements Fightable{
     protected int calculateBaseResistance(int baseHardening) {
         return baseHardening;
     } // *armorModifier * other boni
-
-    public void printStatus(int xp, int xpToNextLevel, int hp, int maxHp, int mp, int maxMp) {
-        System.out.println("XP: " + xp + "/" + xpToNextLevel);
-        System.out.println("HP: " + hp + "/" + maxHp);
-        System.out.println("MP: " + mp + "/" + maxMp);
-        System.out.println("Status effects: ");
-    }
-
-    public void printAttributes(int baseStrength, int baseStamina, int baseKnowledge, int basePerception, int baseMentality, int baseHardening) {
-        System.out.println("str: "+ baseStrength + " end: "+ baseStamina+ " kno: "+ baseKnowledge + " per: "+ basePerception + " men: "+ baseMentality + " har: "+ baseHardening);
-    }
-
-    public void printInventory(Inventory inventory) {
-        System.out.println(inventory.toString());
-    }
-
-    public abstract String toString();
 
     public static void printEntities(ArrayList<Entity> entityList) {
         StringBuilder string = new StringBuilder();

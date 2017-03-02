@@ -56,7 +56,7 @@ public class Skillbook extends Book {
     @Override
     public Ability getRandomAbility() {
         Random intRandom = new Random();
-        return skillbook.get(intRandom.nextInt(skillbook.size()-1));
+        return skillbook.get(intRandom.nextInt(skillbook.size()));
     }
 
     @Override

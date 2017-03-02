@@ -53,7 +53,7 @@ public class Spellbook extends Book {
     @Override
     public Ability getRandomAbility() {
         Random intRandom = new Random();
-        return spellbook.get(intRandom.nextInt(spellbook.size()-1));
+        return spellbook.get(intRandom.nextInt(spellbook.size()));
     }
 
     @Override
