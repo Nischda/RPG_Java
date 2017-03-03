@@ -2,7 +2,7 @@ package Main.Game.Entity.Entities.TraitLists.Traits;
 
 import Main.Game.Entity.Entities.TraitLists.Trait;
 
-public class Giant extends Trait {
+public class Mountain extends Trait {
 
 
     @Override
