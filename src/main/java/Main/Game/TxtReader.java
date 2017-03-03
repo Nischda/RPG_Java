@@ -1,16 +1,23 @@
 package Main.Game;
 
+import Main.Game.Entity.Entities.NPC;
+import Main.Game.Entity.Entities.ProfessionLists.Profession;
+import Main.Game.Entity.Entities.RaceLists.Race;
+import Main.Game.Entity.Entities.TraitLists.CustomTraitList;
+import Main.Game.Entity.Entities.TraitLists.Trait;
+import Main.Game.Entity.Entity;
 import Main.Game.Entity.Map.TileLists.Tile;
 import Main.Game.Entity.Map.TileLists.Tiles.*;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class TxtReader {
 
-    public ArrayList<ArrayList<Tile>> generateMap() {
+    public static ArrayList<ArrayList<Tile>> generateMap() {
         ArrayList<ArrayList<Tile>> map = new ArrayList<>();
 
         try  {
@@ -45,5 +52,42 @@ public class TxtReader {
             ioe.printStackTrace();
         }
         return map;
+    }
+
+    public static Entity generateNPC(File file, int traitCount) {
+
+        try  {
+            Scanner s = new Scanner(file);
+            int creaturesInFile = Integer.parseInt(s.nextLine());
+            Random intRandom = new Random();
+            int skipLines = intRandom.nextInt(creaturesInFile)*5;
+            for(int i = 0; i < skipLines; i++) {
+                s.nextLine();
+            }
+            String name = s.nextLine();
+            Profession profession = Profession.getProfession(s.nextLine());
+            Race race = Race.getRace(s.nextLine());
+            CustomTraitList traits = chooseTraits(traitCount);
+            //System.out.println(name + " " + profession + " " + race + " " + traits);
+            return new NPC(name, profession, race, traits);
+        }
+        catch(IOException ioe){
+            ioe.printStackTrace();
+        }
+        return new NPC("FailedToCreateNPC", Profession.getProfession("Duelist"), Race.getRace("Dwarf"), chooseTraits(traitCount));
+    }
+
+    public static CustomTraitList chooseTraits(int traitCount) {
+        CustomTraitList customTraitList = new CustomTraitList();
+        for(int i = 0; i <traitCount; i++) {
+            Trait trait = chooseTrait();
+            customTraitList.addToList(trait);
+        }
+        return customTraitList;
+    }
+
+    public static Trait chooseTrait() {
+        Trait trait = Trait.getTrait("cursed");
+        return trait;
     }
 }

@@ -6,12 +6,14 @@ import Main.Game.Entity.Map.Battlefield;
 import Main.Game.Entity.Map.TileLists.Tile;
 import Main.Game.Entity.Entities.Player;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
 public class UnknownTile extends Tile {
 
+    private String creaturePath = "D:/RPG_Java/src/main/java/Main/Resources/forestCreatures.txt";
     private Scanner in = new Scanner(System.in);
     Player player;
     ArrayList<Entity> enemyList;
@@ -63,9 +65,8 @@ public class UnknownTile extends Tile {
         }
     }
     public void initializeTile() {
-        this.enemyList = NPCFactory.createNPCs(3, 2);
+        this.enemyList = NPCFactory.createNPCs(new File(creaturePath),2,1); //ToDo add Ranges
     }
-
     public void searchArea() {
         System.out.println("You start to search the area...");
         Random intrandom = new Random();

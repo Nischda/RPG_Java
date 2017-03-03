@@ -303,7 +303,7 @@ public class Player extends Entity {
         int pureDamage = damage - baseResistance;
         if(pureDamage <= 0) pureDamage = 1;
         this.hp-= pureDamage;
-        System.out.println("You  received" + pureDamage + " spell damage from " + actor + ".");
+        System.out.println("You  received " + pureDamage + " spell damage from " + actor + ".");
         checkLeathal();
     }
     @Override

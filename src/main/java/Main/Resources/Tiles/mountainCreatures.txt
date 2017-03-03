@@ -1,0 +1,20 @@
+4
+wolf
+carnivore
+beast
+This is quite an angry wolf.
+
+mountain lizard
+carnivore
+dragon
+A goat is hanging out of his mouth.
+
+mountain ogre
+bruiser
+giant
+How could i not have seen him?
+
+mountain hawk
+carnivore
+beast
+The mountain crumbles when it lifts off.

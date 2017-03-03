@@ -1,0 +1,20 @@
+4
+villager
+craftsman
+human
+In his spare time he crafts chairs out of bones.
+
+villager 
+farmer
+human
+He keeps throwing pitchforks!
+
+guard
+knight
+human
+Do not make him angry!
+
+prophet
+spiritualist
+human
+He can't possibly always be wrong!
