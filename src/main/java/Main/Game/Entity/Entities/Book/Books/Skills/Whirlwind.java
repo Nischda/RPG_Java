@@ -5,15 +5,18 @@ import Main.Game.Entity.Entities.Book.Books.Ability;
 import Main.Game.Entity.Entity;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Whirlwind extends Ability {
 
     @Override
-    public void use(Entity actor, int damage, ArrayList<Entity> targets) {
+    public ArrayList<HashMap<Entity, Integer>> use(Entity actor, int damage, ArrayList<Entity> targets) {
         System.out.println("You attack all targets!");
+        ArrayList<HashMap<Entity, Integer>> actions = new ArrayList<>();
         for(Entity target: targets) {
-            target.receivePhysicalDamage(damage, actor.name());
+            actions.add(target.receivePhysicalDamage(damage, actor.name()));
         }
+        return actions;
     }
     @Override
     public void aiUse(Entity actor, int damage, ArrayList<Entity> targets) {

@@ -1,14 +1,16 @@
 package Main.Game.Entity.Entities.TraitLists;
 
+import Main.Game.Entity.Entity;
+
 import java.util.ArrayList;
 
-public class CustomTraitList {
+public class TraitList {
 
     private static ArrayList<Trait> traitList = new ArrayList<>();
 
-    public void initializeAllTraits() {
+    public void initializeAllTraits(Entity entity) {
         for(Trait trait : traitList) {
-            trait.inititializeTrait();
+            trait.initializeTrait(entity);
         }
     }
 

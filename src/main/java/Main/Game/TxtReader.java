@@ -3,7 +3,7 @@ package Main.Game;
 import Main.Game.Entity.Entities.NPC;
 import Main.Game.Entity.Entities.ProfessionLists.Profession;
 import Main.Game.Entity.Entities.RaceLists.Race;
-import Main.Game.Entity.Entities.TraitLists.CustomTraitList;
+import Main.Game.Entity.Entities.TraitLists.TraitList;
 import Main.Game.Entity.Entities.TraitLists.Trait;
 import Main.Game.Entity.Entity;
 import Main.Game.Entity.Map.TileLists.Tile;
@@ -67,7 +67,7 @@ public class TxtReader {
             String name = s.nextLine();
             Profession profession = Profession.getProfession(s.nextLine());
             Race race = Race.getRace(s.nextLine());
-            CustomTraitList traits = chooseTraits(traitCount);
+            TraitList traits = chooseTraits(traitCount);
             //System.out.println(name + " " + profession + " " + race + " " + traits);
             return new NPC(name, profession, race, traits);
         }
@@ -77,13 +77,13 @@ public class TxtReader {
         return new NPC("FailedToCreateNPC", Profession.getProfession("Duelist"), Race.getRace("Dwarf"), chooseTraits(traitCount));
     }
 
-    public static CustomTraitList chooseTraits(int traitCount) {
-        CustomTraitList customTraitList = new CustomTraitList();
+    public static TraitList chooseTraits(int traitCount) {
+        TraitList traitList = new TraitList();
         for(int i = 0; i <traitCount; i++) {
             Trait trait = chooseTrait();
-            customTraitList.addToList(trait);
+            traitList.addToList(trait);
         }
-        return customTraitList;
+        return traitList;
     }
 
     public static Trait chooseTrait() {

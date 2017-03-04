@@ -3,7 +3,7 @@ package Main.Game.Entity.Entities.Book;
 
 import Main.Game.Entity.Entities.Book.Books.Ability;
 
-public abstract class Book {
+public abstract class ActiveBook {
 
     public abstract void add(Ability ability);
     public abstract void remove(Ability ability);

@@ -14,7 +14,7 @@ public class Bruiser extends Profession {
 
     @Override
     public void initializePerks(Entity entity) {
-        entity.addToEnduranceMod(0.1);
+        entity.addToStrengthMod(0.2);
         //activate player.attackPattern = doublehit
     }
 

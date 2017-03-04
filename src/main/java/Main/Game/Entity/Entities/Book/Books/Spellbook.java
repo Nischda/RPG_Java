@@ -1,13 +1,13 @@
 package Main.Game.Entity.Entities.Book.Books;
 
 
-import Main.Game.Entity.Entities.Book.Book;
+import Main.Game.Entity.Entities.Book.ActiveBook;
 import Main.Game.Entity.Entities.Book.Books.Spells.Spark;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Spellbook extends Book {
+public class Spellbook extends ActiveBook {
 
     private static ArrayList<Ability> spellbook;
 

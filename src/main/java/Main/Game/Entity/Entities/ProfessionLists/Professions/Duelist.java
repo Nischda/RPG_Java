@@ -14,7 +14,7 @@ public class Duelist extends Profession {
 
     @Override
     public void initializePerks(Entity entity) {
-        entity.addToEnduranceMod(0.1);
+        entity.addToEnduranceMod(0.2);
     }
 
     @Override

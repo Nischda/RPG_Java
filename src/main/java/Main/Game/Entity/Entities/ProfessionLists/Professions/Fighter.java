@@ -14,7 +14,7 @@ public class Fighter extends Profession {
 
     @Override
     public void initializePerks(Entity entity) {
-        entity.addToImprovisationMod(0.1); //Todo change all mods of professions/make a lisz
+        entity.addToPerceptionMod(0.2);
         //activate player.attackPattern = doublehit
     }
 

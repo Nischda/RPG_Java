@@ -14,7 +14,7 @@ public class Spiritualist extends Profession {
 
     @Override
     public void initializePerks(Entity entity) {
-        entity.addToMentalityMod(0.1);
+        entity.addToMentalityMod(0.2);
     }
 
     @Override

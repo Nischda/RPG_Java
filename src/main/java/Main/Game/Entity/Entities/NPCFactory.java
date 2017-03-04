@@ -1,16 +1,11 @@
 package Main.Game.Entity.Entities;
 
 
-import Main.Game.Entity.Entities.RaceLists.Race;
-import Main.Game.Entity.Entities.TraitLists.CustomTraitList;
-import Main.Game.Entity.Entities.TraitLists.Trait;
-import Main.Game.Entity.Entities.ProfessionLists.Profession;
 import Main.Game.Entity.Entity;
 import Main.Game.TxtReader;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Random;
 
 public final class NPCFactory {
 

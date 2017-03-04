@@ -22,6 +22,18 @@ public abstract class Entity implements Fightable{
     public abstract void addToHardeningMod(double value);
     public abstract void addToImprovisationMod(double value);
 
+    public abstract void addToDamageMod(double value);
+    public abstract void addToStaminaMod(double value);
+    public abstract void addToSpellDamageMod(double value);
+    public abstract void addToCharismaMod(double value);
+    public abstract void addToEffectChanceMod(double value);
+    public abstract void addToHpRegMod(double value);
+    public abstract void addToMpRegMod(double value);
+    public abstract void addToArmorMod(double value);
+    public abstract void addToResistanceMod(double value);
+    public abstract void addToMaxHpMod(double value);
+    public abstract void addToMaxMpMod(double value);
+
     public abstract String name();
     public abstract int getStrength();
     public abstract int getEndurance();
@@ -35,12 +47,13 @@ public abstract class Entity implements Fightable{
     public abstract void setBaseAttributes(int baseStrength, int baseEndurance, int baseKnowledge, int basePerception, int baseMentality, int baseHardening, int baseImprovisation);
     public abstract String toString();
 
-    protected int calculateMaxHp(double strengthMod, int baseStrength) {
+    protected int calculateBaseMaxHp(double strengthMod, int baseStrength) {
         return (int)(strengthMod * baseStrength * 10);
     }
-    protected int calculateMaxMp(double knowledgeMod, int baseKnowledge) {
+    protected int calculateBaseMaxMp(double knowledgeMod, int baseKnowledge) {
         return (int)(knowledgeMod * baseKnowledge * 10);
     }
+
     protected int calculateStrength(double strengthMod, int baseStrength) {
         return (int)(strengthMod * baseStrength);
     }
@@ -61,6 +74,40 @@ public abstract class Entity implements Fightable{
     }
     protected int calculateBaseImprovisation(double improvisationMod, int baseImprovisation) {
         return (int)(improvisationMod * baseImprovisation);
+    }
+
+    protected int calculateDamage(double baseDamage, int damageMod) {
+        return (int)(baseDamage * damageMod);
+    }
+    protected int calculateStamina(double baseStamina, int staminaMod) {
+        return (int)(baseStamina * staminaMod);
+    }
+    protected int calculateSpellDamage(double baseSpellDamage, int spellDamageMod) {
+        return (int)(baseSpellDamage * spellDamageMod);
+    }
+    protected int calculateCharisma(double baseCharisma, int charismaMod) {
+        return (int)(baseCharisma * charismaMod);
+    }
+    protected int calculateEffectChance(double baseEffectChance, int effectChanceMod) {
+        return (int)(baseEffectChance * effectChanceMod);
+    }
+    protected int calculateHpReg(double baseHpReg, int hpRegMod) {
+        return (int)(baseHpReg * hpRegMod);
+    }
+    protected int calculateMpReg(double baseMpReg, int mpRegMod) {
+        return (int)(baseMpReg * mpRegMod);
+    }
+    protected int calculateArmor(double baseArmor, int armorMod) {
+        return (int)(baseArmor * armorMod);
+    }
+    protected int calculateResistance(double baseResistance, int resistanceMod) {
+        return (int)(baseResistance * resistanceMod);
+    }
+    protected int calculateMaxHp(double baseMaxHp, int maxHpMod) {
+        return (int)(baseMaxHp * maxHpMod);
+    }
+    protected int calculateMaxMp(double baseMaxMp, int maxMpMod) {
+        return (int)(baseMaxMp * maxMpMod);
     }
 
     protected int calculateBaseDamage(int baseStrength) {

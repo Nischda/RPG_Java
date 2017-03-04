@@ -1,14 +1,14 @@
 package Main.Game.Entity.Entities;
 
-import Main.Game.Entity.Entities.Book.Books.Skillbook;
-import Main.Game.Entity.Entities.Book.Books.Spellbook;
+import Main.Game.Entity.Entities.Book.Books.*;
 import Main.Game.Entity.Entities.Item.Inventory;
 import Main.Game.Entity.Entities.RaceLists.Race;
-import Main.Game.Entity.Entities.TraitLists.CustomTraitList;
+import Main.Game.Entity.Entities.TraitLists.TraitList;
 import Main.Game.Entity.Entity;
 import Main.Game.Entity.Entities.ProfessionLists.Profession;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -20,9 +20,10 @@ public class Player extends Entity {
     private String name;
     private Profession profession;
     private Race race;
-    private CustomTraitList customTraitList;
+    private TraitList traitList;
     private Skillbook skillbook;
     private Spellbook spellbook;
+    private Perkbook perkbook;
 
     private int xp = 0;
     private int level = 1;
@@ -67,6 +68,20 @@ public class Player extends Entity {
     private int baseMpReg;
     private int baseArmor;
     private int baseResistance;
+    private int baseMaxHp;
+    private int baseMaxMp;
+
+    private double damageMod = 1;
+    private double staminaMod = 1;
+    private double spellDamageMod = 1;
+    private double charismaMod = 1;
+    private double effectChanceMod = 1;
+    private double maxHpMod = 1;
+    private double maxMpMod = 1;
+    private double hpRegMod = 1;
+    private double mpRegMod = 1;
+    private double armorMod = 1;
+    private double resistanceMod = 1;
 
     private int damage;
     private int stamina;
@@ -79,25 +94,23 @@ public class Player extends Entity {
     private int resistance;
 
 
-    public Player(String name, Profession profession, Race race, CustomTraitList traitList) {
+    public Player(String name, Profession profession, Race race, TraitList traitList) {
         this.name = name;
         this.profession = profession;
         this.race = race;
-        this.customTraitList = traitList;
+        this.traitList = traitList;
         this.skillbook = new Skillbook();
         this.spellbook = new Spellbook();
+        this.perkbook = new Perkbook();
+
 
         profession.initializePerks(this);
         race.initializeAttributes(this);
-        traitList.initializeAllTraits();
+        traitList.initializeAllTraits(this);
 
         updatePlayer();
         this.hp = maxHp;
         this.mp = maxMp;
-
-        printStatus();
-        System.out.println(this.toString());
-        printCharacter();
     }
 
     public void updatePlayer() {
@@ -125,19 +138,21 @@ public class Player extends Entity {
         this.baseMpReg = calculateBaseMpReg (baseMentality); //add clothes
         this.baseArmor = calculateBaseArmor(baseHardening); //add clothes & weapon
         this.baseResistance = calculateBaseResistance(baseHardening); //add clothes
-        this.maxHp = calculateMaxHp(strengthMod, baseStrength); //make base?
-        this.maxMp = calculateMaxMp(knowledgeMod, baseKnowledge); //make base?
+        this.baseMaxHp = calculateBaseMaxHp(strengthMod, baseStrength); //make base?
+        this.baseMaxMp = calculateBaseMaxMp(knowledgeMod, baseKnowledge); //make base?
     }
-    private void calculateValues() {
-        this.damage = baseDamage;               //add status effects
-        this.stamina = baseStamina;             //add status effects
-        this.spellDamage = baseSpellDamage;     //add status effects
-        this.charisma = baseCharisma;           //add status effects
-        this.effectChance = baseEffectChance;   //add status effects
-        this.hpReg = baseHpReg;                 //add status effects
-        this.mpReg = baseMpReg;                 //add status effects
-        this.armor = baseArmor;                 //add status effects
-        this.resistance = baseResistance;       //add status effects
+    private void calculateValues() { //ToDo Add Clothes/Status effects
+        this.damage = calculateDamage(damageMod, baseDamage);
+        this.stamina = calculateStamina(staminaMod, baseStamina);
+        this.spellDamage = calculateSpellDamage(spellDamageMod, baseSpellDamage);
+        this.charisma = calculateCharisma(charismaMod, baseCharisma);
+        this.effectChance = calculateEffectChance(effectChanceMod, baseEffectChance);
+        this.hpReg = calculateHpReg(hpRegMod, baseHpReg);
+        this.mpReg = calculateMpReg(mpRegMod, baseMpReg);
+        this.armor = calculateArmor(armorMod, baseArmor);
+        this.resistance = calculateResistance(resistanceMod, baseResistance);
+        this.maxHp = calculateMaxHp(maxHpMod, baseMaxHp);
+        this.maxMp = calculateMaxMp(maxMpMod, baseMaxMp);
     }
 
 
@@ -153,7 +168,6 @@ public class Player extends Entity {
         this.baseImprovisation = baseImprovisation;
     }
 
-
     public String name() {
         return this.name;
     }
@@ -161,14 +175,28 @@ public class Player extends Entity {
     @Override
     public void addToHp(double value) {
         this.hp += value;
-    }
+    } //useful?
     @Override
     public void addToMp(double value) {
         this.mp += value;
-    }
+    } //useful?
     @Override
     public void addToXp(double value) {
         this.xp += value;
+    }
+
+    //add to books
+    @Override
+    public void addToSkillbook(Ability ability) {
+        this.skillbook.add(ability);
+    }
+    @Override
+    public void addToSpellbook(Ability ability) {
+        this.spellbook.add(ability);
+    }
+    @Override
+    public void addToPerkbook(Perk perk) {
+        this.perkbook.add(perk);
     }
 
     // AddTo ATTRIBUTE MODIFIER
@@ -199,6 +227,52 @@ public class Player extends Entity {
     @Override
     public void addToImprovisationMod(double value) {
         improvisationMod += value;
+    }
+
+    // AddTo Stat MODIFIER
+    @Override
+    public void addToDamageMod(double value) {
+        damageMod += value;
+    }
+    @Override
+    public void addToStaminaMod(double value) {
+        staminaMod += value;
+    }
+    @Override
+    public void addToSpellDamageMod(double value) {
+        spellDamageMod += value;
+    }
+    @Override
+    public void addToCharismaMod(double value) {
+        charismaMod += value;
+    }
+    @Override
+    public void addToEffectChanceMod(double value) {
+        effectChanceMod += value;
+    }
+    @Override
+    public void addToHpRegMod(double value) {
+        hpRegMod += value;
+    }
+    @Override
+    public void addToMpRegMod(double value) {
+        mpRegMod += value;
+    }
+    @Override
+    public void addToArmorMod(double value) {
+        armorMod += value;
+    }
+    @Override
+    public void addToResistanceMod(double value) {
+        resistanceMod += value;
+    }
+    @Override
+    public void addToMaxHpMod(double value) {
+        maxHpMod += value;
+    }
+    @Override
+    public void addToMaxMpMod(double value) {
+        maxMpMod += value;
     }
 
     //GET ATTRIBUTES
@@ -234,17 +308,18 @@ public class Player extends Entity {
     public String getName(){
         return "you";
     } //ToDo differentiate with real name
+
     //ATTACK MOVES
     @Override
     public void attack(ArrayList<Entity> players, ArrayList<Entity> enemies) {
         boolean validAction = false;
-
-        while (!validAction) {
+      while (!validAction) {
             System.out.println("Choose your attack move. (" + skillbook.toString() + ")");
             String action = in.nextLine().toLowerCase();
 
             if (skillbook.contains(action)) {//already uses getAbility ->simplify
-                skillbook.getAbility(action).use(this, this.damage, enemies);
+                ArrayList<HashMap<Entity, Integer>> actions = skillbook.getAbility(action).use(this, this.damage, enemies);
+                perkbook.use(this, actions);
                 validAction = true;
             }
             else {
@@ -291,20 +366,27 @@ public class Player extends Entity {
 
     //PLAYER STATUS
     @Override
-    public void receivePhysicalDamage(int damage, String actor) {
+    public HashMap<Entity, Integer> receivePhysicalDamage(int damage, String actor) {
         int pureDamage = damage - baseArmor;
         if(pureDamage <= 0) pureDamage = 1;
         this.hp-= pureDamage;
         System.out.println("You received " + pureDamage + " damage from " + actor + ".");
         checkLeathal();
+        HashMap hashmap = new HashMap<Entity, Integer>();
+        hashmap.put(this, pureDamage);
+        return hashmap;
     }
+
     @Override
-    public void receiveSpellDamage(int damage, String actor) {
+    public HashMap<Entity, Integer> receiveSpellDamage(int damage, String actor) {
         int pureDamage = damage - baseResistance;
         if(pureDamage <= 0) pureDamage = 1;
         this.hp-= pureDamage;
         System.out.println("You  received " + pureDamage + " spell damage from " + actor + ".");
         checkLeathal();
+        HashMap hashmap = new HashMap<Entity, Integer>();
+        hashmap.put(this, pureDamage);
+        return hashmap;
     }
     @Override
     public void checkLeathal() {
@@ -335,7 +417,7 @@ public class Player extends Entity {
         System.out.println("name: " + name);
         System.out.println("profession: " + profession);
         System.out.println("race: " + race);
-        System.out.println("customTraitList: " + customTraitList.toString());
+        System.out.println("traitList: " + traitList.toString());
         System.out.println("skillbook: " + skillbook.toString());
         System.out.println("spellbook: " + spellbook.toString());
 

@@ -3,7 +3,7 @@ package Main.Game;
 import Main.Game.Entity.Entities.ProfessionLists.Profession;
 import Main.Game.Entity.Entities.Player;
 import Main.Game.Entity.Entities.RaceLists.Race;
-import Main.Game.Entity.Entities.TraitLists.CustomTraitList;
+import Main.Game.Entity.Entities.TraitLists.TraitList;
 import Main.Game.Entity.Entities.TraitLists.Trait;
 
 import java.util.Scanner;
@@ -13,7 +13,7 @@ public class Intro {
     private String name;
     private Profession profession;
     private Race race;
-    private CustomTraitList customTraitList = new CustomTraitList();
+    private TraitList traitList = new TraitList();
 
     private Scanner in = new Scanner(System.in);
 
@@ -69,14 +69,14 @@ public class Intro {
         while (!validTraits || !approval) {
             System.out.println("The world destined you the burden of? (enter up to 3 traits, enter 'accept' to continue)");
             System.out.println(Trait.toS());
-            System.out.println(String.format("Current traits: %s/%s:%s.", curTraits, maxTraits, customTraitList.toString()));
+            System.out.println(String.format("Current traits: %s/%s:%s.", curTraits, maxTraits, traitList.toString()));
             String input = in.nextLine().toLowerCase();
             if(curTraits < maxTraits) {
                 validTraits = true;
                 if (Trait.include(input)) {
                     Trait traitObject = Trait.getTrait(input);
-                    if (!customTraitList.include(traitObject)) {
-                        customTraitList.addToList(traitObject);
+                    if (!traitList.include(traitObject)) {
+                        traitList.addToList(traitObject);
                         curTraits++;
                     }
                 }
@@ -85,7 +85,7 @@ public class Intro {
                 }
             }
         }
-        System.out.println(String.format("The world destined you the burden of: %s", customTraitList.toString()));
+        System.out.println(String.format("The world destined you the burden of: %s", traitList.toString()));
     }
     public Player playerCreation() {
         boolean validInput = false;
@@ -105,12 +105,12 @@ public class Intro {
                 this.profession = Profession.getProfession("duelist");
                 this.race = Race.getRace("dwarf");
                 Trait traitObject = Trait.getTrait("cursed");
-                customTraitList.addToList(traitObject);
+                traitList.addToList(traitObject);
                 validInput = true;
             }
         }
-        System.out.println(String.format("You are the %s %s. You are a skillful %s and your traits are: %s.", this.race, this.name, this.profession, customTraitList.toString()));
-        return new Player(this.name,this.profession,this.race,this.customTraitList);
+        System.out.println(String.format("You are the %s %s. You are a skillful %s and your traits are: %s.", this.race, this.name, this.profession, traitList.toString()));
+        return new Player(this.name,this.profession,this.race,this.traitList);
 }
 
 }

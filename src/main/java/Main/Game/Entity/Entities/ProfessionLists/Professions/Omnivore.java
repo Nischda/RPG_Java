@@ -14,8 +14,9 @@ public class Omnivore extends Profession {
 
     @Override
     public void initializePerks(Entity entity) {
-        entity.addToEnduranceMod(0.05);
-    }//Todo disable usage of non meat food
+        entity.addToEnduranceMod(0.1);
+        entity.addToPerceptionMod(0.1);
+    }
 
     @Override
     public String toString() {

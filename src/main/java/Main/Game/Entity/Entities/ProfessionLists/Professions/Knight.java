@@ -14,7 +14,7 @@ public class Knight extends Profession {
 
     @Override
     public void initializePerks(Entity entity) {
-        entity.addToEnduranceMod(0.1);
+        entity.addToHardeningMod(0.1);
     }
 
     @Override

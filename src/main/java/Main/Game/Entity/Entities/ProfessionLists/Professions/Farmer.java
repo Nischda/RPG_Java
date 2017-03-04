@@ -14,7 +14,8 @@ public class Farmer extends Profession {
 
     @Override
     public void initializePerks(Entity entity) {
-        entity.addToStrengthMod(0.05);
+        entity.addToEnduranceMod(0.1);
+        entity.addToKnowledgeMod(0.1);
     }//
 
     @Override

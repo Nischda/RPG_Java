@@ -1,5 +1,7 @@
 package Main.Game.Entity.Entities.TraitLists;
 
+import Main.Game.Entity.Entity;
+
 import java.util.HashMap;
 
 public abstract class Trait {
@@ -7,7 +9,7 @@ public abstract class Trait {
     private static HashMap<String, Trait> traitList = new HashMap<>();
 
     public abstract void printDescription();
-    public abstract void inititializeTrait();
+    public abstract void initializeTrait(Entity entity);
     public abstract String toString();
 
 

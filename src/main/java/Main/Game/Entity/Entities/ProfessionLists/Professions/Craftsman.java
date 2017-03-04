@@ -14,7 +14,8 @@ public class Craftsman extends Profession {
 
     @Override
     public void initializePerks(Entity entity) {
-        entity.addToStrengthMod(0.05);
+        entity.addToStrengthMod(0.1);
+        entity.addToImprovisationMod(0.1);
     }//
 
     @Override

@@ -1,16 +1,14 @@
 package Main.Game.Entity.Entities.Book.Books;
 
 
-import Main.Game.Entity.Entities.Book.Book;
+import Main.Game.Entity.Entities.Book.ActiveBook;
 import Main.Game.Entity.Entities.Book.Books.Skills.Slash;
 import Main.Game.Entity.Entities.Book.Books.Skills.Whirlwind;
-import Main.Game.Entity.Entities.Book.Books.Spells.Spark;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Random;
 
-public class Skillbook extends Book {
+public class Skillbook extends ActiveBook {
 
     private static ArrayList<Ability> skillbook;
 

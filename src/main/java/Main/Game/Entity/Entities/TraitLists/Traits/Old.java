@@ -1,6 +1,7 @@
 package Main.Game.Entity.Entities.TraitLists.Traits;
 
 import Main.Game.Entity.Entities.TraitLists.Trait;
+import Main.Game.Entity.Entity;
 
 public class Old extends Trait {
 
@@ -11,8 +12,9 @@ public class Old extends Trait {
     }
 
     @Override
-    public void inititializeTrait() {
-
+    public void initializeTrait(Entity entity) {
+        entity.addToKnowledgeMod(0.2);
+        entity.addToMaxHpMod(-0.2);
     }
 
     public String toString() {
