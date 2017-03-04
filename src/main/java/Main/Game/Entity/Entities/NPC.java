@@ -175,16 +175,18 @@ public class NPC extends Entity {
     @Override
     public void addToHp(double value) {
         this.hp += value;
+        System.out.println(this.name() + " was healed for " + value + ".");
     }
     @Override
     public void addToMp(double value) {
         this.mp += value;
+        System.out.println(this.name() + " gained " + value + "mp.");
     }
     @Override
     public void addToXp(double value) {
         this.xp += value;
+        System.out.println(this.name() + " gained " + value + "xp.");
     }
-
     //add to books
     @Override
     public void addToSkillbook(Ability ability) {
@@ -312,23 +314,23 @@ public class NPC extends Entity {
 //move somewhere else, utility class for abilities?
 //ATTACK MOVES
     @Override
-    public void attack(ArrayList<Entity> players, ArrayList<Entity> enemies) {
-        skillbook.getRandomAbility().aiUse(this, this.damage, enemies);
+    public void attack(Entities entities1,Entities entities2) {
+        skillbook.getRandomAbility().aiUse(this, this.damage, entities2);
     }
 
     //CAST SPELLS
     @Override
-    public void cast(ArrayList<Entity> players, ArrayList<Entity> enemies) {
-        spellbook.getRandomAbility().aiUse(this, this.spellDamage, enemies);
+    public void cast(Entities entities1,Entities entities2) {
+        spellbook.getRandomAbility().aiUse(this, this.spellDamage, entities2);
     }
 
     //USE ITEMS
     @Override
-    public void item(ArrayList<Entity> players, ArrayList<Entity> enemies) {
+    public void item(Entities entities1,Entities entities2) {
 
     }
 
-    public boolean escape(ArrayList<Entity> players, ArrayList<Entity> enemies) { //ToDo make escape chances dependent on attributes of you and enemies f.e. some intRandom of improvisation*endurance vs perception*endurance
+    public boolean escape(Entities entities1,Entities entities2) { //ToDo make escape chances dependent on attributes of you and enemies f.e. some intRandom of improvisation*endurance vs perception*endurance
         Random intRandom = new Random();
         int rand = intRandom.nextInt(10) + 1;
         if(rand < 5) {

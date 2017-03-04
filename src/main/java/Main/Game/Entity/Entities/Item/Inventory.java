@@ -1,7 +1,10 @@
 package Main.Game.Entity.Entities.Item;
 
 
+import Main.Game.Entity.Entities.Item.Items.Fruit;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Inventory {
 
@@ -9,6 +12,7 @@ public class Inventory {
 
     public Inventory() {
         this.inventory = new ArrayList<>();
+        this.inventory.add(new Fruit("Apple", 1, 10, 5, 1, new ArrayList<String>(Arrays.asList("weapon"))));
     }
 
     public void add(Item item) {
@@ -29,8 +33,13 @@ public class Inventory {
         }
     }
 
+    @Override
     public String toString() {
-        return inventory.toString();
+        String string = "";
+        for(Item item : inventory) {
+            string += item.toString() + ", ";
+        }
+        return string.substring(0, string.length()-2);
     }
 
 }

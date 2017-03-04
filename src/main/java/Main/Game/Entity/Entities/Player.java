@@ -7,15 +7,12 @@ import Main.Game.Entity.Entities.TraitLists.TraitList;
 import Main.Game.Entity.Entity;
 import Main.Game.Entity.Entities.ProfessionLists.Profession;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
-public class Player extends Entity {
+public class Player extends Entity implements Comparable<Player>, Comparator<Player>{
 
     private Scanner in = new Scanner(System.in);
-    private static Inventory inventory = new Inventory();
+    private Inventory inventory;
 
     private String name;
     private Profession profession;
@@ -102,7 +99,7 @@ public class Player extends Entity {
         this.skillbook = new Skillbook();
         this.spellbook = new Spellbook();
         this.perkbook = new Perkbook();
-
+        this.inventory = new Inventory();
 
         profession.initializePerks(this);
         race.initializeAttributes(this);
@@ -175,14 +172,17 @@ public class Player extends Entity {
     @Override
     public void addToHp(double value) {
         this.hp += value;
-    } //useful?
+        System.out.println(this.toString() + " was healed for " + value + ".");
+    }
     @Override
     public void addToMp(double value) {
         this.mp += value;
-    } //useful?
+        System.out.println(this.toString() + " gained " + value + "mp.");
+    }
     @Override
     public void addToXp(double value) {
         this.xp += value;
+        System.out.println(this.toString() + " gained " + value + "xp.");
     }
 
     //add to books
@@ -311,7 +311,7 @@ public class Player extends Entity {
 
     //ATTACK MOVES
     @Override
-    public void attack(ArrayList<Entity> players, ArrayList<Entity> enemies) {
+    public void attack(Entities entities1, Entities enemies) {
         boolean validAction = false;
       while (!validAction) {
             System.out.println("Choose your attack move. (" + skillbook.toString() + ")");
@@ -330,7 +330,7 @@ public class Player extends Entity {
     }
     //CAST SPELLS
     @Override
-    public void cast(ArrayList<Entity> players, ArrayList<Entity> enemies) {
+    public void cast(Entities entities1, Entities enemies) {
         boolean validAction = false;
 
         while (!validAction) {
@@ -349,11 +349,14 @@ public class Player extends Entity {
     }
 
     //USE ITEMS
-    public void item(ArrayList<Entity> players, ArrayList<Entity> enemies) {
-
+    @Override
+    public void item(Entities entities1, Entities enemies) {
+        System.out.println("Which item do you want to use?");
+        System.out.println(inventory.toString());
     }
 
-    public boolean escape(ArrayList<Entity> players, ArrayList<Entity> enemies) { //ToDo make escape chances dependent on attributes of you and enemies f.e. some intRandom of improvisation*endurance vs perception*endurance
+    @Override
+    public boolean escape(Entities entities1, Entities enemies) { //ToDo make escape chances dependent on attributes of you and enemies f.e. some intRandom of improvisation*endurance vs perception*endurance
         Random intRandom = new Random();
         int rand = intRandom.nextInt(10) + 1;
         if(rand < 5) {
@@ -477,4 +480,13 @@ public class Player extends Entity {
         System.out.println();
     }
 
+    @Override
+    public int compareTo(Player o) {
+        return this.getEndurance() - o.getEndurance();
+    }
+
+    @Override
+    public int compare(Player o1, Player o2) {
+        return o1.getEndurance() - o2.getEndurance();
+    }
 }

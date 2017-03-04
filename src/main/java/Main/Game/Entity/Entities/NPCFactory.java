@@ -9,9 +9,9 @@ import java.util.ArrayList;
 
 public final class NPCFactory {
 
-    public static ArrayList<Entity> createNPCs(File file, int npcCount, int traitCount) {
+    public static Entities createNPCs(File file, int npcCount, int traitCount) {
 
-            ArrayList<Entity> npcList = new ArrayList<>();
+            Entities npcList = new Entities();
             for(int i = 0; i < npcCount; i++) {
                 Entity npc = TxtReader.generateNPC(file, traitCount);
                 npcList.add(npc);

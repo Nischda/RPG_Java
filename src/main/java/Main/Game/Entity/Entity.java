@@ -1,7 +1,7 @@
 package Main.Game.Entity;
 
 
-import Main.Game.Entity.Entities.Item.Inventory;
+import Main.Game.Entity.Entities.Entities;
 
 import java.util.ArrayList;
 
@@ -138,10 +138,10 @@ public abstract class Entity implements Fightable{
         return baseHardening;
     } // *armorModifier * other boni
 
-    public static void printEntities(ArrayList<Entity> entityList) {
+    public static void printEntities(Entities entities) {
         StringBuilder string = new StringBuilder();
         int count = 1;
-        for (Entity entity : entityList) {
+        for (Entity entity : entities) {
             string.append(count + ". " + entity.toString());
             count++;
         }

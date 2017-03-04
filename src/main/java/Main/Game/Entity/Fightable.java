@@ -3,15 +3,16 @@ package Main.Game.Entity;
 
 import Main.Game.Entity.Entities.Book.Books.Ability;
 import Main.Game.Entity.Entities.Book.Books.Perk;
+import Main.Game.Entity.Entities.Entities;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public interface Fightable {
-    public abstract void attack(ArrayList<Entity> players, ArrayList<Entity> enemies);
-    public abstract void cast(ArrayList<Entity> players, ArrayList<Entity> enemies);
-    public abstract void item(ArrayList<Entity> players, ArrayList<Entity> enemies);
-    public abstract boolean escape(ArrayList<Entity> players, ArrayList<Entity> enemies);
+    public abstract void attack(Entities entities1,Entities entities2);
+    public abstract void cast(Entities entities1,Entities entities2);
+    public abstract void item(Entities entities1,Entities entities2);
+    public abstract boolean escape(Entities entities1,Entities entities2);
     public abstract HashMap<Entity, Integer> receivePhysicalDamage(int damage, String actor);
     public abstract HashMap receiveSpellDamage(int damage, String actor);
     public abstract void checkLeathal();

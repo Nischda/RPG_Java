@@ -29,10 +29,6 @@ public class Sword extends Item implements Equipable {
         System.out.println("SwordInfo to be added");
     }
 
-    public String toString() {
-        return this.name;
-    }
-
     @Override
     public boolean isEquipableOn(String slot) {
         if(this.slots.contains(slot)) return true;
@@ -57,5 +53,9 @@ public class Sword extends Item implements Equipable {
     @Override
     public int getWeight() {
         return this.weight;
+    }
+    @Override
+    public String toString() {
+        return this.name + "\n";
     }
 }

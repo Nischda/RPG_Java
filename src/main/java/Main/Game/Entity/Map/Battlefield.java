@@ -1,5 +1,6 @@
 package Main.Game.Entity.Map;
 
+import Main.Game.Entity.Entities.Entities;
 import Main.Game.Entity.Entity;
 
 import java.util.*;
@@ -7,12 +8,12 @@ import java.util.*;
 
 public class Battlefield {
     private Scanner in = new Scanner(System.in);
-    private ArrayList<Entity> players;
-    private ArrayList<Entity> enemies;
+    private Entities entities1;
+    private Entities enemies;
     private boolean battleEnd = false;
 
-    public Battlefield(ArrayList<Entity> players, ArrayList<Entity> enemies) {
-        this.players = players;
+    public Battlefield(Entities entities1, Entities enemies) {
+        this.entities1 = entities1;
         this.enemies = enemies;
 
         executeRound();
@@ -25,8 +26,8 @@ public class Battlefield {
             boolean playerGotTurns = true;
             boolean enemyGotTurns = true;
             int turnCount = 0;
-            sortEntities(players);
-            sortEntities(enemies);
+            entities1.sortEntities();
+            enemies.sortEntities();
 
             roundCount++;
             int playerTurnCount = 0;
@@ -35,13 +36,13 @@ public class Battlefield {
                 turnCount++;
                 //System.out.println("Round: " + roundCount + " | Turn: " + turnCount);
                 System.out.println();
-                if ((players.get(0).getEndurance() >= enemies.get(0).getEndurance() && playerGotTurns) || (playerGotTurns && !enemyGotTurns)) {//Playerturn
+                if ((entities1.get(0).getEndurance() >= enemies.get(0).getEndurance() && playerGotTurns) || (playerGotTurns && !enemyGotTurns)) {//Playerturn
                     playerTurnCount++;
-                    if (playerTurnCount >= players.size()) {
+                    if (playerTurnCount >= entities1.size()) {
                         playerGotTurns = false;
                     }
-                    executePlayerTurn(players.get(0));
-                    Collections.rotate(players, -1);
+                    executePlayerTurn(entities1.get(0));
+                    entities1.rotate(-1);
                 }
                 else if (enemyGotTurns) {//Enemyturn
                     enemyTurnCount++;
@@ -49,7 +50,7 @@ public class Battlefield {
                         enemyGotTurns = false;
                     }
                     executeNPCTurn(enemies.get(0));
-                    Collections.rotate(enemies, -1);
+                    enemies.rotate(-1);
                 }
             }
         }
@@ -58,8 +59,8 @@ public class Battlefield {
     public void executePlayerTurn(Entity entity) {
         System.out.println("----------------------------------------------------------------------------------------------------");
         System.out.println("Your turn:");
-        Entity.printEntities(this.players);
-        Entity.printEntities(this.enemies);
+        entities1.printEntities();
+        enemies.printEntities();
             boolean validAction = false;
 
             while(!validAction) {
@@ -68,19 +69,19 @@ public class Battlefield {
 
                 switch(action) {
                     case "ATTACK":
-                        entity.attack(players, enemies);
+                        entity.attack(entities1, enemies);
                         validAction = true;
                         break;
                     case "CAST":
-                        entity.cast(players, enemies);
+                        entity.cast(entities1, enemies);
                         validAction = true;
                         break;
                     case "ITEM":
-                        entity.item(players, enemies);
+                        entity.item(entities1, enemies);
                         validAction = true;
                         break;
                     case "ESCAPE":
-                        if(entity.escape(players, enemies)) battleEnd = true;
+                        if(entity.escape(entities1, enemies)) battleEnd = true;
                         validAction = true;
                         break;
                     default:
@@ -95,22 +96,13 @@ public class Battlefield {
         //System.out.println("Turn of: " + entity.toString());
         Random intRandom = new Random();
         int rand = intRandom.nextInt(10) + 1;
-        if(rand < 5) entity.attack(enemies, players);
+        if(rand < 5) entity.attack(enemies, entities1);
         else {
-            entity.cast(enemies, players);
+            entity.cast(enemies, entities1);
         }
         //add item use chance of inventory contains items
         //add escapechance if health is < 20%
         //add
-    }
-
-    private void sortEntities(ArrayList<Entity> entities) {
-        Collections.sort(entities, new Comparator<Entity>() {
-            @Override
-            public int compare(Entity e1, Entity e2) {
-                return e1.getEndurance() - e2.getEndurance();
-            }
-        });
     }
 
 

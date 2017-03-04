@@ -2,6 +2,7 @@ package Main.Game.Entity.Entities.Book.Books.Skills;
 
 
 import Main.Game.Entity.Entities.Book.Books.Ability;
+import Main.Game.Entity.Entities.Entities;
 import Main.Game.Entity.Entity;
 
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ import java.util.HashMap;
 public class Whirlwind extends Ability {
 
     @Override
-    public ArrayList<HashMap<Entity, Integer>> use(Entity actor, int damage, ArrayList<Entity> targets) {
+    public ArrayList<HashMap<Entity, Integer>> use(Entity actor, int damage, Entities targets) {
         System.out.println("You attack all targets!");
         ArrayList<HashMap<Entity, Integer>> actions = new ArrayList<>();
         for(Entity target: targets) {
@@ -19,7 +20,7 @@ public class Whirlwind extends Ability {
         return actions;
     }
     @Override
-    public void aiUse(Entity actor, int damage, ArrayList<Entity> targets) {
+    public void aiUse(Entity actor, int damage, Entities targets) {
         System.out.println(actor.getName() + " uses " + this.toString() + ".");
         for(Entity target: targets) {
             target.receivePhysicalDamage(damage, actor.name());

@@ -1,6 +1,7 @@
 package Main.Game.Entity.Map.TileLists.Tiles;
 
 
+import Main.Game.Entity.Entities.Entities;
 import Main.Game.Entity.Entities.NPCFactory;
 import Main.Game.Entity.Entities.Player;
 import Main.Game.Entity.Entity;
@@ -17,8 +18,8 @@ public class PlayerTile extends Tile {
 
     private String creaturePath = "D:/RPG_Java/src/main/java/Main/Resources/forestCreatures.txt";
     private Scanner in = new Scanner(System.in);
-    Player player;
-    ArrayList<Entity> enemyList;
+    Entities entities;
+    Entities enemies;
 
     @Override
     public void printTile() {
@@ -32,9 +33,9 @@ public class PlayerTile extends Tile {
         return "UNUSED";
     }
 
-    public void chooseAction(Player player) {
+    public void chooseAction(Entities entities) {
         initializeTile();
-        this.player = player;
+        this.entities = entities;
         boolean validAction = false;
 
         while(!validAction) {
@@ -67,8 +68,9 @@ public class PlayerTile extends Tile {
         }
     }
     public void initializeTile() {
-        this.enemyList = NPCFactory.createNPCs(new File(creaturePath),2,1); //ToDo add Ranges
+        this.enemies = NPCFactory.createNPCs(new File(creaturePath),2,1); //ToDo add Ranges
     }
+
     public void searchArea() {
         System.out.println("You start to search the area...");
         Random intrandom = new Random();
@@ -94,11 +96,8 @@ public class PlayerTile extends Tile {
     }
 
     public void hunt() {
-        ArrayList<Entity> playerList= new ArrayList<>();
-        playerList.add(this.player);
-
         System.out.println("You stumple upon:");
-        Entity.printEntities(this.enemyList);
-        Battlefield battlefield = new Battlefield(playerList, enemyList);
+        Entity.printEntities(this.enemies);
+        Battlefield battlefield = new Battlefield(entities, enemies);
     }
 }

@@ -32,10 +32,6 @@ public class Fruit extends Item implements Equipable, Consumable {
         System.out.println("SwordInfo to be added");
     }
 
-    public String toString() {
-        return this.name;
-    }
-
     @Override
     public boolean isEquipableOn(String slot) {
         if(this.slots.contains(slot)) return true;
@@ -70,5 +66,9 @@ public class Fruit extends Item implements Equipable, Consumable {
     @Override
     public void effect() {
         //nutritious
+    }
+    @Override
+    public String toString() {
+        return this.name + "\n";
     }
 }

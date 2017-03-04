@@ -1,6 +1,6 @@
 package Main.Game.Entity.Map;
 
-import Main.Game.Entity.Entities.Player;
+import Main.Game.Entity.Entities.Entities;
 import Main.Game.Entity.Map.TileLists.Tile;
 import Main.Game.Entity.Map.TileLists.Tiles.UnknownTile;
 
@@ -9,15 +9,15 @@ import java.util.Scanner;
 
 public class Map {
 
-    private Player player;
+    private Entities entities;
     private Scanner in = new Scanner(System.in);
     private ArrayList<ArrayList<Tile>> map;
     private ArrayList<ArrayList<Tile>> playerMap;
     private int x = 2;
     private int y = 2;
 
-    public Map(Player player,ArrayList<ArrayList<Tile>> map) {
-        this.player = player;
+    public Map(Entities entities, ArrayList<ArrayList<Tile>> map) {
+        this.entities = entities;
         this.map = map;
         createPlayerMap();
 
@@ -125,7 +125,7 @@ public class Map {
                     validAction = true;
                     break;
                 case "INVENTORY":
-                    //accessInventory();
+                    entities.item();
                     validAction = true;
                     break;
                 default:
@@ -149,7 +149,7 @@ public class Map {
 
     public void stay() {
         Tile tile = map.get(y).get(x);
-        tile.chooseAction(this.player);
+        tile.chooseAction(this.entities);
     }
 
 }

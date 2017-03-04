@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Random;
 
 
-public class DoubleHit extends Perk {
+public class Lifesteal extends Perk {
 
     Random intRandom = new Random();
     private int chance = 9;
@@ -21,7 +21,7 @@ public class DoubleHit extends Perk {
             System.out.println("Perk " + this.toString() + " procced!");
             for(HashMap<Entity, Integer> action : actions) {
                 for(Entity entity : action.keySet()) {
-                    entity.receivePhysicalDamage(action.get(entity), actor.getName());
+                    actor.addToHp(action.get(entity));
                 }
             }
         }
@@ -29,6 +29,6 @@ public class DoubleHit extends Perk {
 
     @Override
     public String toString() {
-        return "double hit";
+        return "life steal";
     }
 }

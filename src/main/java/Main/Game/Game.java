@@ -1,23 +1,25 @@
 package Main.Game;
 
+import Main.Game.Entity.Entities.Entities;
 import Main.Game.Entity.Entities.ProfessionLists.Professions.*;
 import Main.Game.Entity.Entities.RaceLists.Races.*;
 import Main.Game.Entity.Entities.TraitLists.Traits.Cursed;
 import Main.Game.Entity.Map.Map;
-import Main.Game.Entity.Entities.Player;
 import Main.Game.Entity.Map.TileLists.Tile;
 
 import java.util.ArrayList;
 
 public class Game {
 
-    private Player player;
+    private Entities entities;
     private boolean gameEnd = false;
     private Map worldMap;
 
     public Game(){
         initializeStuff();
-        this.player = new Intro().playerCreation();
+        this.entities = new Entities();
+        this.entities.add(new Intro().playerCreation());
+        this.entities.add(new Intro().playerCreation());
         generateMap();
     }
 
@@ -30,7 +32,7 @@ public class Game {
     public void generateMap() {
         TxtReader txtReader = new TxtReader();
         ArrayList<ArrayList<Tile>> map = null;
-        this.worldMap = new Map(this.player, txtReader.generateMap());
+        this.worldMap = new Map(this.entities, txtReader.generateMap());
     }
 
     public void initializeStuff() {
