@@ -1,6 +1,7 @@
 package Main.Game.Entity.Entities.Item.Items;
 
 
+import Main.Game.Entity.Entities.Entities;
 import Main.Game.Entity.Entities.Item.Equipable;
 import Main.Game.Entity.Entities.Item.Item;
 
@@ -56,6 +57,9 @@ public class Sword extends Item implements Equipable {
     }
     @Override
     public String toString() {
-        return this.name + "\n";
+        return this.name;
     }
+
+    @Override
+    public void use(Entities entities1, Entities entities2) {}
 }

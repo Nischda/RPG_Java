@@ -1,6 +1,7 @@
 package Main.Game.Entity.Entities;
 
 
+import Main.Game.Entity.Entities.Item.Inventory;
 import Main.Game.Entity.Entity;
 
 import java.util.ArrayList;
@@ -10,18 +11,20 @@ import java.util.Iterator;
 
 public class Entities implements Iterable<Entity> {
     private ArrayList<Entity> entities;
+    private Inventory inventory;
+    private String name;
 
-    public Entities() {
+    public Entities(String name) {
+        this.name = name;
         this.entities = new ArrayList<>();
-    }
-    public Entities(Entity entity) {
-        this.entities = new ArrayList<>();
-        this.entities.add(entity);
+        this.inventory = new Inventory();
     }
 
     public void add(Entity entity) {
         this.entities.add(entity);
+        entity.addTeam(this);
     }
+
     public Entity get(int index) {
         return entities.get(index);
     }
@@ -61,11 +64,16 @@ public class Entities implements Iterable<Entity> {
             }
         });
     }
-
+    public String getName() {
+        return this.name;
+    }
+    public Inventory inventory() {
+        return this.inventory;
+    }
 
     public void item() {
         System.out.println("Which item do you want to use?");
-        System.out.println(this.entities.toString());
+        System.out.println(this.inventory.toString());
     }
 
     public void printEntities() {
@@ -76,6 +84,17 @@ public class Entities implements Iterable<Entity> {
             count++;
         }
         System.out.println(string.toString());
+    }
+
+    @Override
+    public String toString() {
+        String string = "";
+        int index = 1;
+        for(Entity entity : entities) {
+            string += index + ". " + entity.toString() + "\n";
+            index++;
+        }
+        return string;
     }
 
 }

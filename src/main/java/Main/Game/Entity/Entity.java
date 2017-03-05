@@ -9,7 +9,7 @@ public abstract class Entity implements Fightable{
 
 //add contrustor to do shit from here for player & entity?
 
-
+    public abstract void addTeam(Entities team);
     public abstract void addToHp(double value);
     public abstract void addToMp(double value);
     public abstract void addToXp(double value);

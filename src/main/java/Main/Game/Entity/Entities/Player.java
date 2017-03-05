@@ -12,7 +12,6 @@ import java.util.*;
 public class Player extends Entity implements Comparable<Player>, Comparator<Player>{
 
     private Scanner in = new Scanner(System.in);
-    private Inventory inventory;
 
     private String name;
     private Profession profession;
@@ -21,6 +20,7 @@ public class Player extends Entity implements Comparable<Player>, Comparator<Pla
     private Skillbook skillbook;
     private Spellbook spellbook;
     private Perkbook perkbook;
+    private Entities team;
 
     private int xp = 0;
     private int level = 1;
@@ -99,7 +99,6 @@ public class Player extends Entity implements Comparable<Player>, Comparator<Pla
         this.skillbook = new Skillbook();
         this.spellbook = new Spellbook();
         this.perkbook = new Perkbook();
-        this.inventory = new Inventory();
 
         profession.initializePerks(this);
         race.initializeAttributes(this);
@@ -275,6 +274,11 @@ public class Player extends Entity implements Comparable<Player>, Comparator<Pla
         maxMpMod += value;
     }
 
+    @Override
+    public void addTeam(Entities team) {
+        this.team = team;
+    }
+
     //GET ATTRIBUTES
     @Override
     public int getStrength() {
@@ -351,8 +355,22 @@ public class Player extends Entity implements Comparable<Player>, Comparator<Pla
     //USE ITEMS
     @Override
     public void item(Entities entities1, Entities enemies) {
-        System.out.println("Which item do you want to use?");
-        System.out.println(inventory.toString());
+        boolean validAction = false;
+
+        while (!validAction) {
+            System.out.println("Which item do you want to use?(type name)");
+            System.out.println(team.inventory().ConsumablestoString());
+            String itemName = in.nextLine().toLowerCase();
+
+            if (team.inventory().contains(itemName)) {//already uses getAbility ->simplify
+                team.inventory().getItem(itemName).use(entities1, enemies);
+                validAction = true;
+            }
+            else {
+                System.out.println("You can't do that");
+                validAction = false;
+            }
+        }
     }
 
     @Override
@@ -412,11 +430,10 @@ public class Player extends Entity implements Comparable<Player>, Comparator<Pla
     }
     @Override
     public String toString() {
-        return String.format("You: (%s/%sHP %s/%sMP %sEnd)\n ", this.hp, this.maxHp, this.mp, this.maxMp, this.endurance);
+        return String.format(this.name + ": (%s/%sHP %s/%sMP %sEnd)\n ", this.hp, this.maxHp, this.mp, this.maxMp, this.endurance);
     }
 
     public void printCharacter() {
-        System.out.println("inventory: " + inventory.toString());
         System.out.println("name: " + name);
         System.out.println("profession: " + profession);
         System.out.println("race: " + race);

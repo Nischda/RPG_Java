@@ -11,7 +11,7 @@ public final class NPCFactory {
 
     public static Entities createNPCs(File file, int npcCount, int traitCount) {
 
-            Entities npcList = new Entities();
+            Entities npcList = new Entities("EnemyTeam");
             for(int i = 0; i < npcCount; i++) {
                 Entity npc = TxtReader.generateNPC(file, traitCount);
                 npcList.add(npc);

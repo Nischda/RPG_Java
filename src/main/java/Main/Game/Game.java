@@ -17,7 +17,7 @@ public class Game {
 
     public Game(){
         initializeStuff();
-        this.entities = new Entities();
+        this.entities = new Entities("playerTeam");
         this.entities.add(new Intro().playerCreation());
         this.entities.add(new Intro().playerCreation());
         generateMap();

@@ -29,7 +29,6 @@ public class Spellbook extends ActiveBook {
     @Override
     public boolean include(Ability ability) {
         return spellbook.contains(ability);
-
     }
 
     @Override
@@ -50,6 +49,7 @@ public class Spellbook extends ActiveBook {
         }
         return null;
     }
+
     @Override
     public Ability getRandomAbility() {
         Random intRandom = new Random();

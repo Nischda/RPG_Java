@@ -1,15 +1,18 @@
 package Main.Game.Entity.Entities.Item.Items;
 
 
+import Main.Game.Entity.Entities.Entities;
 import Main.Game.Entity.Entities.Item.Consumable;
 import Main.Game.Entity.Entities.Item.Equipable;
 import Main.Game.Entity.Entities.Item.Item;
-import Main.Game.Entity.Entities.Player;
 import Main.Game.Entity.Entity;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Fruit extends Item implements Equipable, Consumable {
+
+    private Scanner in = new Scanner(System.in);
 
     private String type = "Fruit";
     private String name;
@@ -59,8 +62,20 @@ public class Fruit extends Item implements Equipable, Consumable {
     }
 
     @Override
-    public void use(Entity entity) {
-        entity.receivePhysicalDamage(this.damage, this.name);
+    public void use(Entities entities1, Entities entities2) {
+        Entities targets;
+        System.out.println("Choose your target team (1: " + entities1.getName() + "/2: " + entities2.getName() + ")");//Todo add rangecheck
+        int targetTeam = Integer.parseInt(in.nextLine());
+        if(targetTeam == 1) {
+            targets = entities1;
+        }
+        else {
+            targets = entities2;
+        }
+        System.out.println("Choose your target (up to " + targets.size() + ")");//Todo add rangecheck
+        System.out.println(targets.toString());
+        Entity target = targets.get(Integer.parseInt(in.nextLine())-1);
+        target.receivePhysicalDamage(this.damage, this.name);
     }
 
     @Override
@@ -69,6 +84,6 @@ public class Fruit extends Item implements Equipable, Consumable {
     }
     @Override
     public String toString() {
-        return this.name + "\n";
+        return this.name;
     }
 }

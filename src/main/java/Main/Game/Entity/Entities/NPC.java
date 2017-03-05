@@ -24,6 +24,7 @@ public class NPC extends Entity {
     private Skillbook skillbook;
     private Spellbook spellbook;
     private Perkbook perkbook;
+    private Entities team;
 
     private int xp = 0;
     private int level = 1;
@@ -277,6 +278,11 @@ public class NPC extends Entity {
         maxMpMod += value;
     }
 
+    @Override
+    public void addTeam(Entities team) {
+        this.team = team;
+    }
+
     //GET ATTRIBUTES
     @Override
     public int getStrength() {
@@ -323,11 +329,24 @@ public class NPC extends Entity {
     public void cast(Entities entities1,Entities entities2) {
         spellbook.getRandomAbility().aiUse(this, this.spellDamage, entities2);
     }
-
-    //USE ITEMS
     @Override
-    public void item(Entities entities1,Entities entities2) {
+    public void item(Entities entities1, Entities enemies) {
+        boolean validAction = false;
 
+        while (!validAction) {
+            System.out.println("Which item do you want to use?");
+            System.out.println(team.inventory().ConsumablestoString());
+            String action = in.nextLine().toLowerCase();
+
+            if (team.inventory().contains(action)) {//already uses getAbility ->simplify
+                //  team.inventory().getItem(action).use(entities1, enemies);
+                validAction = true;
+            }
+            else {
+                System.out.println("You can't do that");
+                validAction = false;
+            }
+        }
     }
 
     public boolean escape(Entities entities1,Entities entities2) { //ToDo make escape chances dependent on attributes of you and enemies f.e. some intRandom of improvisation*endurance vs perception*endurance
