@@ -1,6 +1,7 @@
 package Main.Game.Entity.Entities;
 
 import Main.Game.Entity.Entities.Book.Books.*;
+import Main.Game.Entity.Entities.Item.Equipable;
 import Main.Game.Entity.Entities.ProfessionLists.Profession;
 import Main.Game.Entity.Entities.RaceLists.Race;
 import Main.Game.Entity.Entity;
@@ -25,6 +26,7 @@ public class NPC extends Entity {
     private Spellbook spellbook;
     private Perkbook perkbook;
     private Entities team;
+    private HashMap<String, Equipable> equipment;
 
     private int xp = 0;
     private int level = 1;
@@ -94,6 +96,16 @@ public class NPC extends Entity {
     private int armor;
     private int resistance;
 
+    private int equipmentDamage;
+    private int equipmentStamina;
+    private int equipmentSpellDamage;
+    private int equipmentCharisma;
+    private int equipmentEffectChance;
+    private int equipmentHpReg;
+    private int equipmentMpReg;
+    private int equipmentArmor;
+    private int equipmentResistance;
+
 
     public NPC(String name, Profession profession, Race race, TraitList traitList) {
         this.name = name;
@@ -103,6 +115,7 @@ public class NPC extends Entity {
         this.skillbook = new Skillbook();
         this.spellbook = new Spellbook();
         this.perkbook = new Perkbook();
+        this.equipment = new HashMap<>();
 
         profession.initializePerks(this);
         race.initializeAttributes(this);
@@ -317,6 +330,35 @@ public class NPC extends Entity {
         return this.name();
     }
 
+    public void equip(Equipable equipable) {
+        this.equipment.put(equipable.getSlot(), equipable);
+        updateEquipment();
+    }
+
+    public void updateEquipment() {
+        this.equipmentDamage = 0;
+        this.equipmentStamina= 0;
+        this.equipmentSpellDamage= 0;
+        this.equipmentCharisma= 0;
+        this.equipmentEffectChance= 0;
+        this.equipmentHpReg= 0;
+        this.equipmentMpReg= 0;
+        this.equipmentArmor= 0;
+        this.equipmentResistance= 0;
+
+        for(Equipable equipable : equipment.values()) {
+            this.equipmentDamage += equipable.getDamage();
+            this.equipmentStamina += equipable.getStamina();
+            this.equipmentSpellDamage += equipable.getSpellDamage();
+            this.equipmentCharisma += equipable.getCharisma();
+            this.equipmentEffectChance += equipable.getEffectChance();
+            this.equipmentHpReg += equipable.getHpReg();
+            this.equipmentMpReg += equipable.getDamage();
+            this.equipmentArmor += equipable.getArmor();
+            this.equipmentResistance += equipable.getResistance();
+        }
+    }
+
 //move somewhere else, utility class for abilities?
 //ATTACK MOVES
     @Override
@@ -335,7 +377,7 @@ public class NPC extends Entity {
 
         while (!validAction) {
             System.out.println("Which item do you want to use?");
-            System.out.println(team.inventory().ConsumablestoString());
+            System.out.println(team.inventory().consumablesToString());
             String action = in.nextLine().toLowerCase();
 
             if (team.inventory().contains(action)) {//already uses getAbility ->simplify

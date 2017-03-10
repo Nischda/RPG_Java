@@ -1,5 +1,6 @@
 package Main.Game.Entity.Map;
 
+import Main.Game.Entity.Entities.Console;
 import Main.Game.Entity.Entities.Entities;
 import Main.Game.Entity.Map.TileLists.Tile;
 import Main.Game.Entity.Map.TileLists.Tiles.UnknownTile;
@@ -10,7 +11,6 @@ import java.util.Scanner;
 public class Map {
 
     private Entities entities;
-    private Scanner in = new Scanner(System.in);
     private ArrayList<ArrayList<Tile>> map;
     private ArrayList<ArrayList<Tile>> playerMap;
     private int x = 2;
@@ -65,31 +65,31 @@ public class Map {
             System.out.println(y + " " + x);
             System.out.println(this.map.get(y).get(x));
             printPlayerMap();
-            String direction = in.nextLine().toUpperCase();
+            String direction = Console.getStringInput();
 
             switch(direction) {
-                case "N":
+                case "n":
                     if(isPassable(y-1, x)) {
                         System.out.println("You walk north");
                         validDirection = true;
                         this.y--;
                     }
                     break;
-                case "W":
+                case "w":
                     if(isPassable(y, x-1)) {
                         System.out.println("You walk east");
                         validDirection = true;
                         this.x--;
                     }
                     break;
-                case "S":
+                case "s":
                     if(isPassable(y+1, x)) {
                         System.out.println("You walk south");
                         validDirection = true;
                         this.y++;
                     }
                     break;
-                case "E":
+                case "e":
                     if(isPassable(y, x+1)) {
                         System.out.println("You walk west");
                         validDirection = true;
@@ -112,20 +112,24 @@ public class Map {
         while(!validAction) {
             System.out.println("You are on: " + map.get(y).get(x).toString());
             printPlayerMap();
-            System.out.println("What do you want to do? (stay/walk/inventory)");
-            String action = in.nextLine().toUpperCase();
+            System.out.println("What do you want to do? (stay/walk/use/equip)");
+            String action = Console.getStringInput();
 
             switch(action) {
-                case "STAY":
+                case "stay":
                     stay();
                     validAction = true;
                     break;
-                case "WALK":
+                case "walk":
                     chooseDirection();
                     validAction = true;
                     break;
-                case "INVENTORY":
-                    entities.item();
+                case "use":
+                    entities.useItem();
+                    validAction = true;
+                    break;
+                case "equip":
+                    entities.equipItem();
                     validAction = true;
                     break;
                 default:

@@ -1,7 +1,10 @@
 package Main.Game.Entity.Entities;
 
 
+import Main.Game.Entity.Entities.Item.Consumable;
+import Main.Game.Entity.Entities.Item.Equipable;
 import Main.Game.Entity.Entities.Item.Inventory;
+import Main.Game.Entity.Entities.Item.Item;
 import Main.Game.Entity.Entity;
 
 import java.util.ArrayList;
@@ -71,9 +74,53 @@ public class Entities implements Iterable<Entity> {
         return this.inventory;
     }
 
-    public void item() {
-        System.out.println("Which item do you want to use?");
-        System.out.println(this.inventory.toString());
+    public void useItem() { //Todo Check if items exist and add step back
+        boolean validAction = false;
+
+        while (!validAction) {
+            System.out.println("Which item do you want to use?");
+            System.out.println(this.inventory.consumablesToString());
+            String itemName = Console.getStringInput();
+
+            if (inventory.contains(itemName)) {
+                Consumable consumable = inventory().getConsumables(itemName);
+                consumable.use(selectEntity());
+                inventory().remove((Item)consumable); // Todo Garbagecollector?
+                validAction = true;
+            }
+            else {
+                System.out.println("You can't do that");
+                validAction = false;
+            }
+        }
+    }
+
+    public void equipItem() {//Todo Check if items exist and add step back
+        boolean validAction = false;
+
+        while (!validAction) {
+            System.out.println("Which item do you want to equip?");
+            System.out.println(this.inventory.equipablesToString());
+            String itemName = Console.getStringInput();
+
+            if (inventory.contains(itemName)) {
+               Equipable equipable = inventory().getEquipables(itemName);
+                equipable.equip(selectEntity());
+                inventory().remove((Item)equipable); // Todo Garbagecollector?
+                validAction = true;
+            }
+            else {
+                System.out.println("You can't do that");
+                validAction = false;
+            }
+        }
+    }
+
+    public Entity selectEntity() {
+            System.out.println("Select a target"); //ToDo Add SafeCheck
+            printEntities();
+            int target = Console.getIntegerInput();
+            return entities.get(target);
     }
 
     public void printEntities() {

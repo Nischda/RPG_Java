@@ -1,5 +1,6 @@
 package Main.Game;
 
+import Main.Game.Entity.Entities.Console;
 import Main.Game.Entity.Entities.ProfessionLists.Profession;
 import Main.Game.Entity.Entities.Player;
 import Main.Game.Entity.Entities.RaceLists.Race;
@@ -15,15 +16,12 @@ public class Intro {
     private Race race;
     private TraitList traitList = new TraitList();
 
-    private Scanner in = new Scanner(System.in);
-
-
     public void promptName() {
         boolean validName = false;
         while (!validName) {
             System.out.println("From now on you will be known as? (enter your name)");
 
-             this.name = in.nextLine();
+             this.name = Console.getStringInput();
             if (this.name.length() >= 3 && this.name.length() <= 20) {
                 validName = true;
             }
@@ -37,7 +35,7 @@ public class Intro {
         while (!validProfession) {
             System.out.println("You are widely known as a professional? (enter your profession)");
             System.out.println(Profession.toS());
-            String professionName = in.nextLine().toLowerCase();
+            String professionName = Console.getStringInput();
             if (Profession.include(professionName)) {
                 this.profession = Profession.getProfession(professionName);
                 validProfession = true;
@@ -52,7 +50,7 @@ public class Intro {
         while (!validRace) {
             System.out.println("You are a proud? (enter your race)");
             System.out.println(Race.toS());
-            String raceName = in.nextLine().toLowerCase();
+            String raceName = Console.getStringInput();
             if (Race.include(raceName)) {
                 this.race = Race.getRace(raceName);
                 validRace = true;
@@ -70,7 +68,7 @@ public class Intro {
             System.out.println("The world destined you the burden of? (enter up to 3 traits, enter 'accept' to continue)");
             System.out.println(Trait.toS());
             System.out.println(String.format("Current traits: %s/%s:%s.", curTraits, maxTraits, traitList.toString()));
-            String input = in.nextLine().toLowerCase();
+            String input = Console.getStringInput();
             if(curTraits < maxTraits) {
                 validTraits = true;
                 if (Trait.include(input)) {
@@ -91,7 +89,7 @@ public class Intro {
         boolean validInput = false;
         while(!validInput) {
             System.out.println("Do you want to crate a custom character? (yes/no)");
-            String createCharacter = in.nextLine().toLowerCase();
+            String createCharacter = Console.getStringInput();
             System.out.println(createCharacter);
             if (createCharacter.equals("yes")) {
                 promptName();

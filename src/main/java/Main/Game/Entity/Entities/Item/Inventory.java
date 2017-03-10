@@ -14,9 +14,9 @@ public class Inventory {
 
     public Inventory() {
         this.inventory = new ArrayList<>();
-        this.inventory.add(new Sword("rusty sword", 23, 4, 27, 8, new ArrayList<String>(Arrays.asList("weapon"))));
-        this.inventory.add(new Fruit("apple", 1, 10, 5, 1, new ArrayList<String>(Arrays.asList("weapon"))));
-    }
+        this.inventory.add(new Sword("rusty sword", 4, 27, 8, "weapon", 20, 0, 0, 0, 0, 0, 0, 5, 0,0, 0 ));
+        this.inventory.add(new Fruit("apple", 1, 10, 5, "weapon", 2, 0, 0, 10, 0, 2, 0, 5, 0,0, 0));
+        }
 
     public void add(Item item) {
         this.inventory.add(item);
@@ -52,11 +52,46 @@ public class Inventory {
         return null;
     }
 
-    public String ConsumablestoString() {
+    public  Consumable getConsumables(String name) {
+        for(Item item: inventory) {
+            if(item instanceof Consumable) {
+                if (item.toString().equals(name)) {
+                    return (Consumable)item;
+                }
+            }
+        }
+        return null;
+    }
+
+    public  Equipable getEquipables(String name) {
+        for(Item item: inventory) {
+            if(item instanceof Equipable) {
+                if (item.toString().equals(name)) {
+                    return (Equipable)item;
+                }
+            }
+        }
+        return null;
+    }
+
+
+    public String consumablesToString() {
         String string = "";
         int index = 1;
         for(Item item : inventory) {
             if(item instanceof Consumable) {
+                string += index + ". " + item.toString() + "\n";
+                index++;
+            }
+        }
+        return string;
+    }
+
+    public String equipablesToString() {
+        String string = "";
+        int index = 1;
+        for(Item item : inventory) {
+            if(item instanceof Equipable) {
                 string += index + ". " + item.toString() + "\n";
                 index++;
             }

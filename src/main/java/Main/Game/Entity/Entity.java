@@ -2,6 +2,7 @@ package Main.Game.Entity;
 
 
 import Main.Game.Entity.Entities.Entities;
+import Main.Game.Entity.Entities.Item.Equipable;
 
 import java.util.ArrayList;
 
@@ -44,6 +45,7 @@ public abstract class Entity implements Fightable{
     public abstract int getImprovisation();
     public abstract String getName();
 
+    public abstract void equip (Equipable equipable);
     public abstract void setBaseAttributes(int baseStrength, int baseEndurance, int baseKnowledge, int basePerception, int baseMentality, int baseHardening, int baseImprovisation);
     public abstract String toString();
 

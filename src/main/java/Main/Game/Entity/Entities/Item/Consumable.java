@@ -6,5 +6,6 @@ import Main.Game.Entity.Entity;
 
 public interface Consumable {
     public void use(Entities entities1, Entities entities2);
+    public void use(Entity target);
     public void effect();
 }

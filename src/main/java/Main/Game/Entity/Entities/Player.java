@@ -1,17 +1,21 @@
 package Main.Game.Entity.Entities;
 
 import Main.Game.Entity.Entities.Book.Books.*;
+import Main.Game.Entity.Entities.Item.Consumable;
+import Main.Game.Entity.Entities.Item.Equipable;
 import Main.Game.Entity.Entities.Item.Inventory;
+import Main.Game.Entity.Entities.Item.Item;
 import Main.Game.Entity.Entities.RaceLists.Race;
 import Main.Game.Entity.Entities.TraitLists.TraitList;
 import Main.Game.Entity.Entity;
 import Main.Game.Entity.Entities.ProfessionLists.Profession;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.*;
 
 public class Player extends Entity implements Comparable<Player>, Comparator<Player>{
-
-    private Scanner in = new Scanner(System.in);
 
     private String name;
     private Profession profession;
@@ -21,6 +25,7 @@ public class Player extends Entity implements Comparable<Player>, Comparator<Pla
     private Spellbook spellbook;
     private Perkbook perkbook;
     private Entities team;
+    private HashMap<String, Equipable> equipment;
 
     private int xp = 0;
     private int level = 1;
@@ -90,6 +95,17 @@ public class Player extends Entity implements Comparable<Player>, Comparator<Pla
     private int armor;
     private int resistance;
 
+    private int equipmentDamage;
+    private int equipmentStamina;
+    private int equipmentSpellDamage;
+    private int equipmentCharisma;
+    private int equipmentEffectChance;
+    private int equipmentHpReg;
+    private int equipmentMpReg;
+    private int equipmentArmor;
+    private int equipmentResistance;
+    private int equipmentMaxHp;
+    private int equipmentMaxMp;
 
     public Player(String name, Profession profession, Race race, TraitList traitList) {
         this.name = name;
@@ -99,6 +115,7 @@ public class Player extends Entity implements Comparable<Player>, Comparator<Pla
         this.skillbook = new Skillbook();
         this.spellbook = new Spellbook();
         this.perkbook = new Perkbook();
+        this.equipment = new HashMap<>();
 
         profession.initializePerks(this);
         race.initializeAttributes(this);
@@ -113,8 +130,20 @@ public class Player extends Entity implements Comparable<Player>, Comparator<Pla
         calculateAttributes();
         calculateBaseValues();
         calculateValues();
-
     }
+
+    //SET BASE ATTRIBUTES
+    @Override
+    public void setBaseAttributes(int baseStrength, int baseEndurance, int baseKnowledge, int basePerception, int baseMentality, int baseHardening, int baseImprovisation) {
+        this.baseStrength = baseStrength;
+        this.baseEndurance = baseEndurance;
+        this.baseKnowledge = baseKnowledge;
+        this.basePerception = basePerception;
+        this.baseMentality = baseMentality;
+        this.baseHardening = baseHardening;
+        this.baseImprovisation = baseImprovisation;
+    }
+
     private void calculateAttributes() {
         this.strength = calculateStrength(strengthMod, baseStrength );
         this.endurance = calculateEndurance(enduranceMod, baseEndurance);
@@ -138,30 +167,17 @@ public class Player extends Entity implements Comparable<Player>, Comparator<Pla
         this.baseMaxMp = calculateBaseMaxMp(knowledgeMod, baseKnowledge); //make base?
     }
     private void calculateValues() { //ToDo Add Clothes/Status effects
-        this.damage = calculateDamage(damageMod, baseDamage);
-        this.stamina = calculateStamina(staminaMod, baseStamina);
-        this.spellDamage = calculateSpellDamage(spellDamageMod, baseSpellDamage);
-        this.charisma = calculateCharisma(charismaMod, baseCharisma);
-        this.effectChance = calculateEffectChance(effectChanceMod, baseEffectChance);
-        this.hpReg = calculateHpReg(hpRegMod, baseHpReg);
-        this.mpReg = calculateMpReg(mpRegMod, baseMpReg);
-        this.armor = calculateArmor(armorMod, baseArmor);
-        this.resistance = calculateResistance(resistanceMod, baseResistance);
-        this.maxHp = calculateMaxHp(maxHpMod, baseMaxHp);
-        this.maxMp = calculateMaxMp(maxMpMod, baseMaxMp);
-    }
-
-
-    //SET BASE ATTRIBUTES
-    @Override
-    public void setBaseAttributes(int baseStrength, int baseEndurance, int baseKnowledge, int basePerception, int baseMentality, int baseHardening, int baseImprovisation) {
-        this.baseStrength = baseStrength;
-        this.baseEndurance = baseEndurance;
-        this.baseKnowledge = baseKnowledge;
-        this.basePerception = basePerception;
-        this.baseMentality = baseMentality;
-        this.baseHardening = baseHardening;
-        this.baseImprovisation = baseImprovisation;
+        this.damage = calculateDamage(damageMod, baseDamage) + equipmentDamage;
+        this.stamina = calculateStamina(staminaMod, baseStamina) + equipmentStamina;
+        this.spellDamage = calculateSpellDamage(spellDamageMod, baseSpellDamage) + equipmentSpellDamage;
+        this.charisma = calculateCharisma(charismaMod, baseCharisma) + equipmentCharisma;
+        this.effectChance = calculateEffectChance(effectChanceMod, baseEffectChance) + equipmentEffectChance;
+        this.hpReg = calculateHpReg(hpRegMod, baseHpReg) + equipmentHpReg;
+        this.mpReg = calculateMpReg(mpRegMod, baseMpReg) + equipmentMpReg;
+        this.armor = calculateArmor(armorMod, baseArmor) + equipmentArmor;
+        this.resistance = calculateResistance(resistanceMod, baseResistance) + equipmentResistance;
+        this.maxHp = calculateMaxHp(maxHpMod, baseMaxHp) + equipmentMaxHp;
+        this.maxMp = calculateMaxMp(maxMpMod, baseMaxMp) + equipmentMaxMp;
     }
 
     public String name() {
@@ -313,13 +329,48 @@ public class Player extends Entity implements Comparable<Player>, Comparator<Pla
         return "you";
     } //ToDo differentiate with real name
 
+
+    public void equip(Equipable equipable) { //Todo Remove equiped item from inventory list or mark them as used
+        this.equipment.put(equipable.getSlot(), equipable);
+        updateEquipment();
+        updatePlayer();
+    }
+
+    public void updateEquipment() {
+        this.equipmentDamage = 0;
+        this.equipmentStamina= 0;
+        this.equipmentSpellDamage= 0;
+        this.equipmentCharisma= 0;
+        this.equipmentEffectChance= 0;
+        this.equipmentHpReg= 0;
+        this.equipmentMpReg= 0;
+        this.equipmentArmor= 0;
+        this.equipmentResistance= 0;
+        this.equipmentMaxHp = 0;
+        this.equipmentMaxMp = 0;
+
+        for(Equipable equipable : equipment.values()) {
+            this.equipmentDamage += equipable.getDamage();
+            this.equipmentStamina += equipable.getStamina();
+            this.equipmentSpellDamage += equipable.getSpellDamage();
+            this.equipmentCharisma += equipable.getCharisma();
+            this.equipmentEffectChance += equipable.getEffectChance();
+            this.equipmentHpReg += equipable.getHpReg();
+            this.equipmentMpReg += equipable.getDamage();
+            this.equipmentArmor += equipable.getArmor();
+            this.equipmentResistance += equipable.getResistance();
+            this.equipmentMaxHp += equipable.getArmor();
+            this.equipmentMaxMp += equipable.getResistance();
+        }
+    }
+
     //ATTACK MOVES
     @Override
     public void attack(Entities entities1, Entities enemies) {
         boolean validAction = false;
       while (!validAction) {
             System.out.println("Choose your attack move. (" + skillbook.toString() + ")");
-            String action = in.nextLine().toLowerCase();
+            String action = Console.getStringInput();
 
             if (skillbook.contains(action)) {//already uses getAbility ->simplify
                 ArrayList<HashMap<Entity, Integer>> actions = skillbook.getAbility(action).use(this, this.damage, enemies);
@@ -339,7 +390,7 @@ public class Player extends Entity implements Comparable<Player>, Comparator<Pla
 
         while (!validAction) {
             System.out.println("Choose your spell. (" + spellbook.toString() + ")");
-            String action = in.nextLine().toLowerCase();
+            String action = Console.getStringInput();
 
             if (spellbook.contains(action)) {//already uses getAbility ->simplify
                 spellbook.getAbility(action).use(this, this.spellDamage, enemies);
@@ -359,11 +410,13 @@ public class Player extends Entity implements Comparable<Player>, Comparator<Pla
 
         while (!validAction) {
             System.out.println("Which item do you want to use?(type name)");
-            System.out.println(team.inventory().ConsumablestoString());
-            String itemName = in.nextLine().toLowerCase();
+            System.out.println(team.inventory().consumablesToString());
+            String itemName = Console.getStringInput();
 
             if (team.inventory().contains(itemName)) {//already uses getAbility ->simplify
-                team.inventory().getItem(itemName).use(entities1, enemies);
+                Consumable consumable = team.inventory().getConsumables(itemName);
+                consumable.use(entities1, enemies);
+                team.inventory().remove((Item)consumable);
                 validAction = true;
             }
             else {
