@@ -1,12 +1,10 @@
 package Main.Game.Entity.Entities.Item;
 
 
-import Main.Game.Entity.Entities.Book.Books.Ability;
 import Main.Game.Entity.Entities.Item.Items.Fruit;
 import Main.Game.Entity.Entities.Item.Items.Sword;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Inventory {
 

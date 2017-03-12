@@ -1,11 +1,10 @@
 package Main.Game.Entity;
 
 
-import Main.Game.Entity.Entities.Book.Books.Ability;
-import Main.Game.Entity.Entities.Book.Books.Perk;
+import Main.Game.Entity.Entities.Books.AbilityBooks.Ability;
+import Main.Game.Entity.Entities.Books.PassiveBooks.Perk;
 import Main.Game.Entity.Entities.Entities;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public interface Fightable {

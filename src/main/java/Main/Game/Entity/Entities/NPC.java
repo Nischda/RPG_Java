@@ -1,6 +1,10 @@
 package Main.Game.Entity.Entities;
 
-import Main.Game.Entity.Entities.Book.Books.*;
+import Main.Game.Entity.Entities.Books.AbilityBooks.Ability;
+import Main.Game.Entity.Entities.Books.AbilityBooks.Skillbook;
+import Main.Game.Entity.Entities.Books.AbilityBooks.Spellbook;
+import Main.Game.Entity.Entities.Books.PassiveBooks.Perk;
+import Main.Game.Entity.Entities.Books.PassiveBooks.PerkBook;
 import Main.Game.Entity.Entities.Item.Equipable;
 import Main.Game.Entity.Entities.ProfessionLists.Profession;
 import Main.Game.Entity.Entities.RaceLists.Race;
@@ -8,7 +12,6 @@ import Main.Game.Entity.Entity;
 import Main.Game.Entity.Entities.Item.Inventory;
 import Main.Game.Entity.Entities.TraitLists.TraitList;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 import java.util.Scanner;
@@ -24,7 +27,7 @@ public class NPC extends Entity {
     private TraitList traitList;
     private Skillbook skillbook;
     private Spellbook spellbook;
-    private Perkbook perkbook;
+    private PerkBook perkBook;
     private Entities team;
     private HashMap<String, Equipable> equipment;
 
@@ -114,7 +117,7 @@ public class NPC extends Entity {
         this.traitList = traitList;
         this.skillbook = new Skillbook();
         this.spellbook = new Spellbook();
-        this.perkbook = new Perkbook();
+        this.perkBook = new PerkBook();
         this.equipment = new HashMap<>();
 
         profession.initializePerks(this);
@@ -212,7 +215,7 @@ public class NPC extends Entity {
     }
     @Override
     public void addToPerkbook(Perk perk) {
-        this.perkbook.add(perk);
+        this.perkBook.add(perk);
     }
 
     // AddTo ATTRIBUTE MODIFIER
@@ -363,13 +366,13 @@ public class NPC extends Entity {
 //ATTACK MOVES
     @Override
     public void attack(Entities entities1,Entities entities2) {
-        skillbook.getRandomAbility().aiUse(this, this.damage, entities2);
+        skillbook.getRandom().aiUse(this, this.damage, entities2);
     }
 
     //CAST SPELLS
     @Override
     public void cast(Entities entities1,Entities entities2) {
-        spellbook.getRandomAbility().aiUse(this, this.spellDamage, entities2);
+        spellbook.getRandom().aiUse(this, this.spellDamage, entities2);
     }
     @Override
     public void item(Entities entities1, Entities enemies) {

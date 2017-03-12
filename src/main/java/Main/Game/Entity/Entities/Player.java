@@ -1,29 +1,32 @@
 package Main.Game.Entity.Entities;
 
-import Main.Game.Entity.Entities.Book.Books.*;
+import Main.Game.Entity.Entities.Books.AbilityBooks.Ability;
+import Main.Game.Entity.Entities.Books.AbilityBooks.Skillbook;
+import Main.Game.Entity.Entities.Books.AbilityBooks.Spellbook;
+import Main.Game.Entity.Entities.Books.PassiveBooks.Perk;
+import Main.Game.Entity.Entities.Books.PassiveBooks.PerkBook;
+import Main.Game.Entity.Entities.Books.Book;
+import Main.Game.Entity.Entities.Books.StatBooks.StatBook;
 import Main.Game.Entity.Entities.Item.Consumable;
 import Main.Game.Entity.Entities.Item.Equipable;
-import Main.Game.Entity.Entities.Item.Inventory;
 import Main.Game.Entity.Entities.Item.Item;
 import Main.Game.Entity.Entities.RaceLists.Race;
 import Main.Game.Entity.Entities.TraitLists.TraitList;
 import Main.Game.Entity.Entity;
 import Main.Game.Entity.Entities.ProfessionLists.Profession;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.*;
 
 public class Player extends Entity implements Comparable<Player>, Comparator<Player>{
 
     private String name;
+    private StatBook statBook;
     private Profession profession;
     private Race race;
     private TraitList traitList;
     private Skillbook skillbook;
     private Spellbook spellbook;
-    private Perkbook perkbook;
+    private PerkBook perkBook;
     private Entities team;
     private HashMap<String, Equipable> equipment;
 
@@ -114,9 +117,10 @@ public class Player extends Entity implements Comparable<Player>, Comparator<Pla
         this.traitList = traitList;
         this.skillbook = new Skillbook();
         this.spellbook = new Spellbook();
-        this.perkbook = new Perkbook();
+        this.perkBook = new PerkBook();
         this.equipment = new HashMap<>();
 
+        this.statBook = new StatBook();
         profession.initializePerks(this);
         race.initializeAttributes(this);
         traitList.initializeAllTraits(this);
@@ -211,7 +215,7 @@ public class Player extends Entity implements Comparable<Player>, Comparator<Pla
     }
     @Override
     public void addToPerkbook(Perk perk) {
-        this.perkbook.add(perk);
+        this.perkBook.add(perk);
     }
 
     // AddTo ATTRIBUTE MODIFIER
@@ -373,8 +377,8 @@ public class Player extends Entity implements Comparable<Player>, Comparator<Pla
             String action = Console.getStringInput();
 
             if (skillbook.contains(action)) {//already uses getAbility ->simplify
-                ArrayList<HashMap<Entity, Integer>> actions = skillbook.getAbility(action).use(this, this.damage, enemies);
-                perkbook.use(this, actions);
+                ArrayList<HashMap<Entity, Integer>> actions = skillbook.get(action).use(this, this.damage, enemies);
+                perkBook.use(this, actions);
                 validAction = true;
             }
             else {
@@ -393,7 +397,7 @@ public class Player extends Entity implements Comparable<Player>, Comparator<Pla
             String action = Console.getStringInput();
 
             if (spellbook.contains(action)) {//already uses getAbility ->simplify
-                spellbook.getAbility(action).use(this, this.spellDamage, enemies);
+                spellbook.get(action).use(this, this.spellDamage, enemies);
                 validAction = true;
             }
             else {
