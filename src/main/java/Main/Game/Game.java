@@ -1,9 +1,9 @@
 package Main.Game;
 
+import Main.Game.Entity.Entities.Books.PassiveBooks.TraitBook.Trait;
 import Main.Game.Entity.Entities.Entities;
 import Main.Game.Entity.Entities.ProfessionLists.Professions.*;
 import Main.Game.Entity.Entities.RaceLists.Races.*;
-import Main.Game.Entity.Entities.TraitLists.Traits.Cursed;
 import Main.Game.Entity.Map.Map;
 import Main.Game.Entity.Map.TileLists.Tile;
 
@@ -36,6 +36,7 @@ public class Game {
     }
 
     public void initializeStuff() {
+        Trait.initialize();
         new Duelist().addToList();
         new Bruiser().addToList();
         new Knight().addToList();
@@ -60,6 +61,5 @@ public class Game {
         new Orc().addToList();
         new Human().addToList();
 
-        new Cursed().addToList();
     }
 }

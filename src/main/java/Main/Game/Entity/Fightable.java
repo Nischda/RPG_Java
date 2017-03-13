@@ -2,7 +2,7 @@ package Main.Game.Entity;
 
 
 import Main.Game.Entity.Entities.Books.AbilityBooks.Ability;
-import Main.Game.Entity.Entities.Books.PassiveBooks.Perk;
+import Main.Game.Entity.Entities.Books.PassiveBooks.PerkBook.Perk;
 import Main.Game.Entity.Entities.Entities;
 
 import java.util.HashMap;

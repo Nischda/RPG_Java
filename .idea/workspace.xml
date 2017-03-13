@@ -2,86 +2,85 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c670e49-837f-43cc-8ce4-86261f591d95" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/baseStat.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Books/StatBooks/Stats/Strength.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/Stats/Strength.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Books/AbilityBooks/Skillbook.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Books/AbilityBooks/Skillbook.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Books/AbilityBooks/Skills/Slash.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Books/AbilityBooks/Skills/Slash.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Books/AbilityBooks/Skills/Whirlwind.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Books/AbilityBooks/Skills/Whirlwind.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Books/AbilityBooks/Spells/Spark.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Books/AbilityBooks/Spells/Spark.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Books/PassiveBooks/PerkBook.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Books/PassiveBooks/PerkBook.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Books/StatBooks/Stat.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Books/StatBooks/Stat.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Books/StatBooks/StatBook.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Books/StatBooks/StatBook.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Entities$2.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Entities$2.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AttributeBooks/AttributeBook.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AttributeBooks/Calculateable.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/TraitBook/TraitBook.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/TraitBook/Traits/BaseTrait.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Books/AbilityBooks/Skillbook.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Books/AbilityBooks/Skills/Slash.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Books/AbilityBooks/Skills/Whirlwind.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Books/AbilityBooks/Spellbook.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Books/AbilityBooks/Spells/Spark.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Books/PassiveBooks/Perk.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Books/PassiveBooks/PerkBook.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Books/PassiveBooks/Perks/DoubleHit.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Books/PassiveBooks/Perks/Lifesteal.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Books/StatBooks/Stat.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Books/StatBooks/StatBook.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Books/StatBooks/Stats/baseStat.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/TraitLists/Trait.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/TraitLists/TraitList.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/TraitLists/Traits/Beloved.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/TraitLists/Traits/Broken.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/TraitLists/Traits/Corrupted.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/TraitLists/Traits/Cursed.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/TraitLists/Traits/Energetic.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/TraitLists/Traits/Enthusiastic.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/TraitLists/Traits/Forgotten.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/TraitLists/Traits/Merciless.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/TraitLists/Traits/Mountain.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/TraitLists/Traits/Old.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/TraitLists/Traits/Rabbit.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/TraitLists/Traits/Rock.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/TraitLists/Traits/Shapeshifter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/TraitLists/Traits/Steed.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/TraitLists/Traits/Wanderer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/StatBook.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/TraitList.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Beloved.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Broken.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Corrupted.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Cursed.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Energetic.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Enthusiastic.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Forgotten.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Merciless.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Mountain.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Old.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Rabbit.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Rock.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Shapeshifter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Steed.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Wanderer.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/NPC.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/NPC.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Player.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/Player.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/ProfessionLists/Profession.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/ProfessionLists/Profession.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/ProfessionLists/Professions/Bruiser.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/ProfessionLists/Professions/Bruiser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/ProfessionLists/Professions/Carnivore.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/ProfessionLists/Professions/Carnivore.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/ProfessionLists/Professions/Craftsman.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/ProfessionLists/Professions/Craftsman.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/ProfessionLists/Professions/Duelist.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/ProfessionLists/Professions/Duelist.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/ProfessionLists/Professions/Farmer.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/ProfessionLists/Professions/Farmer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/ProfessionLists/Professions/Fighter.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/ProfessionLists/Professions/Fighter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/ProfessionLists/Professions/Kabbalist.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/ProfessionLists/Professions/Kabbalist.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/ProfessionLists/Professions/Knight.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/ProfessionLists/Professions/Knight.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/ProfessionLists/Professions/Omnivore.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/ProfessionLists/Professions/Omnivore.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/ProfessionLists/Professions/Spiritualist.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/ProfessionLists/Professions/Spiritualist.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/ProfessionLists/Professions/Trickster.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/ProfessionLists/Professions/Trickster.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/RaceLists/Race.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/RaceLists/Race.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/RaceLists/Races/Beast.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/RaceLists/Races/Beast.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/RaceLists/Races/Dragon.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/RaceLists/Races/Dragon.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/RaceLists/Races/Dwarf.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/RaceLists/Races/Dwarf.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/RaceLists/Races/Elf.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/RaceLists/Races/Elf.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/RaceLists/Races/Ent.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/RaceLists/Races/Ent.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/RaceLists/Races/Giant.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/RaceLists/Races/Giant.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/RaceLists/Races/Gnome.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/RaceLists/Races/Gnome.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/RaceLists/Races/Human.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/RaceLists/Races/Human.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/RaceLists/Races/Naga.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/RaceLists/Races/Naga.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/RaceLists/Races/Necrotic.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/RaceLists/Races/Necrotic.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/RaceLists/Races/Orc.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/RaceLists/Races/Orc.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/TraitLists/Traits/Mountain.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/TraitLists/Traits/Mountain.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/TraitLists/Traits/Old.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entities/TraitLists/Traits/Old.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entity.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Entity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Fightable.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Fightable.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Map/Battlefield.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Entity/Map/Battlefield.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Game.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Game.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Intro.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/Intro.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/TxtReader.class" afterPath="$PROJECT_DIR$/out/production/RPG_Java/Main/Game/TxtReader.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/Skillbook.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/Skillbook.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/Skills/Slash.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/Skills/Slash.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/Skills/Whirlwind.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/Skills/Whirlwind.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/Spells/Spark.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/Spells/Spark.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/PerkBook.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/PerkBook.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/Stat.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/Stat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/StatBook.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/StatBook.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Entities.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Entities.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/NPC.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/NPC.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Player.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Profession.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Profession.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Bruiser.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Bruiser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Carnivore.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Carnivore.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Craftsman.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Craftsman.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Duelist.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Duelist.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Farmer.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Farmer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Fighter.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Fighter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Kabbalist.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Kabbalist.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Knight.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Knight.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Omnivore.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Omnivore.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Spiritualist.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Spiritualist.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Trickster.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Trickster.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Race.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Race.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Beast.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Beast.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Dragon.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Dragon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Dwarf.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Dwarf.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Elf.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Elf.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Ent.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Ent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Giant.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Giant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Gnome.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Gnome.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Human.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Human.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Naga.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Naga.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Necrotic.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Necrotic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Orc.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Orc.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Mountain.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Mountain.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Old.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Old.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entity.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Fightable.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Fightable.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Map/Battlefield.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Map/Battlefield.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Game.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Game.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Intro.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Intro.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/TxtReader.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/TxtReader.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/Skillbook.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/SkillBook/Skillbook.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/Skills/Slash.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/SkillBook/Skills/Slash.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/Skills/Whirlwind.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/SkillBook/Skills/Whirlwind.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/Spellbook.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/SpellBook/SpellBook.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/Spells/Spark.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/SpellBook/Spells/Spark.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/Perk.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/PerkBook/Perk.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/PerkBook.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/PerkBook/PerkBook.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/Perks/DoubleHit.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/PerkBook/Perks/DoubleHit.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/Perks/Lifesteal.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/PerkBook/Perks/Lifesteal.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/Stat.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AttributeBooks/Attribute.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/baseStat.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AttributeBooks/BaseAttribute.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Trait.java" afterPath="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/TraitBook/Trait.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -104,137 +103,99 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1615">
-              <caret line="244" column="23" lean-forward="false" selection-start-line="244" selection-start-column="8" selection-end-line="244" selection-end-column="23" />
+            <state relative-caret-position="193">
+              <caret line="12" column="48" lean-forward="false" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Book.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/Book.java">
+      <file leaf-file-name="Trait.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/TraitBook/Trait.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="43" lean-forward="false" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+            <state relative-caret-position="476">
+              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StatBook.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/StatBook.java">
+      <file leaf-file-name="BaseTrait.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/TraitBook/Traits/BaseTrait.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="44" column="45" lean-forward="false" selection-start-line="44" selection-start-column="45" selection-end-line="44" selection-end-column="45" />
+            <state relative-caret-position="42">
+              <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TraitBook.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/TraitBook/TraitBook.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="332">
+              <caret line="71" column="13" lean-forward="true" selection-start-line="71" selection-start-column="13" selection-end-line="71" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1541#1542#0" expanded="true" />
-                <element signature="e#1634#1635#0" expanded="true" />
+                <element signature="e#472#473#0" expanded="true" />
+                <element signature="e#522#523#0" expanded="true" />
+                <element signature="e#709#710#0" expanded="true" />
+                <element signature="e#745#746#0" expanded="true" />
+                <element signature="e#947#948#0" expanded="true" />
+                <element signature="e#995#996#0" expanded="true" />
+                <element signature="e#1667#1668#0" expanded="true" />
+                <element signature="e#1718#1719#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Knight.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Knight.java">
+      <file leaf-file-name="Intro.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Intro.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="11" column="81" lean-forward="false" selection-start-line="11" selection-start-column="81" selection-end-line="11" selection-end-column="81" />
+            <state relative-caret-position="315">
+              <caret line="68" column="34" lean-forward="true" selection-start-line="68" selection-start-column="34" selection-end-line="68" selection-end-column="34" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#553#554#0" expanded="false" />
-                <element signature="e#580#581#0" expanded="false" />
-                <element signature="e#632#633#0" expanded="false" />
-                <element signature="e#679#680#0" expanded="false" />
-                <element signature="e#725#726#0" expanded="false" />
-                <element signature="e#756#757#0" expanded="false" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Stat.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/Stat.java">
+      <file leaf-file-name="TxtReader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/TxtReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="30" lean-forward="false" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+            <state relative-caret-position="648">
+              <caret line="86" column="5" lean-forward="true" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#generateMap#0;class#TxtReader#0" expanded="false" />
+                <element signature="method#chooseTrait#0;class#TxtReader#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NPC.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/NPC.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="193">
+              <caret line="12" column="31" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="baseStat.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/baseStat.java">
+      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="18" column="17" lean-forward="true" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Carnivore.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Carnivore.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Omnivore.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Omnivore.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+            <state relative-caret-position="425">
+              <caret line="38" column="9" lean-forward="false" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#558#559#0" expanded="false" />
-                <element signature="e#585#586#0" expanded="false" />
-                <element signature="e#637#638#0" expanded="false" />
-                <element signature="e#689#690#0" expanded="false" />
-                <element signature="e#735#736#0" expanded="false" />
-                <element signature="e#768#769#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Spiritualist.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Spiritualist.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="11" column="77" lean-forward="false" selection-start-line="11" selection-start-column="77" selection-end-line="11" selection-end-column="77" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#566#567#0" expanded="false" />
-                <element signature="e#593#594#0" expanded="false" />
-                <element signature="e#645#646#0" expanded="false" />
-                <element signature="e#697#698#0" expanded="false" />
-                <element signature="e#743#744#0" expanded="false" />
-                <element signature="e#780#781#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Trickster.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Trickster.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#559#560#0" expanded="false" />
-                <element signature="e#586#587#0" expanded="false" />
-                <element signature="e#638#639#0" expanded="false" />
-                <element signature="e#690#691#0" expanded="false" />
-                <element signature="e#736#737#0" expanded="false" />
-                <element signature="e#770#771#0" expanded="false" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -246,19 +207,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Singleton" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>stumb</find>
-      <find>&quot; +</find>
-      <find>toUpperCase</find>
-      <find>baseArm</find>
-      <find>receive</find>
-      <find>damage</find>
       <find>reci</find>
       <find>receiv</find>
       <find>slash</find>
@@ -280,9 +235,15 @@
       <find>perkbook</find>
       <find>skillbook</find>
       <find>Strength</find>
-      <find>strength</find>
       <find>compare</find>
       <find>0</find>
+      <find>Stat</find>
+      <find>wor</find>
+      <find>System</find>
+      <find>strength</find>
+      <find>Spellbook</find>
+      <find>PerkBook</find>
+      <find>Perk</find>
     </findStrings>
     <replaceStrings>
       <replace>baseImprovisation</replace>
@@ -309,6 +270,10 @@
       <replace>value</replace>
       <replace>Value</replace>
       <replace>0.0</replace>
+      <replace>Attribute</replace>
+      <replace>SpellBook</replace>
+      <replace>TraitBook</replace>
+      <replace>Trait</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -322,57 +287,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/Value.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/Perk.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/Book.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/Spellbook.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/AbilityBook.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/PerkBook.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/Skillbook.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/Stats/Endurance.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/Stats/Hardening.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/Stats/Improvisation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/Stats/Knowledge.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/Stats/Mentality.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/Stats/Perception.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Race.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Orc.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Necrotic.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Naga.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Human.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Gnome.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Giant.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Ent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Elf.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Dwarf.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Dragon.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Beast.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Profession.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Entities.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Map/Battlefield.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Mountain.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Old.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/NPC.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/Skills/Whirlwind.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/Skills/Slash.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/Spells/Spark.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Bruiser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Carnivore.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Craftsman.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Duelist.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Farmer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Fighter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Kabbalist.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Knight.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Omnivore.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Spiritualist.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Trickster.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/Stat.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/Stats/baseStat.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Player.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/StatBook.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/Attribute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/baseAttribute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/AttributeBook.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/baseStat.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AttributeBooks/baseAttribute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Map/Battlefield.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Beloved.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Broken.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Corrupted.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Enthusiastic.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Forgotten.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Merciless.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Cursed.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Energetic.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Mountain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Old.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Rabbit.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Rock.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Shapeshifter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Steed.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Wanderer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/Book.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/Spellbook.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/Skillbook.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/PerkBook.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AttributeBooks/calculateable.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AttributeBooks/AttributeBook.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/SpellBook/Spellbook.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/SpellBook/SpellBook.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/SkillBook/Skillbook.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/Perkbook/Perk.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/Perks/PerkBook/Perk.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/Perk.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/TraitBook.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/PerkBook/Perk.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/TraitBook/Traits/Broken.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/TraitBook/BaseTrait.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/TraitList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/TraitBook/Traits/Forgotten.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Player.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/TxtReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/NPC.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/TraitBook/Traits/BaseTrait.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/TraitBook/TraitBook.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Game.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/TraitBook/Trait.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/Game/Intro.java" />
       </list>
     </option>
   </component>
@@ -432,7 +397,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -665,10 +629,203 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPG_Java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPG_Java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entities" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Books" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPG_Java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPG_Java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entities" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Books" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PassiveBooks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TraitBook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPG_Java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPG_Java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entities" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Books" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PassiveBooks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TraitBook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Traits" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPG_Java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPG_Java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entities" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Books" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PassiveBooks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -683,15 +840,19 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="Traits" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="Main.Game.Entity.Entities.Books.StatBooks.Stats" />
-      <recent name="Main.Game.Entity.Entities.Books.StatBooks" />
-      <recent name="Main.Game.Entity.Entities.Book.Books.Perks" />
-      <recent name="Main.Game.Entity.Entities" />
-      <recent name="Main.Game.Entity.Entities.Book" />
-    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Entities" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Main.Game.Entity.Entities.Books.PassiveBooks.TraitBook" />
+      <recent name="Main.Game.Entity.Entities.Books.PassiveBooks" />
+      <recent name="Main.Game.Entity.Entities.Books.StatBooks" />
+      <recent name="Main.Game.Entity.Entities.Books.StatBooks.Stats" />
+      <recent name="Main.Game.Entity.Entities.Book.Books.Perks" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\RPG_Java\src\main\java\Main\Game\Entity\Entities\Books\PassiveBooks\TraitBook" />
+      <recent name="StatBooks" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -994,7 +1155,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23510292" sideWeight="0.4914712" order="6" side_tool="false" content_ui="tabs" />
@@ -1005,19 +1166,20 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30877572" sideWeight="0.07782516" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5098468" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30552545" sideWeight="0.9221748" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30769232" sideWeight="0.9221748" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21018419" sideWeight="0.4936034" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19189766" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23987207" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32502708" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39761648" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39824945" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1025,7 +1187,6 @@
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3298272" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32603937" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -1046,170 +1207,27 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/Perk.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/baseStat.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/NPCFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="13" column="54" lean-forward="false" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
-          <folding>
-            <marker date="1489179729595" expanded="false" signature="44:118" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/PerkBook.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
-          <folding>
-            <element signature="e#698#699#0" expanded="false" />
-            <element signature="e#732#733#0" expanded="false" />
-            <element signature="e#926#927#0" expanded="false" />
-            <element signature="e#972#973#0" expanded="false" />
-            <element signature="e#1630#1631#0" expanded="false" />
-            <element signature="e#1685#1686#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/Skillbook.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1032">
-          <caret line="67" column="39" lean-forward="false" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="39" />
-          <folding>
-            <element signature="e#588#589#0" expanded="false" />
-            <element signature="e#626#627#0" expanded="false" />
-            <element signature="e#839#840#0" expanded="false" />
-            <element signature="e#889#890#0" expanded="false" />
-            <element signature="e#1583#1584#0" expanded="false" />
-            <element signature="e#1639#1640#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/Ability.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/Stats/Hardening.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/Stats/Knowledge.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/Stats/Mentality.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/Stats/Perception.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/Stats/Improvisation.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/Stats/Endurance.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Trait.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Map/Battlefield.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Broken.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Race.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="44" lean-forward="false" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+        <state relative-caret-position="646">
+          <caret line="45" column="17" lean-forward="true" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Orc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Necrotic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Naga.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="23" column="4" lean-forward="false" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Human.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Gnome.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Giant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Ent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Elf.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Dwarf.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Dragon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Beast.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="31" column="22" lean-forward="false" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+        <state relative-caret-position="427">
+          <caret line="31" column="2" lean-forward="false" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
           <folding>
             <element signature="method#calculateEndurance#0;class#Entity#0" expanded="false" />
             <element signature="method#calculateKnowledge#0;class#Entity#0" expanded="false" />
@@ -1227,205 +1245,151 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Profession.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Broken.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="48" lean-forward="false" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
+        <state relative-caret-position="68">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Entities.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Corrupted.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="71" column="5" lean-forward="true" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
+        <state relative-caret-position="221">
+          <caret line="16" column="55" lean-forward="false" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Map/Battlefield.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Cursed.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-662">
-          <caret line="38" column="107" lean-forward="false" selection-start-line="38" selection-start-column="107" selection-end-line="38" selection-end-column="107" />
+        <state relative-caret-position="221">
+          <caret line="16" column="34" lean-forward="false" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Energetic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" column="34" lean-forward="false" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Enthusiastic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" column="42" lean-forward="false" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Forgotten.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="16" column="34" lean-forward="false" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Merciless.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Mountain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="221">
+          <caret line="16" column="38" lean-forward="false" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Old.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/NPC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="103" column="44" lean-forward="true" selection-start-line="103" selection-start-column="44" selection-end-line="103" selection-end-column="44" />
+        <state relative-caret-position="204">
+          <caret line="15" column="40" lean-forward="false" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/Skills/Whirlwind.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="25" column="62" lean-forward="false" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/Skills/Slash.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/Spells/Spark.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Rabbit.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="20" column="95" lean-forward="false" selection-start-line="20" selection-start-column="95" selection-end-line="20" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Bruiser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="64" lean-forward="false" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
+          <caret line="16" column="43" lean-forward="false" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Craftsman.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Rock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="89" lean-forward="false" selection-start-line="11" selection-start-column="89" selection-end-line="11" selection-end-column="89" />
-          <folding>
-            <element signature="e#638#639#0" expanded="false" />
-            <element signature="e#690#691#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Duelist.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="65" lean-forward="false" selection-start-line="11" selection-start-column="65" selection-end-line="11" selection-end-column="65" />
+        <state relative-caret-position="289">
+          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Farmer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Shapeshifter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="69" lean-forward="false" selection-start-line="11" selection-start-column="69" selection-end-line="11" selection-end-column="69" />
+        <state relative-caret-position="221">
+          <caret line="16" column="38" lean-forward="false" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Fighter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Steed.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="85" lean-forward="false" selection-start-line="11" selection-start-column="85" selection-end-line="11" selection-end-column="85" />
+        <state relative-caret-position="221">
+          <caret line="16" column="38" lean-forward="false" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Kabbalist.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Wanderer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="69" lean-forward="false" selection-start-line="11" selection-start-column="69" selection-end-line="11" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#559#560#0" expanded="false" />
-            <element signature="e#586#587#0" expanded="false" />
-            <element signature="e#638#639#0" expanded="false" />
-            <element signature="e#685#686#0" expanded="false" />
-            <element signature="e#731#732#0" expanded="false" />
-            <element signature="e#765#766#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Knight.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="81" lean-forward="false" selection-start-line="11" selection-start-column="81" selection-end-line="11" selection-end-column="81" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#553#554#0" expanded="false" />
-            <element signature="e#580#581#0" expanded="false" />
-            <element signature="e#632#633#0" expanded="false" />
-            <element signature="e#679#680#0" expanded="false" />
-            <element signature="e#725#726#0" expanded="false" />
-            <element signature="e#756#757#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Omnivore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#558#559#0" expanded="false" />
-            <element signature="e#585#586#0" expanded="false" />
-            <element signature="e#637#638#0" expanded="false" />
-            <element signature="e#689#690#0" expanded="false" />
-            <element signature="e#735#736#0" expanded="false" />
-            <element signature="e#768#769#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Spiritualist.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="77" lean-forward="false" selection-start-line="11" selection-start-column="77" selection-end-line="11" selection-end-column="77" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#566#567#0" expanded="false" />
-            <element signature="e#593#594#0" expanded="false" />
-            <element signature="e#645#646#0" expanded="false" />
-            <element signature="e#697#698#0" expanded="false" />
-            <element signature="e#743#744#0" expanded="false" />
-            <element signature="e#780#781#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Trickster.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#559#560#0" expanded="false" />
-            <element signature="e#586#587#0" expanded="false" />
-            <element signature="e#638#639#0" expanded="false" />
-            <element signature="e#690#691#0" expanded="false" />
-            <element signature="e#736#737#0" expanded="false" />
-            <element signature="e#770#771#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/Book.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="43" lean-forward="false" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+        <state relative-caret-position="51">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/Stat.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AttributeBooks/BaseAttribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="59" column="1" lean-forward="false" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Races/Beast.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/RaceLists/Race.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AttributeBooks/Calculateable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="46" lean-forward="false" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AttributeBooks/Attribute.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="30" lean-forward="false" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
@@ -1433,39 +1397,254 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/StatBook.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AttributeBooks/AttributeBook.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="44" column="45" lean-forward="false" selection-start-line="44" selection-start-column="45" selection-end-line="44" selection-end-column="45" />
+        <state relative-caret-position="593">
+          <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1541#1542#0" expanded="true" />
-            <element signature="e#1634#1635#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/ProfessionLists/Professions/Carnivore.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/Book.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="187">
+          <caret line="11" column="45" lean-forward="false" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/StatBooks/baseStat.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/SpellBook/SpellBook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding>
+            <element signature="e#559#560#0" expanded="false" />
+            <element signature="e#597#598#0" expanded="false" />
+            <element signature="e#810#811#0" expanded="false" />
+            <element signature="e#860#861#0" expanded="false" />
+            <element signature="e#1555#1556#0" expanded="false" />
+            <element signature="e#1611#1612#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/AbilityBooks/SkillBook/Skillbook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/PerkBook/PerkBook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/PerkBook/Perk.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/TraitBook/Traits/Old.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="18" column="17" lean-forward="true" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/TraitBook/Traits/Rock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/TraitBook/Traits/Enthusiastic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/TraitBook/Traits/Wanderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/TraitBook/Traits/Energetic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/TraitBook/Traits/Beloved.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" column="28" lean-forward="false" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/TraitBook/Traits/Broken.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/TraitBook/Traits/Corrupted.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/TraitBook/Traits/Shapeshifter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/TraitBook/Traits/Cursed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Trait.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/Traits/Beloved.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/TraitLists/TraitList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/TraitBook/Traits/Forgotten.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="36" lean-forward="false" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1615">
-          <caret line="244" column="23" lean-forward="false" selection-start-line="244" selection-start-column="8" selection-end-line="244" selection-end-column="23" />
+        <state relative-caret-position="193">
+          <caret line="12" column="48" lean-forward="false" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/TxtReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="86" column="5" lean-forward="true" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#generateMap#0;class#TxtReader#0" expanded="false" />
+            <element signature="method#chooseTrait#0;class#TxtReader#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/NPC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="12" column="31" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/TraitBook/Traits/BaseTrait.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/TraitBook/TraitBook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="71" column="13" lean-forward="true" selection-start-line="71" selection-start-column="13" selection-end-line="71" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#472#473#0" expanded="true" />
+            <element signature="e#522#523#0" expanded="true" />
+            <element signature="e#709#710#0" expanded="true" />
+            <element signature="e#745#746#0" expanded="true" />
+            <element signature="e#947#948#0" expanded="true" />
+            <element signature="e#995#996#0" expanded="true" />
+            <element signature="e#1667#1668#0" expanded="true" />
+            <element signature="e#1718#1719#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="38" column="9" lean-forward="false" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Entity/Entities/Books/PassiveBooks/TraitBook/Trait.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Game/Intro.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="68" column="34" lean-forward="true" selection-start-line="68" selection-start-column="34" selection-end-line="68" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,10 +1,10 @@
 package Main.Game;
 
+import Main.Game.Entity.Entities.Books.PassiveBooks.TraitBook.Trait;
+import Main.Game.Entity.Entities.Books.PassiveBooks.TraitBook.TraitBook;
 import Main.Game.Entity.Entities.NPC;
 import Main.Game.Entity.Entities.ProfessionLists.Profession;
 import Main.Game.Entity.Entities.RaceLists.Race;
-import Main.Game.Entity.Entities.TraitLists.TraitList;
-import Main.Game.Entity.Entities.TraitLists.Trait;
 import Main.Game.Entity.Entity;
 import Main.Game.Entity.Map.TileLists.Tile;
 import Main.Game.Entity.Map.TileLists.Tiles.*;
@@ -67,7 +67,7 @@ public class TxtReader {
             String name = s.nextLine();
             Profession profession = Profession.getProfession(s.nextLine());
             Race race = Race.getRace(s.nextLine());
-            TraitList traits = chooseTraits(traitCount);
+            TraitBook traits = chooseTraits(traitCount);
             //System.out.println(name + " " + profession + " " + race + " " + traits);
             return new NPC(name, profession, race, traits);
         }
@@ -77,17 +77,20 @@ public class TxtReader {
         return new NPC("FailedToCreateNPC", Profession.getProfession("Duelist"), Race.getRace("Dwarf"), chooseTraits(traitCount));
     }
 
-    public static TraitList chooseTraits(int traitCount) {
-        TraitList traitList = new TraitList();
+    public static TraitBook chooseTraits(int traitCount) {
+        TraitBook traitBook = new TraitBook();
         for(int i = 0; i <traitCount; i++) {
             Trait trait = chooseTrait();
-            traitList.addToList(trait);
+            traitBook.add(trait);
         }
-        return traitList;
+        return traitBook;
     }
 
     public static Trait chooseTrait() {
         Trait trait = Trait.getTrait("cursed");
         return trait;
     }
+
+
+
 }

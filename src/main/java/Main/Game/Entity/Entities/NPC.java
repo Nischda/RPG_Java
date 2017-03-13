@@ -1,17 +1,16 @@
 package Main.Game.Entity.Entities;
 
 import Main.Game.Entity.Entities.Books.AbilityBooks.Ability;
-import Main.Game.Entity.Entities.Books.AbilityBooks.Skillbook;
-import Main.Game.Entity.Entities.Books.AbilityBooks.Spellbook;
-import Main.Game.Entity.Entities.Books.PassiveBooks.Perk;
-import Main.Game.Entity.Entities.Books.PassiveBooks.PerkBook;
-import Main.Game.Entity.Entities.Books.StatBooks.StatBook;
+import Main.Game.Entity.Entities.Books.AbilityBooks.SkillBook.Skillbook;
+import Main.Game.Entity.Entities.Books.AbilityBooks.SpellBook.SpellBook;
+import Main.Game.Entity.Entities.Books.PassiveBooks.PerkBook.Perk;
+import Main.Game.Entity.Entities.Books.PassiveBooks.PerkBook.PerkBook;
+import Main.Game.Entity.Entities.Books.AttributeBooks.AttributeBook;
+import Main.Game.Entity.Entities.Books.PassiveBooks.TraitBook.TraitBook;
 import Main.Game.Entity.Entities.Item.Equipable;
 import Main.Game.Entity.Entities.ProfessionLists.Profession;
 import Main.Game.Entity.Entities.RaceLists.Race;
 import Main.Game.Entity.Entity;
-import Main.Game.Entity.Entities.Item.Inventory;
-import Main.Game.Entity.Entities.TraitLists.TraitList;
 
 import java.util.HashMap;
 import java.util.Random;
@@ -21,12 +20,12 @@ public class NPC extends Entity {
 
     private Scanner in = new Scanner(System.in);
     private String name;
-    private StatBook statBook;
+    private AttributeBook attributeBook;
     private Profession profession;
     private Race race;
-    private TraitList traitList;
+    private TraitBook traitBook;
     private Skillbook skillbook;
-    private Spellbook spellbook;
+    private SpellBook spellBook;
     private PerkBook perkBook;
     private Entities team;
     private HashMap<String, Equipable> equipment;
@@ -89,19 +88,19 @@ public class NPC extends Entity {
 
 
 
-    public NPC(String name, Profession profession, Race race, TraitList traitList) {
+    public NPC(String name, Profession profession, Race race, TraitBook traitBook) {
         this.name = name;
         this.profession = profession;
         this.race = race;
-        this.traitList = traitList;
+        this.traitBook = traitBook;
         this.skillbook = new Skillbook();
-        this.spellbook = new Spellbook();
+        this.spellBook = new SpellBook();
         this.perkBook = new PerkBook();
         this.equipment = new HashMap<>();
 
-        this.statBook = new StatBook(race.getStats(), profession.getMods());
+        this.attributeBook = new AttributeBook(race.getStats(), profession.getMods());
 
-        traitList.initializeAllTraits(this);
+        //traitBook.initializeAllTraits(this); //Todo
 
         updateNPC();
         this.hp = maxHp;
@@ -115,17 +114,17 @@ public class NPC extends Entity {
     }
 
     private void calculateBaseValues() {
-        this.baseDamage = calculateBaseDamage(statBook.get("strength").get());
-        this.baseStamina = calculateBaseStamina(statBook.get("endurance").get());
-        this.baseSpellDamage = calculateBaseSpellDamage(statBook.get("knowledge").get());
-        this.baseCharisma = calculateBaseCharisma(statBook.get("perception").get());
-        this.baseEffectChance = calculateBaseEffectChance(statBook.get("perception").get());
-        this.baseHpReg = calculateBaseHpReg(statBook.get("mentality").get());
-        this.baseMpReg = calculateBaseMpReg (statBook.get("mentality").get());
-        this.baseArmor = calculateBaseArmor(statBook.get("hardening").get());
-        this.baseResistance = calculateBaseResistance(statBook.get("hardening").get());
-        this.baseMaxHp = calculateBaseMaxHp(statBook.get("strength").get());
-        this.baseMaxMp = calculateBaseMaxMp(statBook.get("knowledge").get());
+        this.baseDamage = calculateBaseDamage(attributeBook.get("strength").get());
+        this.baseStamina = calculateBaseStamina(attributeBook.get("endurance").get());
+        this.baseSpellDamage = calculateBaseSpellDamage(attributeBook.get("knowledge").get());
+        this.baseCharisma = calculateBaseCharisma(attributeBook.get("perception").get());
+        this.baseEffectChance = calculateBaseEffectChance(attributeBook.get("perception").get());
+        this.baseHpReg = calculateBaseHpReg(attributeBook.get("mentality").get());
+        this.baseMpReg = calculateBaseMpReg (attributeBook.get("mentality").get());
+        this.baseArmor = calculateBaseArmor(attributeBook.get("hardening").get());
+        this.baseResistance = calculateBaseResistance(attributeBook.get("hardening").get());
+        this.baseMaxHp = calculateBaseMaxHp(attributeBook.get("strength").get());
+        this.baseMaxMp = calculateBaseMaxMp(attributeBook.get("knowledge").get());
     }
     private void calculateValues() { //ToDo Add Clothes/Status effects
         this.damage = calculateDamage(damageMod, baseDamage);
@@ -170,7 +169,7 @@ public class NPC extends Entity {
     }
     @Override
     public void addToSpellbook(Ability ability) {
-        this.spellbook.add(ability);
+        this.spellBook.add(ability);
     }
     @Override
     public void addToPerkbook(Perk perk) {
@@ -180,7 +179,7 @@ public class NPC extends Entity {
 
     @Override
     public void addToStatMod(String name, double value) {
-        statBook.get(name).addMod(value);
+        attributeBook.get(name).addMod(value);
     }
     @Override
     public void addTeam(Entities team) {
@@ -188,14 +187,15 @@ public class NPC extends Entity {
     }
     @Override
     public int getStatValue(String name) {
-        return statBook.get(name).get();
+        return attributeBook.get(name).get();
     }
     @Override
     public String getName(){
         return this.name;
     } //ToDo differentiate with real name
 
-    // AddTo Stat MODIFIER
+    /*
+    // AddTo Attribute MODIFIER
     @Override
     public void addToDamageMod(double value) {
         damageMod += value;
@@ -241,6 +241,7 @@ public class NPC extends Entity {
         maxMpMod += value;
     }
 
+*/
     public void equip(Equipable equipable) {
         this.equipment.put(equipable.getSlot(), equipable);
         updateEquipment();
@@ -280,7 +281,7 @@ public class NPC extends Entity {
     //CAST SPELLS
     @Override
     public void cast(Entities entities1,Entities entities2) {
-        spellbook.getRandom().aiUse(this, this.spellDamage, entities2);
+        spellBook.getRandom().aiUse(this, this.spellDamage, entities2);
     }
     @Override
     public void item(Entities entities1, Entities enemies) {
@@ -380,6 +381,6 @@ public class NPC extends Entity {
 
     @Override
     public String toString() {
-        return String.format("%s %s: %s (%s/%sHP %s/%sMP %sEnd)\n",this.race, this.profession, this.name, this.hp, this.maxHp, this.mp, this.maxMp, this.getStatValue("endurance"));
+        return String.format("%s %s: %s (%s/%sHP %s/%sMP %Speed)\n",this.race, this.profession, this.name, this.hp, this.maxHp, this.mp, this.maxMp, this.getStatValue("speed"));
     }
 }
