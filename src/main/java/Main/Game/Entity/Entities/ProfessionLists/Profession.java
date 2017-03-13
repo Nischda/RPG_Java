@@ -1,6 +1,7 @@
 package Main.Game.Entity.Entities.ProfessionLists;
 import Main.Game.Entity.Entity;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public abstract class Profession {
@@ -8,7 +9,7 @@ public abstract class Profession {
     private static HashMap<String, Profession> professionList = new HashMap<>();
 
     public abstract void printDescription();
-    public abstract void initializePerks(Entity entity);
+    public abstract ArrayList<Double> getMods();
 
     public void addToList() {
         professionList.put(this.toString(), this);

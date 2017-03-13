@@ -40,30 +40,6 @@ public class Player extends Entity implements Comparable<Player>, Comparator<Pla
     private int maxMp;
     private int mp;
 
-    private int baseStrength; //see if making double
-    private int baseEndurance;
-    private int baseKnowledge;
-    private int basePerception;
-    private int baseMentality;
-    private int baseHardening;
-    private int baseImprovisation;
-
-    private double strengthMod = 1;
-    private double enduranceMod = 1;
-    private double knowledgeMod = 1;
-    private double perceptionMod = 1;
-    private double mentalityMod = 1;
-    private double hardeningMod = 1;
-    private double improvisationMod = 1;
-
-    private int strength; //see if making double
-    private int endurance;
-    private int knowledge;
-    private int perception;
-    private int mentality;
-    private int hardening;
-    private int improvisation;
-
     private int baseDamage;
     private int baseStamina;
     private int baseSpellDamage;
@@ -120,9 +96,8 @@ public class Player extends Entity implements Comparable<Player>, Comparator<Pla
         this.perkBook = new PerkBook();
         this.equipment = new HashMap<>();
 
-        this.statBook = new StatBook();
-        profession.initializePerks(this);
-        race.initializeAttributes(this);
+        this.statBook = new StatBook(race.getStats(), profession.getMods());
+
         traitList.initializeAllTraits(this);
 
         updatePlayer();
@@ -131,45 +106,27 @@ public class Player extends Entity implements Comparable<Player>, Comparator<Pla
     }
 
     public void updatePlayer() {
-        calculateAttributes();
         calculateBaseValues();
         calculateValues();
     }
 
-    //SET BASE ATTRIBUTES
-    @Override
-    public void setBaseAttributes(int baseStrength, int baseEndurance, int baseKnowledge, int basePerception, int baseMentality, int baseHardening, int baseImprovisation) {
-        this.baseStrength = baseStrength;
-        this.baseEndurance = baseEndurance;
-        this.baseKnowledge = baseKnowledge;
-        this.basePerception = basePerception;
-        this.baseMentality = baseMentality;
-        this.baseHardening = baseHardening;
-        this.baseImprovisation = baseImprovisation;
+
+    private void calculateBaseValues() {
+        System.out.println(statBook.get("strength"));
+        System.out.println(statBook.get("strength").toString());
+        this.baseDamage = calculateBaseDamage(statBook.get("strength").get());
+        this.baseStamina = calculateBaseStamina(statBook.get("endurance").get());
+        this.baseSpellDamage = calculateBaseSpellDamage(statBook.get("knowledge").get());
+        this.baseCharisma = calculateBaseCharisma(statBook.get("perception").get());
+        this.baseEffectChance = calculateBaseEffectChance(statBook.get("perception").get());
+        this.baseHpReg = calculateBaseHpReg(statBook.get("mentality").get());
+        this.baseMpReg = calculateBaseMpReg (statBook.get("mentality").get());
+        this.baseArmor = calculateBaseArmor(statBook.get("hardening").get());
+        this.baseResistance = calculateBaseResistance(statBook.get("hardening").get());
+        this.baseMaxHp = calculateBaseMaxHp(statBook.get("strength").get());
+        this.baseMaxMp = calculateBaseMaxMp(statBook.get("knowledge").get());
     }
 
-    private void calculateAttributes() {
-        this.strength = calculateStrength(strengthMod, baseStrength );
-        this.endurance = calculateEndurance(enduranceMod, baseEndurance);
-        this.knowledge = calculateKnowledge(knowledgeMod, baseKnowledge);
-        this.perception = calculatePerception(perceptionMod, basePerception);
-        this.mentality = calculateMentality(mentalityMod, baseMentality);
-        this.hardening = calculateHardening(hardeningMod,baseHardening);
-        this.improvisation = calculateBaseImprovisation(improvisationMod, baseImprovisation);
-    }
-    private void calculateBaseValues() {
-        this.baseDamage = calculateBaseDamage(baseStrength); //add weapon
-        this.baseStamina = calculateBaseStamina(baseEndurance); //add clothes
-        this.baseSpellDamage = calculateBaseSpellDamage(baseKnowledge); //add clothes & weapon
-        this.baseCharisma = calculateBaseCharisma(basePerception); //add clothes
-        this.baseEffectChance = calculateBaseEffectChance(basePerception); //add clothes
-        this.baseHpReg = calculateBaseHpReg(baseMentality); //add clothes
-        this.baseMpReg = calculateBaseMpReg (baseMentality); //add clothes
-        this.baseArmor = calculateBaseArmor(baseHardening); //add clothes & weapon
-        this.baseResistance = calculateBaseResistance(baseHardening); //add clothes
-        this.baseMaxHp = calculateBaseMaxHp(strengthMod, baseStrength); //make base?
-        this.baseMaxMp = calculateBaseMaxMp(knowledgeMod, baseKnowledge); //make base?
-    }
     private void calculateValues() { //ToDo Add Clothes/Status effects
         this.damage = calculateDamage(damageMod, baseDamage) + equipmentDamage;
         this.stamina = calculateStamina(staminaMod, baseStamina) + equipmentStamina;
@@ -218,35 +175,23 @@ public class Player extends Entity implements Comparable<Player>, Comparator<Pla
         this.perkBook.add(perk);
     }
 
-    // AddTo ATTRIBUTE MODIFIER
+
     @Override
-    public void addToStrengthMod(double value) {
-        strengthMod += value;
+    public void addToStatMod(String name, double value) {
+        statBook.get(name).addMod(value);
     }
     @Override
-    public void addToEnduranceMod(double value) {
-        enduranceMod += value;
+    public void addTeam(Entities team) {
+        this.team = team;
     }
     @Override
-    public void addToKnowledgeMod(double value) {
-        knowledgeMod += value;
+    public int getStatValue(String name) {
+        return statBook.get(name).get();
     }
     @Override
-    public void addToPerceptionMod(double value) {
-        perceptionMod += value;
-    }
-    @Override
-    public void addToMentalityMod(double value) {
-        mentalityMod += value;
-    }
-    @Override
-    public void addToHardeningMod(double value) {
-        hardeningMod += value;
-    }
-    @Override
-    public void addToImprovisationMod(double value) {
-        improvisationMod += value;
-    }
+    public String getName(){
+        return "you";
+    } //ToDo differentiate with real name
 
     // AddTo Stat MODIFIER
     @Override
@@ -293,45 +238,6 @@ public class Player extends Entity implements Comparable<Player>, Comparator<Pla
     public void addToMaxMpMod(double value) {
         maxMpMod += value;
     }
-
-    @Override
-    public void addTeam(Entities team) {
-        this.team = team;
-    }
-
-    //GET ATTRIBUTES
-    @Override
-    public int getStrength() {
-        return strength;
-    }
-    @Override
-    public int getEndurance() {
-        return endurance;
-    }
-    @Override
-    public int getKnowledge() {
-        return knowledge;
-    }
-    @Override
-    public int getPerception() {
-        return perception;
-    }
-    @Override
-    public int getMentality() {
-        return mentality;
-    }
-    @Override
-    public int getHardening() {
-        return hardening;
-    }
-    @Override
-    public int getImprovisation() {
-        return improvisation;
-    }
-    @Override
-    public String getName(){
-        return "you";
-    } //ToDo differentiate with real name
 
 
     public void equip(Equipable equipable) { //Todo Remove equiped item from inventory list or mark them as used
@@ -474,9 +380,9 @@ public class Player extends Entity implements Comparable<Player>, Comparator<Pla
     }
 
     public void printStatus() {
-        System.out.println("HP: " + this.hp + "/" + this.maxHp);
-        System.out.println("MP: " + this.mp + "/" + this.maxMp);
-        System.out.println("XP: " + this.xp + "/" + this.xpToNextLevel);
+        System.out.println("HP: " + hp + "/" + maxHp);
+        System.out.println("MP: " + mp + "/" + maxMp);
+        System.out.println("XP: " + xp + "/" + xpToNextLevel);
         System.out.println("Status effects: \n");
     }
 
@@ -487,10 +393,11 @@ public class Player extends Entity implements Comparable<Player>, Comparator<Pla
     }
     @Override
     public String toString() {
-        return String.format(this.name + ": (%s/%sHP %s/%sMP %sEnd)\n ", this.hp, this.maxHp, this.mp, this.maxMp, this.endurance);
+        return String.format(name + ": (%s/%sHP %s/%sMP %sEnd)\n ", hp, maxHp,mp, maxMp, statBook.get("endurance").get());
     }
 
     public void printCharacter() {
+   /*
         System.out.println("name: " + name);
         System.out.println("profession: " + profession);
         System.out.println("race: " + race);
@@ -552,15 +459,16 @@ public class Player extends Entity implements Comparable<Player>, Comparator<Pla
         System.out.println("armor: : " + armor);
         System.out.println("resistance: : " + resistance);
         System.out.println();
+        */
     }
 
     @Override
     public int compareTo(Player o) {
-        return this.getEndurance() - o.getEndurance();
+        return this.getStatValue("endurance") - o.getStatValue("endurance");
     }
 
     @Override
     public int compare(Player o1, Player o2) {
-        return o1.getEndurance() - o2.getEndurance();
+        return o1.getStatValue("endurance") - o2.getStatValue("endurance");
     }
 }

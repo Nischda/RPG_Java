@@ -36,7 +36,7 @@ public class Battlefield {
                 turnCount++;
                 //System.out.println("Round: " + roundCount + " | Turn: " + turnCount);
                 System.out.println();
-                if ((entities1.get(0).getEndurance() >= enemies.get(0).getEndurance() && playerGotTurns) || (playerGotTurns && !enemyGotTurns)) {//Playerturn
+                if ((entities1.get(0).getStatValue("endurance") >= enemies.get(0).getStatValue("endurance") && playerGotTurns) || (playerGotTurns && !enemyGotTurns)) {//Playerturn
                     playerTurnCount++;
                     if (playerTurnCount >= entities1.size()) {
                         playerGotTurns = false;

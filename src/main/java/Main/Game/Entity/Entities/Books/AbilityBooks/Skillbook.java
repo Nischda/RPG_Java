@@ -10,27 +10,27 @@ import java.util.Random;
 
 public class Skillbook extends Book<Ability> {
 
-    private static ArrayList<Ability> skillbook;
+    private static ArrayList<Ability> skillBook;
 
     public Skillbook() {
-        skillbook = new ArrayList<>();
-        skillbook.add(new Slash());
-        skillbook.add(new Whirlwind());
+        skillBook = new ArrayList<>();
+        skillBook.add(new Slash());
+        skillBook.add(new Whirlwind());
     }
 
     @Override
     public void add(Ability ability) {
-        skillbook.add(ability);
+        skillBook.add(ability);
     }
     @Override
     public void remove(Ability ability) {
-        if(skillbook.contains(ability)) {
-            skillbook.remove(ability);
+        if(skillBook.contains(ability)) {
+            skillBook.remove(ability);
         }
     }
     @Override
     public boolean include(Ability ability) {
-        return skillbook.contains(ability);
+        return skillBook.contains(ability);
     }
 
     @Override
@@ -44,7 +44,7 @@ public class Skillbook extends Book<Ability> {
 
     @Override
     public  Ability get(String name) {
-        for(Ability ability: skillbook) {
+        for(Ability ability: skillBook) {
             if (ability.toString().equals(name)) {
                 return ability;
             }
@@ -54,18 +54,18 @@ public class Skillbook extends Book<Ability> {
     @Override
     public Ability getRandom() {
         Random intRandom = new Random();
-        return skillbook.get(intRandom.nextInt(skillbook.size()));
+        return skillBook.get(intRandom.nextInt(skillBook.size()));
     }
 
     @Override
     public void printBook() {
-        System.out.println(skillbook.toString());
+        System.out.println(skillBook.toString());
     }
 
     @Override
     public String toString() {
         String string = "";
-        for(Ability ability : skillbook) {
+        for(Ability ability : skillBook) {
             string += ability.toString() + ", ";
         }
         return string.substring(0, string.length()-2);

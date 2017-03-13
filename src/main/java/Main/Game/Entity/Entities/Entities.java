@@ -63,7 +63,7 @@ public class Entities implements Iterable<Entity> {
     public void sortEntities() {
         Collections.sort(entities, new Comparator<Entity>() {
             public int compare(Entity e1, Entity e2) {
-                return e1.getEndurance() - e2.getEndurance();
+                return e1.getStatValue("endurance") - e2.getStatValue("endurance");
             }
         });
     }

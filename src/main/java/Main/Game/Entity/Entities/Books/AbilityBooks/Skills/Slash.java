@@ -19,14 +19,14 @@ public class Slash extends Ability {
     public ArrayList<HashMap<Entity, Integer>> use(Entity actor, int damage, Entities targets) {
         System.out.println("Choose your target (up to " + targets.size() + ")");//Todo add rangecheck
         Entity target = targets.get(Integer.parseInt(in.nextLine())-1);
-        return new ArrayList<>(Arrays.asList(target.receivePhysicalDamage(damage, actor.name())));
+        return new ArrayList<>(Arrays.asList(target.receivePhysicalDamage(damage, actor.getName())));
     }
 
     @Override
     public void aiUse(Entity actor, int damage, Entities targets) {
         Entity target = targets.get(0);//ToDo make sort by missing health
         System.out.println(actor.getName() + " uses " + this.toString() + " on " + target.getName() + ".");
-        target.receivePhysicalDamage(damage, actor.name());
+        target.receivePhysicalDamage(damage, actor.getName());
     }
 
     @Override

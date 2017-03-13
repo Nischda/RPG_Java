@@ -13,7 +13,7 @@ public class Old extends Trait {
 
     @Override
     public void initializeTrait(Entity entity) {
-        entity.addToKnowledgeMod(0.2);
+        entity.addToSpellDamageMod(0.2);
         entity.addToMaxHpMod(-0.2);
     }
 

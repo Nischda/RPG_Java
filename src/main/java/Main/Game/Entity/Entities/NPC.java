@@ -5,6 +5,7 @@ import Main.Game.Entity.Entities.Books.AbilityBooks.Skillbook;
 import Main.Game.Entity.Entities.Books.AbilityBooks.Spellbook;
 import Main.Game.Entity.Entities.Books.PassiveBooks.Perk;
 import Main.Game.Entity.Entities.Books.PassiveBooks.PerkBook;
+import Main.Game.Entity.Entities.Books.StatBooks.StatBook;
 import Main.Game.Entity.Entities.Item.Equipable;
 import Main.Game.Entity.Entities.ProfessionLists.Profession;
 import Main.Game.Entity.Entities.RaceLists.Race;
@@ -19,9 +20,8 @@ import java.util.Scanner;
 public class NPC extends Entity {
 
     private Scanner in = new Scanner(System.in);
-    private static Inventory inventory = new Inventory();
-
     private String name;
+    private StatBook statBook;
     private Profession profession;
     private Race race;
     private TraitList traitList;
@@ -40,30 +40,6 @@ public class NPC extends Entity {
     private int hp;
     private int maxMp;
     private int mp;
-
-    private int baseStrength; //see if making double
-    private int baseEndurance;
-    private int baseKnowledge;
-    private int basePerception;
-    private int baseMentality;
-    private int baseHardening;
-    private int baseImprovisation;
-
-    private double strengthMod = 1;
-    private double enduranceMod = 1;
-    private double knowledgeMod = 1;
-    private double perceptionMod = 1;
-    private double mentalityMod = 1;
-    private double hardeningMod = 1;
-    private double improvisationMod = 1;
-
-    private int strength; //see if making double
-    private int endurance;
-    private int knowledge;
-    private int perception;
-    private int mentality;
-    private int hardening;
-    private int improvisation;
 
     private int baseDamage;
     private int baseStamina;
@@ -108,6 +84,9 @@ public class NPC extends Entity {
     private int equipmentMpReg;
     private int equipmentArmor;
     private int equipmentResistance;
+    private int equipmentMaxHp;
+    private int equipmentMaxMp;
+
 
 
     public NPC(String name, Profession profession, Race race, TraitList traitList) {
@@ -120,43 +99,33 @@ public class NPC extends Entity {
         this.perkBook = new PerkBook();
         this.equipment = new HashMap<>();
 
-        profession.initializePerks(this);
-        race.initializeAttributes(this);
+        this.statBook = new StatBook(race.getStats(), profession.getMods());
+
         traitList.initializeAllTraits(this);
 
         updateNPC();
         this.hp = maxHp;
         this.mp = maxMp;
-
     }
 
     public void updateNPC() {
-        calculateAttributes();
         calculateBaseValues();
         calculateValues();
 
     }
-    private void calculateAttributes() {
-        this.strength = calculateStrength(strengthMod, baseStrength );
-        this.endurance = calculateEndurance(enduranceMod, baseEndurance);
-        this.knowledge = calculateKnowledge(knowledgeMod, baseKnowledge);
-        this.perception = calculatePerception(perceptionMod, basePerception);
-        this.mentality = calculateMentality(mentalityMod, baseMentality);
-        this.hardening = calculateHardening(hardeningMod,baseHardening);
-        this.improvisation = calculateBaseImprovisation(improvisationMod, baseImprovisation);
-    }
+
     private void calculateBaseValues() {
-        this.baseDamage = calculateBaseDamage(baseStrength); //add weapon
-        this.baseStamina = calculateBaseStamina(baseEndurance); //add clothes
-        this.baseSpellDamage = calculateBaseSpellDamage(baseKnowledge); //add clothes & weapon
-        this.baseCharisma = calculateBaseCharisma(basePerception); //add clothes
-        this.baseEffectChance = calculateBaseEffectChance(basePerception); //add clothes
-        this.baseHpReg = calculateBaseHpReg(baseMentality); //add clothes
-        this.baseMpReg = calculateBaseMpReg (baseMentality); //add clothes
-        this.baseArmor = calculateBaseArmor(baseHardening); //add clothes & weapon
-        this.baseResistance = calculateBaseResistance(baseHardening); //add clothes
-        this.baseMaxHp = calculateBaseMaxHp(strengthMod, baseStrength); //make base?
-        this.baseMaxMp = calculateBaseMaxMp(knowledgeMod, baseKnowledge); //make base?
+        this.baseDamage = calculateBaseDamage(statBook.get("strength").get());
+        this.baseStamina = calculateBaseStamina(statBook.get("endurance").get());
+        this.baseSpellDamage = calculateBaseSpellDamage(statBook.get("knowledge").get());
+        this.baseCharisma = calculateBaseCharisma(statBook.get("perception").get());
+        this.baseEffectChance = calculateBaseEffectChance(statBook.get("perception").get());
+        this.baseHpReg = calculateBaseHpReg(statBook.get("mentality").get());
+        this.baseMpReg = calculateBaseMpReg (statBook.get("mentality").get());
+        this.baseArmor = calculateBaseArmor(statBook.get("hardening").get());
+        this.baseResistance = calculateBaseResistance(statBook.get("hardening").get());
+        this.baseMaxHp = calculateBaseMaxHp(statBook.get("strength").get());
+        this.baseMaxMp = calculateBaseMaxMp(statBook.get("knowledge").get());
     }
     private void calculateValues() { //ToDo Add Clothes/Status effects
         this.damage = calculateDamage(damageMod, baseDamage);
@@ -176,17 +145,6 @@ public class NPC extends Entity {
         return this.name;
     }
 
-    //SET BASE ATTRIBUTES
-    @Override
-    public void setBaseAttributes(int baseStrength, int baseEndurance, int baseKnowledge, int basePerception, int baseMentality, int baseHardening, int baseImprovisation) {
-        this.baseStrength = baseStrength;
-        this.baseEndurance = baseEndurance;
-        this.baseKnowledge = baseKnowledge;
-        this.basePerception = basePerception;
-        this.baseMentality = baseMentality;
-        this.baseHardening = baseHardening;
-        this.baseImprovisation = baseImprovisation;
-    }
 
     // AddTo Stats
     @Override
@@ -204,6 +162,7 @@ public class NPC extends Entity {
         this.xp += value;
         System.out.println(this.name() + " gained " + value + "xp.");
     }
+
     //add to books
     @Override
     public void addToSkillbook(Ability ability) {
@@ -218,35 +177,23 @@ public class NPC extends Entity {
         this.perkBook.add(perk);
     }
 
-    // AddTo ATTRIBUTE MODIFIER
+
     @Override
-    public void addToStrengthMod(double value) {
-        strengthMod += value;
+    public void addToStatMod(String name, double value) {
+        statBook.get(name).addMod(value);
     }
     @Override
-    public void addToEnduranceMod(double value) {
-        enduranceMod += value;
+    public void addTeam(Entities team) {
+        this.team = team;
     }
     @Override
-    public void addToKnowledgeMod(double value) {
-        knowledgeMod += value;
+    public int getStatValue(String name) {
+        return statBook.get(name).get();
     }
     @Override
-    public void addToPerceptionMod(double value) {
-        perceptionMod += value;
-    }
-    @Override
-    public void addToMentalityMod(double value) {
-        mentalityMod += value;
-    }
-    @Override
-    public void addToHardeningMod(double value) {
-        hardeningMod += value;
-    }
-    @Override
-    public void addToImprovisationMod(double value) {
-        improvisationMod += value;
-    }
+    public String getName(){
+        return this.name;
+    } //ToDo differentiate with real name
 
     // AddTo Stat MODIFIER
     @Override
@@ -292,45 +239,6 @@ public class NPC extends Entity {
     @Override
     public void addToMaxMpMod(double value) {
         maxMpMod += value;
-    }
-
-    @Override
-    public void addTeam(Entities team) {
-        this.team = team;
-    }
-
-    //GET ATTRIBUTES
-    @Override
-    public int getStrength() {
-        return strength;
-    }
-    @Override
-    public int getEndurance() {
-        return endurance;
-    }
-    @Override
-    public int getKnowledge() {
-        return knowledge;
-    }
-    @Override
-    public int getPerception() {
-        return perception;
-    }
-    @Override
-    public int getMentality() {
-        return mentality;
-    }
-    @Override
-    public int getHardening() {
-        return hardening;
-    }
-    @Override
-    public int getImprovisation() {
-        return improvisation;
-    }
-    @Override
-    public String getName(){
-        return this.name();
     }
 
     public void equip(Equipable equipable) {
@@ -472,6 +380,6 @@ public class NPC extends Entity {
 
     @Override
     public String toString() {
-        return String.format("%s %s: %s (%s/%sHP %s/%sMP %sEnd)\n",this.race, this.profession, this.name, this.hp, this.maxHp, this.mp, this.maxMp, this.endurance);
+        return String.format("%s %s: %s (%s/%sHP %s/%sMP %sEnd)\n",this.race, this.profession, this.name, this.hp, this.maxHp, this.mp, this.maxMp, this.getStatValue("endurance"));
     }
 }

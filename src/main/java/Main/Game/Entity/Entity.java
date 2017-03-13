@@ -14,14 +14,7 @@ public abstract class Entity implements Fightable{
     public abstract void addToHp(double value);
     public abstract void addToMp(double value);
     public abstract void addToXp(double value);
-
-    public abstract void addToStrengthMod(double value);
-    public abstract void addToEnduranceMod(double value);
-    public abstract void addToKnowledgeMod(double value);
-    public abstract void addToPerceptionMod(double value);
-    public abstract void addToMentalityMod(double value);
-    public abstract void addToHardeningMod(double value);
-    public abstract void addToImprovisationMod(double value);
+    public abstract void addToStatMod(String name, double value);
 
     public abstract void addToDamageMod(double value);
     public abstract void addToStaminaMod(double value);
@@ -35,25 +28,17 @@ public abstract class Entity implements Fightable{
     public abstract void addToMaxHpMod(double value);
     public abstract void addToMaxMpMod(double value);
 
-    public abstract String name();
-    public abstract int getStrength();
-    public abstract int getEndurance();
-    public abstract int getKnowledge();
-    public abstract int getPerception();
-    public abstract int getMentality();
-    public abstract int getHardening();
-    public abstract int getImprovisation();
+    public abstract int getStatValue(String name);
     public abstract String getName();
 
     public abstract void equip (Equipable equipable);
-    public abstract void setBaseAttributes(int baseStrength, int baseEndurance, int baseKnowledge, int basePerception, int baseMentality, int baseHardening, int baseImprovisation);
     public abstract String toString();
 
-    protected int calculateBaseMaxHp(double strengthMod, int baseStrength) {
-        return (int)(strengthMod * baseStrength * 10);
+    protected int calculateBaseMaxHp(int baseStrength) {
+        return (int)(baseStrength * 10);
     }
-    protected int calculateBaseMaxMp(double knowledgeMod, int baseKnowledge) {
-        return (int)(knowledgeMod * baseKnowledge * 10);
+    protected int calculateBaseMaxMp(int baseKnowledge) {
+        return (int)(baseKnowledge * 10);
     }
 
     protected int calculateStrength(double strengthMod, int baseStrength) {

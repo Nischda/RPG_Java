@@ -15,7 +15,7 @@ public class Whirlwind extends Ability {
         System.out.println("You attack all targets!");
         ArrayList<HashMap<Entity, Integer>> actions = new ArrayList<>();
         for(Entity target: targets) {
-            actions.add(target.receivePhysicalDamage(damage, actor.name()));
+            actions.add(target.receivePhysicalDamage(damage, actor.getName()));
         }
         return actions;
     }
@@ -23,7 +23,7 @@ public class Whirlwind extends Ability {
     public void aiUse(Entity actor, int damage, Entities targets) {
         System.out.println(actor.getName() + " uses " + this.toString() + ".");
         for(Entity target: targets) {
-            target.receivePhysicalDamage(damage, actor.name());
+            target.receivePhysicalDamage(damage, actor.getName());
         }
     }
 

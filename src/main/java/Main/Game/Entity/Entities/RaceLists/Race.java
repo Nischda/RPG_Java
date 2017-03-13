@@ -1,6 +1,8 @@
 package Main.Game.Entity.Entities.RaceLists;
 
 import Main.Game.Entity.Entity;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public abstract class Race {
@@ -8,8 +10,7 @@ public abstract class Race {
     private static HashMap raceList = new HashMap();
 
     public abstract void printDescription();
-    public abstract void initializeAttributes(Entity entity);
-
+    public abstract ArrayList<Integer> getStats();
     public static boolean include(String race) {
         return raceList.containsKey(race);
     }

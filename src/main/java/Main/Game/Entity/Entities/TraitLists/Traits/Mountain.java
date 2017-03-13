@@ -14,7 +14,7 @@ public class Mountain extends Trait {
     @Override
     public void initializeTrait(Entity entity) {
         entity.addToMaxHpMod(0.2);
-        entity.addToEnduranceMod(-0.2);
+        entity.addToStaminaMod(-0.2);
     }
 
     public String toString() {
