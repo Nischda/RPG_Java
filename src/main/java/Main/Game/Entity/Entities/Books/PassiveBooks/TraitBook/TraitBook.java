@@ -2,7 +2,6 @@ package Main.Game.Entity.Entities.Books.PassiveBooks.TraitBook;
 
 
 import Main.Game.Entity.Entities.Books.Book;
-import Main.Game.Entity.Entities.Books.PassiveBooks.TraitBook.Traits.BaseTrait;
 import Main.Game.Entity.Entity;
 
 import java.util.ArrayList;

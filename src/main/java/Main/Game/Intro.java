@@ -66,7 +66,7 @@ public class Intro {
         boolean approval = false;
         while (!validTraits || !approval) {
             System.out.println("The world destined you the burden of? (enter up to 3 traits, enter 'accept' to continue)");
-            traitBook.printBook();
+            Trait.toS();
             System.out.println(String.format("Current traits: %s/%s:%s.", curTraits, maxTraits, traitBook.toString()));
             String input = Console.getStringInput();
             if(curTraits < maxTraits) {
