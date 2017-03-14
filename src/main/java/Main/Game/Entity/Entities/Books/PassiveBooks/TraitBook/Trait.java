@@ -1,11 +1,9 @@
 package Main.Game.Entity.Entities.Books.PassiveBooks.TraitBook;
 
-import Main.Game.Entity.Entities.Books.PassiveBooks.TraitBook.Traits.BaseTrait;
 import Main.Game.Entity.Entity;
 import Main.Game.TxtReader;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public abstract class Trait {

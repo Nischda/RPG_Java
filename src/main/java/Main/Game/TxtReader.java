@@ -2,10 +2,11 @@ package Main.Game;
 
 import Main.Game.Entity.Entities.Books.PassiveBooks.TraitBook.Trait;
 import Main.Game.Entity.Entities.Books.PassiveBooks.TraitBook.TraitBook;
-import Main.Game.Entity.Entities.Books.PassiveBooks.TraitBook.Traits.BaseTrait;
+import Main.Game.Entity.Entities.Books.PassiveBooks.TraitBook.BaseTrait;
 import Main.Game.Entity.Entities.NPC;
 import Main.Game.Entity.Entities.ProfessionLists.Profession;
-import Main.Game.Entity.Entities.RaceLists.Race;
+import Main.Game.Entity.Entities.Books.RaceBooks.Race;
+import Main.Game.Entity.Entities.Books.RaceBooks.BaseRace;
 import Main.Game.Entity.Entity;
 import Main.Game.Entity.Map.TileLists.Tile;
 import Main.Game.Entity.Map.TileLists.Tiles.*;
@@ -70,7 +71,6 @@ public class TxtReader {
             Profession profession = Profession.getProfession(s.nextLine());
             Race race = Race.getRace(s.nextLine());
             TraitBook traits = chooseTraits(traitCount);
-            //System.out.println(name + " " + profession + " " + race + " " + traits);
             return new NPC(name, profession, race, traits);
         }
         catch(IOException ioe){
@@ -94,6 +94,7 @@ public class TxtReader {
         return trait;
     }
 
+
     public static HashMap<String, Trait> generateTraitRegister(File file) {
 
         HashMap<String,Trait> traitMap= new HashMap<>();
@@ -110,13 +111,41 @@ public class TxtReader {
                 String description = s.nextLine();
                 traitMap.put(name, new BaseTrait(name, attrName1, mod1, attrName2, mod2, description));
             }
-            //System.out.println(name + " " + profession + " " + race + " " + traits);
             return traitMap;
         }
         catch(IOException ioe){
             ioe.printStackTrace();
         }
         System.out.println("Failed to read and crate traitMap in txtReader");
+        return null;
+    }
+
+    public static HashMap<String, Race> generateRaceRegister(File file) {
+
+        HashMap<String,Race> raceMap= new HashMap<>();
+        try  {
+            Scanner s = new Scanner(file);
+            int racesInFile = Integer.parseInt(s.nextLine());
+
+            for(int i = 0; i < racesInFile; i++) {
+                String name = s.next();
+                String article = s.next();
+                int strength = Integer.parseInt(s.next());
+                int endurance = Integer.parseInt(s.next());
+                int knowledge = Integer.parseInt(s.next());
+                int perception = Integer.parseInt(s.next());
+                int mentality = Integer.parseInt(s.next());
+                int hardening = Integer.parseInt(s.next());
+                int improvisation = Integer.parseInt(s.next());
+                String description = s.nextLine();
+                raceMap.put(name, new BaseRace(name, article, strength, endurance, knowledge, perception, mentality, hardening, improvisation, description));
+           }
+            return raceMap;
+        }
+        catch(IOException ioe){
+            ioe.printStackTrace();
+        }
+        System.out.println("Failed to read and crate raceMap in txtReader");
         return null;
     }
 

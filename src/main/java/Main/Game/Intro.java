@@ -5,9 +5,7 @@ import Main.Game.Entity.Entities.Books.PassiveBooks.TraitBook.TraitBook;
 import Main.Game.Entity.Entities.Console;
 import Main.Game.Entity.Entities.ProfessionLists.Profession;
 import Main.Game.Entity.Entities.Player;
-import Main.Game.Entity.Entities.RaceLists.Race;
-
-import java.util.Scanner;
+import Main.Game.Entity.Entities.Books.RaceBooks.Race;
 
 public class Intro {
 

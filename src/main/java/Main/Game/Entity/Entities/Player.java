@@ -10,7 +10,7 @@ import Main.Game.Entity.Entities.Books.PassiveBooks.TraitBook.TraitBook;
 import Main.Game.Entity.Entities.Item.Consumable;
 import Main.Game.Entity.Entities.Item.Equipable;
 import Main.Game.Entity.Entities.Item.Item;
-import Main.Game.Entity.Entities.RaceLists.Race;
+import Main.Game.Entity.Entities.Books.RaceBooks.Race;
 import Main.Game.Entity.Entity;
 import Main.Game.Entity.Entities.ProfessionLists.Profession;
 
@@ -60,10 +60,9 @@ public class Player extends Entity implements Comparable<Player>, Comparator<Pla
         this.spellBook = new SpellBook();
         this.perkBook = new PerkBook();
         this.equipment = new HashMap<>();
+        System.out.println(race.toString());
 
         this.attributeBook = new AttributeBook(race.getStats(), profession.getMods());
-
-       // traitBook.initializeAllTraits(this);//Todo
 
       //  updatePlayer();
         this.hp = maxHp;
@@ -73,6 +72,7 @@ public class Player extends Entity implements Comparable<Player>, Comparator<Pla
     public String name() {
         return this.name;
     }
+
     // AddTo Stats
     @Override
     public void addToHp(double value) {

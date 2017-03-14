@@ -1,4 +1,4 @@
-package Main.Game.Entity.Entities.Books.PassiveBooks.TraitBook.Traits;
+package Main.Game.Entity.Entities.Books.PassiveBooks.TraitBook;
 
 import Main.Game.Entity.Entities.Books.PassiveBooks.TraitBook.Trait;
 import Main.Game.Entity.Entity;

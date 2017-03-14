@@ -9,7 +9,7 @@ import Main.Game.Entity.Entities.Books.AttributeBooks.AttributeBook;
 import Main.Game.Entity.Entities.Books.PassiveBooks.TraitBook.TraitBook;
 import Main.Game.Entity.Entities.Item.Equipable;
 import Main.Game.Entity.Entities.ProfessionLists.Profession;
-import Main.Game.Entity.Entities.RaceLists.Race;
+import Main.Game.Entity.Entities.Books.RaceBooks.Race;
 import Main.Game.Entity.Entity;
 
 import java.util.HashMap;
