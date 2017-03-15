@@ -1,0 +1,185 @@
+package Main.Game.Utility.FileHandler;
+
+import Main.Game.Team.Entity.Components.Books.PassiveBooks.TraitBook.Trait;
+import Main.Game.Team.Entity.Components.Books.PassiveBooks.TraitBook.TraitBook;
+import Main.Game.Team.Entity.Components.Books.PassiveBooks.TraitBook.BaseTrait;
+import Main.Game.Team.Entity.Components.Books.ProfessionBooks.BaseProfession;
+import Main.Game.Team.Entity.Components.Books.ProfessionBooks.Profession;
+import Main.Game.Team.Entity.Entities.NPC;
+import Main.Game.Team.Entity.Components.Books.RaceBooks.Race;
+import Main.Game.Team.Entity.Components.Books.RaceBooks.BaseRace;
+import Main.Game.Team.Entity.Entity;
+import Main.Game.Team.Entity.Components.Map.TileLists.Tile;
+import Main.Game.Team.Entity.Components.Map.TileLists.Tiles.*;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Random;
+import java.util.Scanner;
+
+public class TxtReader {
+
+    public static ArrayList<ArrayList<Tile>> generateMap() {
+        ArrayList<ArrayList<Tile>> map = new ArrayList<>();
+
+        try  {
+            Scanner s = new Scanner(new File("D:/RPG_Java/src/main/resources/map.txt"));
+            while (s.hasNextLine()) {
+                String line = s.next();
+                ArrayList<Tile> mapLine = new ArrayList();
+
+                for(int i = 0; i < line.length(); i++) {
+                    switch (line.charAt(i)) {
+                        case 'M':
+                            mapLine.add(new Mountain());
+                            break;
+                        case 'O':
+                            mapLine.add(new Ocean());
+                            break;
+                        case 'F':
+                            mapLine.add(new Forest());
+                            break;
+                        case 'P':
+                            mapLine.add(new Plain());
+                            break;
+                        case 'R':
+                            mapLine.add(new Road());
+                            break;
+                    }
+                }
+                map.add(mapLine);
+            }
+        }
+        catch(IOException ioe){
+            ioe.printStackTrace();
+        }
+        return map;
+    }
+
+    public static Entity generateNPC(File file, int traitCount) {
+
+        try  {
+            Scanner s = new Scanner(file);
+            int creaturesInFile = Integer.parseInt(s.nextLine());
+            Random intRandom = new Random();
+            int skipLines = intRandom.nextInt(creaturesInFile)*5;
+            for(int i = 0; i < skipLines; i++) {
+                s.nextLine();
+            }
+            String name = s.nextLine();
+            Profession profession = Profession.getProfession(s.nextLine());
+            Race race = Race.getRace(s.nextLine());
+            TraitBook traits = chooseTraits(traitCount);
+            return new NPC(name, profession, race, traits);
+        }
+        catch(IOException ioe){
+            ioe.printStackTrace();
+        }
+        System.out.println("Failed to read and crate NPC in txtReader");
+        return null;
+    }
+
+    public static TraitBook chooseTraits(int traitCount) {
+        TraitBook traitBook = new TraitBook();
+        for(int i = 0; i <traitCount; i++) {
+            Trait trait = chooseTrait();
+            traitBook.add(trait);
+        }
+        return traitBook;
+    }
+
+    public static Trait chooseTrait() {
+        Trait trait = Trait.getTrait("cursed");
+        return trait;
+    }
+
+
+    public static HashMap<String, Trait> generateTraitRegister(File file) {
+
+        HashMap<String,Trait> traitMap= new HashMap<>();
+        try  {
+            Scanner s = new Scanner(file);
+            int traitsInFile = Integer.parseInt(s.nextLine());
+
+            for(int i = 0; i < traitsInFile; i++) {
+                String name = s.next();
+                String attrName1 = s.next();
+                Double mod1 = Double.parseDouble(s.next());
+                String attrName2 = s.next();
+                Double mod2 = Double.parseDouble(s.next());
+                String description = s.nextLine();
+                traitMap.put(name, new BaseTrait(name, attrName1, mod1, attrName2, mod2, description));
+            }
+            return traitMap;
+        }
+        catch(IOException ioe){
+            ioe.printStackTrace();
+        }
+        System.out.println("Failed to read and crate traitMap in txtReader");
+        return null;
+    }
+
+    public static HashMap<String, Race> generateRaceRegister(File file) {
+
+        HashMap<String,Race> raceMap= new HashMap<>();
+        try  {
+            Scanner s = new Scanner(file);
+            int racesInFile = Integer.parseInt(s.nextLine());
+
+            for(int i = 0; i < racesInFile; i++) {
+                String name = s.next();
+                String article = s.next();
+                int strength = Integer.parseInt(s.next());
+                int endurance = Integer.parseInt(s.next());
+                int knowledge = Integer.parseInt(s.next());
+                int perception = Integer.parseInt(s.next());
+                int mentality = Integer.parseInt(s.next());
+                int hardening = Integer.parseInt(s.next());
+                int improvisation = Integer.parseInt(s.next());
+                String description = s.nextLine();
+                raceMap.put(name, new BaseRace(name, article, strength, endurance, knowledge, perception, mentality, hardening, improvisation, description));
+           }
+            return raceMap;
+        }
+        catch(IOException ioe){
+            ioe.printStackTrace();
+        }
+        System.out.println("Failed to read and crate raceMap in txtReader");
+        return null;
+    }
+
+    public static HashMap<String, Profession> generateProfessionRegister(File file) {
+
+        HashMap<String,Profession> professionMap= new HashMap<>();
+        try  {
+            Scanner s = new Scanner(file);
+            int professionsInFile = Integer.parseInt(s.nextLine());
+
+            for(int i = 0; i < professionsInFile; i++) {
+                String name = s.next();
+                String article = s.next();
+                Double strength = Double.parseDouble(s.next());
+                Double endurance = Double.parseDouble(s.next());
+                Double knowledge = Double.parseDouble(s.next());
+                Double perception = Double.parseDouble(s.next());
+                Double mentality = Double.parseDouble(s.next());
+                Double hardening = Double.parseDouble(s.next());
+                Double improvisation = Double.parseDouble(s.next());
+                String perkName = s.next();
+                String description = s.nextLine();
+                professionMap.put(name, new BaseProfession(name, article, strength, endurance, knowledge, perception, mentality, hardening, improvisation, perkName, description));
+            }
+            return professionMap;
+        }
+        catch(IOException ioe){
+            ioe.printStackTrace();
+        }
+        System.out.println("Failed to read and crate professionMap in txtReader");
+        return null;
+    }
+
+
+
+}

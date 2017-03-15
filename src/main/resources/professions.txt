@@ -1,0 +1,13 @@
+11
+bruiser			a		0.2	0.0	0.0	0.0	0.0	0.0	0.0		stunn          	description
+carnivore		a		0.1	0.1	0.0	0.0	0.0	0.0	0.0		evade          	description
+craftsman		a		0.1	0.0	0.0	0.0	0.0	0.0	0.1		doublecraft    	description
+duelist			a		0.0	0.2	0.0	0.0	0.0	0.0	0.0		doubleattack   	description
+farmer			a		0.0	0.1	0.1	0.0	0.0	0.0	0.0		patatorain     	description
+fighter			a		0.0	0.0	0.0	0.2	0.0	0.0	0.0		crit           	description
+kabbalist		a		0.0	0.0	0.2	0.0	0.0	0.0	0.0		lifesteal      	description
+knight			a		0.0	0.0	0.0	0.0	0.0	0.2	0.0		reflect        	description
+omnivore		an		0.0	0.1	0.0	0.1	0.0	0.0	0.0		resist         	description
+spiritualist	a		0.0	0.0	0.0	0.0	0.2	0.0	0.0		manasteal		description
+trickster		a		0.0	0.0	0.0	0.0	0.0	0.0	0.2		random			description
+					

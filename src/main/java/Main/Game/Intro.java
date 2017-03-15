@@ -1,11 +1,11 @@
 package Main.Game;
 
-import Main.Game.Entity.Entities.Books.PassiveBooks.TraitBook.Trait;
-import Main.Game.Entity.Entities.Books.PassiveBooks.TraitBook.TraitBook;
-import Main.Game.Entity.Entities.Console;
-import Main.Game.Entity.Entities.ProfessionLists.Profession;
-import Main.Game.Entity.Entities.Player;
-import Main.Game.Entity.Entities.Books.RaceBooks.Race;
+import Main.Game.Team.Entity.Components.Books.PassiveBooks.TraitBook.Trait;
+import Main.Game.Team.Entity.Components.Books.PassiveBooks.TraitBook.TraitBook;
+import Main.Game.Team.Entity.Components.Books.ProfessionBooks.Profession;
+import Main.Game.Utility.Input.Console;
+import Main.Game.Team.Entity.Entities.Player;
+import Main.Game.Team.Entity.Components.Books.RaceBooks.Race;
 
 public class Intro {
 
@@ -79,6 +79,9 @@ public class Intro {
                 else if(input.equals("accept")) {
                     approval = true;
                 }
+            }
+            else if(input.equals("accept")) {
+                approval = true;
             }
         }
         System.out.println(String.format("The world destined you the burden of: %s", traitBook.toString()));
