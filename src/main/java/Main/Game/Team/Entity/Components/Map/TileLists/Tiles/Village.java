@@ -37,22 +37,22 @@ public class Village extends Tile {
         while(!validAction) {
             System.out.println("You are " + this.toS());
             System.out.println("What do you want to do? (scout/camp/inventory/wander)");
-            String action = in.nextLine().toUpperCase();
+            String action = in.nextLine().toLowerCase();
 
             switch(action) {
-                case "SCOUT":
+                case "scout":
                     searchArea();
                     validAction = true;
                     break;
-                case "CAMP":
+                case "camp":
                     camp();
                     validAction = true;
                     break;
-                case "INVENTORY":
+                case "inventory":
                     //accessInventory
                     validAction = true;
                     break;
-                case "WANDER":
+                case "wander":
                     wander();
                     validAction = true;
                     break;
@@ -63,6 +63,7 @@ public class Village extends Tile {
             }
         }
     }
+
     public void initializeTile() {
         this.enemies = NPCFactory.createNPCs(new File(creaturePath),2,1); //ToDo add Ranges
     }

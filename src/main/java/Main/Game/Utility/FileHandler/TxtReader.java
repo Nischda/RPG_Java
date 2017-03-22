@@ -1,5 +1,8 @@
 package Main.Game.Utility.FileHandler;
 
+import Main.Game.Team.Entity.Components.Books.AttributeBooks.Attribute;
+import Main.Game.Team.Entity.Components.Books.AttributeBooks.AttributeBook;
+import Main.Game.Team.Entity.Components.Books.AttributeBooks.BaseAttribute;
 import Main.Game.Team.Entity.Components.Books.PassiveBooks.TraitBook.Trait;
 import Main.Game.Team.Entity.Components.Books.PassiveBooks.TraitBook.TraitBook;
 import Main.Game.Team.Entity.Components.Books.PassiveBooks.TraitBook.BaseTrait;
@@ -11,9 +14,11 @@ import Main.Game.Team.Entity.Components.Books.RaceBooks.BaseRace;
 import Main.Game.Team.Entity.Entity;
 import Main.Game.Team.Entity.Components.Map.TileLists.Tile;
 import Main.Game.Team.Entity.Components.Map.TileLists.Tiles.*;
+import Main.Game.Team.Item.Items.Weapon;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.Inet4Address;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
@@ -58,7 +63,7 @@ public class TxtReader {
         return map;
     }
 
-    public static Entity generateNPC(File file, int traitCount) {
+    public static Entity generateNPC(File file, TraitBook traits) {
 
         try  {
             Scanner s = new Scanner(file);
@@ -68,32 +73,70 @@ public class TxtReader {
             for(int i = 0; i < skipLines; i++) {
                 s.nextLine();
             }
+
             String name = s.nextLine();
             Profession profession = Profession.getProfession(s.nextLine());
             Race race = Race.getRace(s.nextLine());
-            TraitBook traits = chooseTraits(traitCount);
             return new NPC(name, profession, race, traits);
         }
         catch(IOException ioe){
             ioe.printStackTrace();
         }
-        System.out.println("Failed to read and crate NPC in txtReader");
+        System.out.println("Failed to read and create NPC in txtReader");
         return null;
     }
 
-    public static TraitBook chooseTraits(int traitCount) {
-        TraitBook traitBook = new TraitBook();
-        for(int i = 0; i <traitCount; i++) {
-            Trait trait = chooseTrait();
-            traitBook.add(trait);
+    public static Weapon generateWeapon(File file, Double statMod, Double matMod) {
+
+        try  {
+            Scanner s = new Scanner(file);
+            ArrayList<String> slots = new ArrayList<>();
+            AttributeBook attributeBook = new AttributeBook();
+
+            boolean slotsCompleted = false;
+            boolean attributeBookCompleted = false;
+
+            int weaponsInFile = Integer.parseInt(s.nextLine());
+            Random intRandom = new Random();
+            int skipLines = intRandom.nextInt(weaponsInFile);
+            for(int i = 0; i < skipLines; i++) {
+                s.nextLine();
+            }
+
+            String name = s.next();
+
+            while(!slotsCompleted) {
+                String next = s.next();
+                if (!next.equals(",")) {
+                    slots.add(next);
+
+                } else {
+                    slotsCompleted = true;
+                }
+            }
+            while(!attributeBookCompleted) {
+                String next = s.next();
+                if (!next.equals(",")) {
+                    attributeBook.add(new BaseAttribute(1, next, Integer.parseInt(s.next()), 1.0));
+
+                } else {
+                    attributeBookCompleted = true;
+                }
+            }
+            String description = s.nextLine();
+
+            return new Weapon(statMod, matMod, name, slots, attributeBook, description);
         }
-        return traitBook;
+        catch(IOException ioe){
+            ioe.printStackTrace();
+        }
+        System.out.println("Failed to read and create Weapon in txtReader");
+        return null;
     }
 
-    public static Trait chooseTrait() {
-        Trait trait = Trait.getTrait("cursed");
-        return trait;
-    }
+    //String prefix, String name, Double multiplier, String slot, int price, int weight, int speed, int damage, int stamina, int spellDamage, int charisma, int effectChance, int hpReg, int mpReg, int armor, int resistance, int maxHp, int maxMp) {
+
+
 
 
     public static HashMap<String, Trait> generateTraitRegister(File file) {

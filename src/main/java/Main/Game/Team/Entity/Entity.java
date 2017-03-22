@@ -6,28 +6,12 @@ import Main.Game.Team.Item.Equipable;
 
 public abstract class Entity implements Fightable{
 
-//add contrustor to do shit from here for player & entity?
-
     public abstract void addTeam(Team team);
     public abstract void addToHp(double value);
     public abstract void addToMp(double value);
     public abstract void addToXp(double value);
     public abstract void addToStatMod(String name, double value);
 
-    /*
-    public abstract void addToDamageMod(double value);
-    public abstract void addToStaminaMod(double value);
-    public abstract void addToSpellDamageMod(double value);
-    public abstract void addToCharismaMod(double value);
-    public abstract void addToEffectChanceMod(double value);
-    public abstract void addToHpRegMod(double value);
-    public abstract void addToMpRegMod(double value);
-    public abstract void addToArmorMod(double value);
-    public abstract void addToResistanceMod(double value);
-    public abstract void addToMaxHpMod(double value);
-    public abstract void addToMaxMpMod(double value);
-
-*/
     public abstract int getStatValue(String name);
     public abstract String getName();
 

@@ -24,20 +24,37 @@ public class Team implements Iterable<Entity> {
         this.inventory = new Inventory();
     }
 
-    public void add(Entity entity) {
-        this.team.add(entity);
-        entity.addTeam(this);
+    public String getName() {
+        return this.name;
+    }
+    public Inventory getInventory() {
+        return this.inventory;
     }
 
     public Entity get(int index) {
         return team.get(index);
     }
 
+
+    public void add(Entity entity) {
+        this.team.add(entity);
+        entity.addTeam(this);
+    }
+
     public int size() {
         return team.size();
     }
+
     public void rotate(int index) {
         Collections.rotate(team, index);
+    }
+
+    public void sortTeam() {
+        Collections.sort(team, new Comparator<Entity>() {
+            public int compare(Entity e1, Entity e2) {
+                return e1.getStatValue("endurance") - e2.getStatValue("endurance");
+            }
+        });
     }
 
     @Override
@@ -61,19 +78,7 @@ public class Team implements Iterable<Entity> {
             }
         };
     }
-    public void sortTeam() {
-        Collections.sort(team, new Comparator<Entity>() {
-            public int compare(Entity e1, Entity e2) {
-                return e1.getStatValue("endurance") - e2.getStatValue("endurance");
-            }
-        });
-    }
-    public String getName() {
-        return this.name;
-    }
-    public Inventory inventory() {
-        return this.inventory;
-    }
+
 
     public void useItem() { //Todo Check if items exist and add step back
         boolean validAction = false;
@@ -84,9 +89,9 @@ public class Team implements Iterable<Entity> {
             String itemName = Console.getStringInput();
 
             if (inventory.contains(itemName)) {
-                Consumable consumable = inventory().getConsumables(itemName);
+                Consumable consumable = getInventory().getConsumables(itemName);
                 consumable.use(selectEntity());
-                inventory().remove((Item)consumable); // Todo Garbagecollector?
+                getInventory().remove((Item)consumable); // Todo Garbagecollector?
                 validAction = true;
             }
             else {
@@ -96,19 +101,22 @@ public class Team implements Iterable<Entity> {
         }
     }
 
-    public void equipItem() {//Todo Check if items exist and add step back
+    public void equipItem() {
         boolean validAction = false;
 
         while (!validAction) {
-            System.out.println("Which item do you want to equip?");
+            System.out.println("Which item do you want to equip? (name/none)");
             System.out.println(this.inventory.equipablesToString());
-            String itemName = Console.getStringInput();
+            String input = Console.getStringInput();
 
-            if (inventory.contains(itemName)) {
-               Equipable equipable = inventory().getEquipables(itemName);
+            if (inventory.contains(input)) {
+               Equipable equipable = getInventory().getEquipables(input);
                 equipable.equip(selectEntity());
-                inventory().remove((Item)equipable); // Todo Garbagecollector?
+                getInventory().remove((Item)equipable); // Todo Garbagecollector? readd to inventory on unequip
                 validAction = true;
+            }
+            else if(input.equals("none")) {
+                System.out.println("Nothing has been equiped");
             }
             else {
                 System.out.println("You can't do that");
@@ -118,10 +126,22 @@ public class Team implements Iterable<Entity> {
     }
 
     public Entity selectEntity() {
-            System.out.println("Select a target"); //ToDo Add SafeCheck
+        boolean validInput = false;
+
+        while (!validInput) {//Todo simplify
+            System.out.println("Select a target");
             printTeam();
-            int target = Console.getIntegerInput();
-            return team.get(target);
+            int target = Console.getIntegerInput()-1;
+
+            if (target > 0 && target < team.size()) {
+                return team.get(target);
+            }
+            else {
+                System.out.println("Try again");
+            }
+        }
+        System.out.println("Valid entity has not been selected");
+        return null;
     }
 
     public void printTeam() {

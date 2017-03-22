@@ -195,56 +195,9 @@ public class NPC extends Entity {
         return this.name;
     } //ToDo differentiate with real name
 
-    /*
-    // AddTo Attribute MODIFIER
-    @Override
-    public void addToDamageMod(double value) {
-        damageMod += value;
-    }
-    @Override
-    public void addToStaminaMod(double value) {
-        staminaMod += value;
-    }
-    @Override
-    public void addToSpellDamageMod(double value) {
-        spellDamageMod += value;
-    }
-    @Override
-    public void addToCharismaMod(double value) {
-        charismaMod += value;
-    }
-    @Override
-    public void addToEffectChanceMod(double value) {
-        effectChanceMod += value;
-    }
-    @Override
-    public void addToHpRegMod(double value) {
-        hpRegMod += value;
-    }
-    @Override
-    public void addToMpRegMod(double value) {
-        mpRegMod += value;
-    }
-    @Override
-    public void addToArmorMod(double value) {
-        armorMod += value;
-    }
-    @Override
-    public void addToResistanceMod(double value) {
-        resistanceMod += value;
-    }
-    @Override
-    public void addToMaxHpMod(double value) {
-        maxHpMod += value;
-    }
-    @Override
-    public void addToMaxMpMod(double value) {
-        maxMpMod += value;
-    }
 
-*/
     public void equip(Equipable equipable) {
-        this.equipment.put(equipable.getSlot(), equipable);
+        this.equipment.put(equipable.getSlots().get(0), equipable); //ToDo make enemys put on adequate equipables
         updateEquipment();
     }
 
@@ -260,19 +213,11 @@ public class NPC extends Entity {
         this.equipmentResistance= 0;
 
         for(Equipable equipable : equipment.values()) {
-            this.equipmentDamage += equipable.getDamage();
-            this.equipmentStamina += equipable.getStamina();
-            this.equipmentSpellDamage += equipable.getSpellDamage();
-            this.equipmentCharisma += equipable.getCharisma();
-            this.equipmentEffectChance += equipable.getEffectChance();
-            this.equipmentHpReg += equipable.getHpReg();
-            this.equipmentMpReg += equipable.getDamage();
-            this.equipmentArmor += equipable.getArmor();
-            this.equipmentResistance += equipable.getResistance();
+
         }
     }
 
-//move somewhere else, utility class for abilities?
+
 //ATTACK MOVES
     @Override
     public void attack(Team team1, Team team2) {
@@ -290,11 +235,11 @@ public class NPC extends Entity {
 
         while (!validAction) {
             System.out.println("Which item do you want to use?");
-            System.out.println(team.inventory().consumablesToString());
+            System.out.println(team.getInventory().consumablesToString());
             String action = in.nextLine().toLowerCase();
 
-            if (team.inventory().contains(action)) {//already uses getAbility ->simplify
-                //  team.inventory().getItem(action).use(team1, enemies);
+            if (team.getInventory().contains(action)) {//already uses getAbility ->simplify
+                //  team.getInventory().getItem(action).use(team1, enemies);
                 validAction = true;
             }
             else {
@@ -304,7 +249,7 @@ public class NPC extends Entity {
         }
     }
 
-    public boolean escape(Team team1, Team team2) { //ToDo make escape chances dependent on attributes of you and enemies f.e. some intRandom of improvisation*endurance vs perception*endurance
+    public boolean escape(Team team1, Team team2) {
         Random intRandom = new Random();
         int rand = intRandom.nextInt(10) + 1;
         if(rand < 5) {

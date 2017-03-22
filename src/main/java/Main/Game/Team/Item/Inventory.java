@@ -1,9 +1,11 @@
 package Main.Game.Team.Item;
 
 
-import Main.Game.Team.Item.Items.Fruit;
-import Main.Game.Team.Item.Items.Sword;
+import Main.Game.Team.Item.Items.Food;
+import Main.Game.Team.Item.Items.Weapon;
+import Main.Game.Utility.FileHandler.TxtReader;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class Inventory {
@@ -12,8 +14,8 @@ public class Inventory {
 
     public Inventory() {
         this.inventory = new ArrayList<>();
-        this.inventory.add(new Sword("rusty sword", 4, 27, 8, "weapon", 20, 0, 0, 0, 0, 0, 0, 5, 0,0, 0 ));
-        this.inventory.add(new Fruit("apple", 1, 10, 5, "weapon", 2, 0, 0, 10, 0, 2, 0, 5, 0,0, 0));
+        this.inventory.add(TxtReader.generateWeapon(new File("D:/RPG_Java/src/main/resources/Items/swords.txt"), 1.0, 1.0));
+        //Todo add consumable
         }
 
     public void add(Item item) {
@@ -37,7 +39,7 @@ public class Inventory {
             this.inventory.remove(item);
         }
         else {
-            System.out.println("Item:" + item + " has not been removed because it is not in this inventory");
+            System.out.println("Item:" + item + " has not been removed because it is not in this getInventory");
         }
     }
 

@@ -1,0 +1,8 @@
+7
+longsword	 1-hand 2-hand	,	price 25	weight 6	speed 10	damage 20 ,	description a longsword
+greatsword	 2-hand 		,	price 40	weight 10	speed 6		damage 30 ,	description a greatsword
+shortsword	 1-hand 2-hand	,	price 20	weight 4	speed 13	damage 16 ,	description a shortsword
+scimitar	 1-hand 2-hand	,	price 35	weight 7	speed 8		damage 23 ,	description a scimitar
+rapier		 1-hand 2-hand	,	price 50	weight 3	speed 16	damage 14 ,	description a rapier
+flamberge	 2-hand 		,	price 60	weight 11	speed 9		damage 26 ,	description a flamberge
+dagger		 1-hand 		,	price 15	weight 1	speed 20	damage 10 ,	description a dagger

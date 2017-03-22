@@ -7,6 +7,7 @@ import Main.Game.Team.Team;
 import Main.Game.Team.Entity.Components.Map.Map;
 import Main.Game.Team.Entity.Components.Map.TileLists.Tile;
 import Main.Game.Utility.FileHandler.TxtReader;
+import Main.Game.Utility.Input.Console;
 
 import java.util.ArrayList;
 
@@ -17,7 +18,13 @@ public class Game {
     private Map worldMap;
 
     public Game(){
-        initializeStuff();
+        initialize();
+    }
+
+    public void initialize() {
+        Trait.initialize();
+        Race.initialize();
+        Profession.initialize();
         this.team = new Team("playerTeam");
         this.team.add(new Intro().playerCreation());
         this.team.add(new Intro().playerCreation());
@@ -28,6 +35,7 @@ public class Game {
         while(!gameEnd) {
             worldMap.chooseAction();
         }
+        restart();
     }
 
     public void generateMap() {
@@ -35,9 +43,20 @@ public class Game {
         this.worldMap = new Map(this.team, TxtReader.generateMap());
     }
 
-    public void initializeStuff() {
-        Trait.initialize();
-        Race.initialize();
-        Profession.initialize();
+    private void restart() {
+        String input = "";
+        System.out.println("Would you like to dive in again? (yes)");
+        boolean validInput = false;
+        while (!validInput) {
+            System.out.println("From now on you will be known as? (enter your name)");
+
+            input = Console.getStringInput();
+            if (input.equals("yes")) {
+                validInput = true;
+            }
+            else {
+                System.out.println("Try again.");
+            }
+        }
     }
 }

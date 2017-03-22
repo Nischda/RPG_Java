@@ -100,7 +100,7 @@ public class Battlefield {
         else {
             entity.cast(enemies, team1);
         }
-        //add item use chance of inventory contains items
+        //add item use chance of getInventory contains items
         //add escapechance if health is < 20%
         //add
     }

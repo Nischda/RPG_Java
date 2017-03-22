@@ -3,9 +3,9 @@ package Main.Game;
 import Main.Game.Team.Entity.Components.Books.PassiveBooks.TraitBook.Trait;
 import Main.Game.Team.Entity.Components.Books.PassiveBooks.TraitBook.TraitBook;
 import Main.Game.Team.Entity.Components.Books.ProfessionBooks.Profession;
-import Main.Game.Utility.Input.Console;
 import Main.Game.Team.Entity.Entities.Player;
 import Main.Game.Team.Entity.Components.Books.RaceBooks.Race;
+import Main.Game.Utility.Input.Console;
 
 public class Intro {
 
@@ -23,6 +23,9 @@ public class Intro {
             if (this.name.length() >= 3 && this.name.length() <= 20) {
                 validName = true;
             }
+            else {
+                System.out.println("Try again.");
+            }
         }
         System.out.println(String.format("From now on you will be known as %s.\n", this.name));
     }
@@ -38,6 +41,9 @@ public class Intro {
                 this.profession = Profession.getProfession(professionName);
                 validProfession = true;
             }
+            else {
+                System.out.println("Try again.");
+            }
         }
         System.out.println(String.format("You are widely known as a professional %s.\n", this.profession));
     }
@@ -52,6 +58,9 @@ public class Intro {
             if (Race.include(raceName)) {
                 this.race = Race.getRace(raceName);
                 validRace = true;
+            }
+            else {
+                System.out.println("Try again.");
             }
         }
         System.out.println(String.format("You are a proud %s.\n", this.race));
@@ -80,7 +89,7 @@ public class Intro {
                     approval = true;
                 }
             }
-            else if(input.equals("accept")) {
+            else {
                 approval = true;
             }
         }

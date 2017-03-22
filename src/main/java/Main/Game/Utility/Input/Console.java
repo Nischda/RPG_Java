@@ -3,6 +3,7 @@ package Main.Game.Utility.Input;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 public  class Console {
 
@@ -29,5 +30,15 @@ public  class Console {
             e.printStackTrace();
         }
         return input;
+    }
+
+    public static String toString(ArrayList<String> stringList) {
+            String returnString = "";
+            int index = 1;
+            for(String string : stringList) {
+                returnString += index + ". " + string + "\n";
+                index++;
+            }
+            return returnString;
     }
 }

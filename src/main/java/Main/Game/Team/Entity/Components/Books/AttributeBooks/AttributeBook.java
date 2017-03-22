@@ -11,6 +11,10 @@ public class AttributeBook extends Book<Attribute> implements Calculateable{ //T
 
     private HashMap<String, Attribute> attributeMap;
 
+    public AttributeBook() {
+        attributeMap = new HashMap<>();
+    }
+
     public AttributeBook(ArrayList<Integer> attributes, ArrayList<Double> mods) {
         attributeMap = new HashMap<>();
 
