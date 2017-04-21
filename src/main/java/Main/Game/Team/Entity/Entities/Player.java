@@ -186,16 +186,18 @@ public class Player extends Entity implements Comparable<Player>, Comparator<Pla
         boolean validAction = false;
       while (!validAction) {
             System.out.println("Choose your attack move. (" + skillbook.toString() + ")");
-            String action = Console.getStringInput();
+            Console.input();
+            if(Console.gotBuffer()) {
+                String action = Console.getBuffer();
 
-            if (skillbook.contains(action)) {//ToDo already uses getAbility ->simplify
-                ArrayList<HashMap<Entity, Integer>> actions = skillbook.get(action).use(this, attributeBook.getValue("damage"), enemies);
-                perkBook.use(this, actions);
-                validAction = true;
-            }
-            else {
+                if (skillbook.contains(action)) {//ToDo already uses getAbility ->simplify
+                    ArrayList<HashMap<Entity, Integer>> actions = skillbook.get(action).use(this, attributeBook.getValue("damage"), enemies);
+                    perkBook.use(this, actions);
+                    validAction = true;
+                } else {
                     System.out.println("You can't do that");
                     validAction = false;
+                }
             }
         }
     }
@@ -207,15 +209,17 @@ public class Player extends Entity implements Comparable<Player>, Comparator<Pla
 
         while (!validAction) {
             System.out.println("Choose your spell. (" + spellBook.toString() + ")");
-            String action = Console.getStringInput();
+            Console.input();
+            if(Console.gotBuffer()) {
+                String action = Console.getBuffer();
 
-            if (spellBook.contains(action)) {//already uses getAbility ->simplify
-                spellBook.get(action).use(this, attributeBook.getValue("spellDamage"), enemies);
-                validAction = true;
-            }
-            else {
-                System.out.println("You can't do that");
-                validAction = false;
+                if (spellBook.contains(action)) {//already uses getAbility ->simplify
+                    spellBook.get(action).use(this, attributeBook.getValue("spellDamage"), enemies);
+                    validAction = true;
+                } else {
+                    System.out.println("You can't do that");
+                    validAction = false;
+                }
             }
         }
     }
@@ -228,17 +232,19 @@ public class Player extends Entity implements Comparable<Player>, Comparator<Pla
         while (!validAction) {
             System.out.println("Which item do you want to use?(type name)");
             System.out.println(team.getInventory().consumablesToString());
-            String itemName = Console.getStringInput();
+            Console.input();
+            if(Console.gotBuffer()) {
+                String itemName = Console.getBuffer();
 
-            if (team.getInventory().contains(itemName)) {//ToDo already uses getAbility ->simplify
-                Consumable consumable = team.getInventory().getConsumables(itemName);
-                consumable.use(team1, enemies);
-                team.getInventory().remove((Item)consumable);
-                validAction = true;
-            }
-            else {
-                System.out.println("You can't do that");
-                validAction = false;
+                if (team.getInventory().contains(itemName)) {//ToDo already uses getAbility ->simplify
+                    Consumable consumable = team.getInventory().getConsumables(itemName);
+                    consumable.use(team1, enemies);
+                    team.getInventory().remove((Item) consumable);
+                    validAction = true;
+                } else {
+                    System.out.println("You can't do that");
+                    validAction = false;
+                }
             }
         }
     }

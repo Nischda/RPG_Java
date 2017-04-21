@@ -20,7 +20,6 @@ public class BaseRace extends Race {
 
     @Override
     public ArrayList<Integer> getStats() {
-        System.out.println("should work");
         return attributeList;
     }
 

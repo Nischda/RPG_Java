@@ -50,12 +50,15 @@ public class Game {
         while (!validInput) {
             System.out.println("From now on you will be known as? (enter your name)");
 
-            input = Console.getStringInput();
-            if (input.equals("yes")) {
-                validInput = true;
-            }
-            else {
-                System.out.println("Try again.");
+            Console.input();
+            if(Console.gotBuffer()) {
+                String itemName = Console.getBuffer();
+
+                if (input.equals("yes")) {
+                    validInput = true;
+                } else {
+                    System.out.println("Try again.");
+                }
             }
         }
     }

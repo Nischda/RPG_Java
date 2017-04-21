@@ -64,41 +64,45 @@ public class Map {
             System.out.println(y + " " + x);
             System.out.println(this.map.get(y).get(x));
             printPlayerMap();
-            String direction = Console.getStringInput();
+            Console.input();
+            if(Console.gotBuffer()) {
+                String direction = Console.getBuffer();
 
-            switch(direction) {
-                case "n":
-                    if(isPassable(y-1, x)) {
-                        System.out.println("You walk north");
-                        validDirection = true;
-                        this.y--;
-                    }
-                    break;
-                case "w":
-                    if(isPassable(y, x-1)) {
-                        System.out.println("You walk east");
-                        validDirection = true;
-                        this.x--;
-                    }
-                    break;
-                case "s":
-                    if(isPassable(y+1, x)) {
-                        System.out.println("You walk south");
-                        validDirection = true;
-                        this.y++;
-                    }
-                    break;
-                case "e":
-                    if(isPassable(y, x+1)) {
-                        System.out.println("You walk west");
-                        validDirection = true;
-                        this.x++;
-                    }
-                    break;
-                default:
-                    System.out.println("Can't walk there");
-                    validDirection = false;
-                    break;
+
+                switch (direction) {
+                    case "n":
+                        if (isPassable(y - 1, x)) {
+                            System.out.println("You walk north");
+                            validDirection = true;
+                            this.y--;
+                        }
+                        break;
+                    case "w":
+                        if (isPassable(y, x - 1)) {
+                            System.out.println("You walk east");
+                            validDirection = true;
+                            this.x--;
+                        }
+                        break;
+                    case "s":
+                        if (isPassable(y + 1, x)) {
+                            System.out.println("You walk south");
+                            validDirection = true;
+                            this.y++;
+                        }
+                        break;
+                    case "e":
+                        if (isPassable(y, x + 1)) {
+                            System.out.println("You walk west");
+                            validDirection = true;
+                            this.x++;
+                        }
+                        break;
+                    default:
+                        System.out.println("Can't walk there");
+                        validDirection = false;
+                        break;
+                }
             }
         }
         updatePlayerMap();
@@ -112,31 +116,34 @@ public class Map {
             System.out.println("You are on: " + map.get(y).get(x).toString());
             printPlayerMap();
             System.out.println("What do you want to do? (stay/walk/use/equip)");
-            String action = Console.getStringInput();
+            Console.input();
+            if (Console.gotBuffer()) {
+                String action = Console.getBuffer();
 
-            switch(action) {
-                case "stay":
-                    stay();
-                    validAction = true;
-                    break;
-                case "walk":
-                    chooseDirection();
-                    validAction = true;
-                    break;
-                case "use":
-                    team.useItem();
-                    validAction = true;
-                    break;
-                case "equip":
-                    team.equipItem();
-                    validAction = true;
-                    break;
-                default:
-                    System.out.println("You can't do that");
-                    validAction = false;
-                    break;
+                switch (action) {
+                    case "stay":
+                        stay();
+                        validAction = true;
+                        break;
+                    case "walk":
+                        chooseDirection();
+                        validAction = true;
+                        break;
+                    case "use":
+                        team.useItem();
+                        validAction = true;
+                        break;
+                    case "equip":
+                        team.equipItem();
+                        validAction = true;
+                        break;
+                    default:
+                        System.out.println("You can't do that");
+                        validAction = false;
+                        break;
+                }
+                System.out.println("----------------------------------------------------------------------------------------------------");
             }
-            System.out.println("----------------------------------------------------------------------------------------------------");
         }
     }
 

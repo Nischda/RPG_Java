@@ -86,17 +86,18 @@ public class Team implements Iterable<Entity> {
         while (!validAction) {
             System.out.println("Which item do you want to use?");
             System.out.println(this.inventory.consumablesToString());
-            String itemName = Console.getStringInput();
-
-            if (inventory.contains(itemName)) {
-                Consumable consumable = getInventory().getConsumables(itemName);
-                consumable.use(selectEntity());
-                getInventory().remove((Item)consumable); // Todo Garbagecollector?
-                validAction = true;
-            }
-            else {
-                System.out.println("You can't do that");
-                validAction = false;
+            Console.input();
+            if(Console.gotBuffer()) {
+                String itemName = Console.getBuffer();
+                if (inventory.contains(itemName)) {
+                    Consumable consumable = getInventory().getConsumables(itemName);
+                    consumable.use(selectEntity());
+                    getInventory().remove((Item) consumable); // Todo Garbagecollector?
+                    validAction = true;
+                } else {
+                    System.out.println("You can't do that");
+                    validAction = false;
+                }
             }
         }
     }
@@ -107,20 +108,22 @@ public class Team implements Iterable<Entity> {
         while (!validAction) {
             System.out.println("Which item do you want to equip? (name/none)");
             System.out.println(this.inventory.equipablesToString());
-            String input = Console.getStringInput();
+            Console.input();
+            if(Console.gotBuffer()) {
+                String input = Console.getBuffer();
 
-            if (inventory.contains(input)) {
-               Equipable equipable = getInventory().getEquipables(input);
-                equipable.equip(selectEntity());
-                getInventory().remove((Item)equipable); // Todo Garbagecollector? readd to inventory on unequip
-                validAction = true;
-            }
-            else if(input.equals("none")) {
-                System.out.println("Nothing has been equiped");
-            }
-            else {
-                System.out.println("You can't do that");
-                validAction = false;
+
+                if (inventory.contains(input)) {
+                    Equipable equipable = getInventory().getEquipables(input);
+                    equipable.equip(selectEntity());
+                    getInventory().remove((Item) equipable); // Todo Garbagecollector? readd to inventory on unequip
+                    validAction = true;
+                } else if (input.equals("none")) {
+                    System.out.println("Nothing has been equiped");
+                } else {
+                    System.out.println("You can't do that");
+                    validAction = false;
+                }
             }
         }
     }
@@ -131,7 +134,7 @@ public class Team implements Iterable<Entity> {
         while (!validInput) {//Todo simplify
             System.out.println("Select a target");
             printTeam();
-            int target = Console.getIntegerInput()-1;
+            int target = Console.intInput()-1;
 
             if (target > 0 && target < team.size()) {
                 return team.get(target);
