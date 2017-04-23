@@ -15,6 +15,7 @@ import Main.Game.Team.Entity.Entity;
 import Main.Game.Team.Entity.Components.Map.TileLists.Tile;
 import Main.Game.Team.Entity.Components.Map.TileLists.Tiles.*;
 import Main.Game.Team.Item.Items.Weapon;
+import Main.Game.Utility.Library;
 
 import java.io.File;
 import java.io.IOException;
@@ -23,6 +24,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class TxtReader {
 
@@ -143,6 +145,7 @@ public class TxtReader {
 
         HashMap<String,Trait> traitMap= new HashMap<>();
         try  {
+           // private static Pattern p = Pattern.compile("(\\w*)\\s*(\\w*)\\s*(-?\\d*.\\d*)");
             Scanner s = new Scanner(file);
             int traitsInFile = Integer.parseInt(s.nextLine());
 
@@ -154,6 +157,7 @@ public class TxtReader {
                 Double mod2 = Double.parseDouble(s.next());
                 String description = s.nextLine();
                 traitMap.put(name, new BaseTrait(name, attrName1, mod1, attrName2, mod2, description));
+                Library.put(name, description);
             }
             return traitMap;
         }
@@ -183,6 +187,7 @@ public class TxtReader {
                 int improvisation = Integer.parseInt(s.next());
                 String description = s.nextLine();
                 raceMap.put(name, new BaseRace(name, article, strength, endurance, knowledge, perception, mentality, hardening, improvisation, description));
+                Library.put(name, description);
            }
             return raceMap;
         }
@@ -213,6 +218,7 @@ public class TxtReader {
                 String perkName = s.next();
                 String description = s.nextLine();
                 professionMap.put(name, new BaseProfession(name, article, strength, endurance, knowledge, perception, mentality, hardening, improvisation, perkName, description));
+                Library.put(name, description);
             }
             return professionMap;
         }

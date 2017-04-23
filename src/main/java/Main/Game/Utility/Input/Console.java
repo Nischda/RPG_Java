@@ -71,4 +71,9 @@ public  class Console {
         }
         return input;
     }
+
+    public static boolean isInteger(String s) {
+        return s.matches("\\d*");
+    }
+
 }

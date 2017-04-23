@@ -19,6 +19,10 @@ public class Library {
             System.out.println("--------------------------------------------------------------------------------------------------------------");
         }
     }
+
+    public static void put(String name, String info) {
+        helpMap.put(name, info);
+    }
 }
 
 

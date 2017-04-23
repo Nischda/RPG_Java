@@ -9,5 +9,6 @@ import java.util.HashMap;
 public abstract class Perk {
 
     public abstract void use(Entity actor, ArrayList<HashMap<Entity, Integer>> actions);
+    public abstract String getDescription();
     public abstract String toString();
 }

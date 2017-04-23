@@ -1,20 +1,26 @@
 package Main.Game.Team.Item;
 
 
+import Main.Game.Team.Entity.Components.Books.AttributeBooks.AttributeBook;
 import Main.Game.Team.Item.Items.Food;
 import Main.Game.Team.Item.Items.Weapon;
 import Main.Game.Utility.FileHandler.TxtReader;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Inventory {
 
     private ArrayList<Item> inventory;
+    private ArrayList<Equipable> equipList;
 
     public Inventory() {
         this.inventory = new ArrayList<>();
-        this.inventory.add(TxtReader.generateWeapon(new File("D:/RPG_Java/src/main/resources/Items/swords.txt"), 1.0, 1.0));
+        this.equipList = new ArrayList<>();
+        Weapon weapon = TxtReader.generateWeapon(new File("D:/RPG_Java/src/main/resources/Items/swords.txt"), 1.0, 1.0);
+        this.inventory.add(weapon);
+        this.equipList.add(weapon);
         //Todo add consumable
         }
 
@@ -43,6 +49,14 @@ public class Inventory {
         }
     }
 
+    public Item getItem(int index){
+        if(index >= 0 && index < inventory.size())
+        return inventory.get(index);
+        else {
+            return null;
+        }
+    }
+
     public  Item getItem(String name) {
         for(Item item: inventory) {
             if (item.toString().equals(name)) {
@@ -63,15 +77,27 @@ public class Inventory {
         return null;
     }
 
-    public  Equipable getEquipables(String name) {
-        for(Item item: inventory) {
-            if(item instanceof Equipable) {
-                if (item.toString().equals(name)) {
-                    return (Equipable)item;
-                }
-            }
+    public  String equipablesToString() {
+        String string = "";
+        int index = 1;
+        for(Equipable equip: equipList) {
+                string += String.format("%s: %s",index, equip.toString());
+                        index++;
         }
-        return null;
+        return string;
+    }
+
+    public  Equipable getEquipable(int index) {
+            return equipList.get(index);
+    }
+
+    public void removeEquipable(int index) {
+        equipList.remove(index);
+        inventory.remove(index);
+    }
+
+    public int equipSize() {
+        return equipList.size();
     }
 
 
@@ -83,17 +109,8 @@ public class Inventory {
                 string += index + ". " + item.toString() + "\n";
                 index++;
             }
-        }
-        return string;
-    }
-
-    public String equipablesToString() {
-        String string = "";
-        int index = 1;
-        for(Item item : inventory) {
-            if(item instanceof Equipable) {
-                string += index + ". " + item.toString() + "\n";
-                index++;
+            else {
+                index += 1;
             }
         }
         return string;

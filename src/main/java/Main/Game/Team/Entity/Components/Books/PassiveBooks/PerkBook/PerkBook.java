@@ -3,7 +3,9 @@ package Main.Game.Team.Entity.Components.Books.PassiveBooks.PerkBook;
 
 import Main.Game.Team.Entity.Components.Books.Book;
 import Main.Game.Team.Entity.Components.Books.PassiveBooks.PerkBook.Perks.DoubleHit;
+import Main.Game.Team.Entity.Components.Books.PassiveBooks.PerkBook.Perks.Lifesteal;
 import Main.Game.Team.Entity.Entity;
+import Main.Game.Utility.Library;
 
 
 import java.util.ArrayList;
@@ -17,6 +19,11 @@ public class PerkBook extends Book<Perk> {
     public PerkBook() {
         perkBook = new ArrayList<>();
         perkBook.add(new DoubleHit());
+        perkBook.add(new Lifesteal());
+
+        for(Perk perk : perkBook) {
+            Library.put(perk.toString(), perk.getDescription());
+        }
     }
     public void use(Entity actor, ArrayList<HashMap<Entity, Integer>> actions) {
         for(Perk perk : perkBook) {

@@ -2,6 +2,7 @@ package Main.Game.Team.Entity.Components.Books.PassiveBooks.PerkBook.Perks;
 
 import Main.Game.Team.Entity.Components.Books.PassiveBooks.PerkBook.Perk;
 import Main.Game.Team.Entity.Entity;
+import Main.Game.Utility.Library;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,6 +10,9 @@ import java.util.Random;
 
 
 public class DoubleHit extends Perk {
+
+    private static String name = "double hit";
+    private static String description = "DoublHit gives a 10% chance to hit enemies twice.";
 
     Random intRandom = new Random();
     private int chance = 9;
@@ -28,7 +32,12 @@ public class DoubleHit extends Perk {
     }
 
     @Override
+    public String getDescription() {
+        return description;
+    }
+
+    @Override
     public String toString() {
-        return "double hit";
+        return name;
     }
 }

@@ -135,7 +135,7 @@ public class Player extends Entity implements Comparable<Player>, Comparator<Pla
                 System.out.println("On which slot do you want to equip it? (index)");
                 System.out.println(Console.toString(slotList));
                 int index = Integer.parseInt(in.nextLine())-1;
-                if(index >0 && index <= slotList.size()) {
+                if(index >=0 && index < slotList.size()) {
                     this.equipment.put(slotList.get(index), equipable);
                     validInput = true;
                 }

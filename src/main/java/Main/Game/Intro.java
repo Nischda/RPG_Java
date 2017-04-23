@@ -19,7 +19,7 @@ public class Intro {
         while (!validName) {
             System.out.println("From now on you will be known as? (enter your name)");
 
-            Console.input();
+            Console.input(); //Todo redo for capitalized name
             if (Console.gotBuffer()) {
                  this.name = Console.getBuffer();
                 if (this.name.length() >= 3 && this.name.length() <= 20) {
